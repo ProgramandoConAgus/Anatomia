@@ -11,12 +11,12 @@
 
 	<link rel="icon" type="image/png" href="./images/logo-anato.png">
 		<meta charset="utf-8" />
-		<meta name="description" content="Sistema exclusivo para alumnos de ProgramandoConAgus" />
+		<meta name="description" content="Sistema exclusivo para alumnos de PreparandoAnato" />
 		<meta name="keywords" content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta property="og:locale" content="es_AR" />
 		<meta property="og:type" content="article" />
-		<meta property="og:title" content="Plataforma Exclusiva de aprendizaje - Aprende Programación Frontend, Backend y bases de datos" />
+		<meta property="og:title" content="Plataforma Exclusiva de aprendizaje - Aprende Anatomía" />
 
 		<meta property="og:site_name" content="Plataforma Exclusiva de aprendizaje" />
 		<!--begin::Fonts(mandatory for all pages)-->
@@ -64,21 +64,9 @@
 									<!--end::Subtitle=-->
 								</div>
 								<!--begin::Heading-->
-								<!--begin::Login options-->
-								<div class="row g-3 mb-9">
-									<!--begin::Col-->
-									<div class="col-md-12">
-										<!--begin::Google link=-->
-										<a href="#" class="btn btn-flex btn-outline btn-text-gray-700 btn-active-color-primary bg-state-light flex-center text-nowrap w-100">
-										<img alt="Logo" src="./src/media/corona.png" class="h-15px me-3" />Soy parte del equipo</a>
-										<!--end::Google link=-->
-									</div>
-									<!--end::Col-->
-								</div>
-								<!--end::Login options-->
 								<!--begin::Separator-->
 								<div class="separator separator-content my-14">
-									<span class="w-125px text-gray-500 fw-semibold fs-7">Ingresa como alumno</span>
+									<span class="w-125px text-gray-500 fw-semibold fs-7">Ingresa con correo</span>
 								</div>
 								<!--end::Separator-->
 								<!--begin::Input group=-->
@@ -117,8 +105,8 @@
 								</div>
 								<!--end::Submit button-->
 								<!--begin::Sign up-->
-								<div class="text-gray-500 text-center fw-semibold fs-6">No tenes acceso? 
-								<a href="register.php" class="link-primary">Adquiri la plataforma</a>
+								<div class="text-gray-500 text-center fw-semibold fs-6">No tenes cuenta? 
+								<a href="register.php" class="link-primary">Registrate</a>
 								<br>
 								<br>	
 								<!--end::Sign up-->
