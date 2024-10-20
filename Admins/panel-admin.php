@@ -679,7 +679,7 @@ $result = $stmt->get_result();
 															<?php
 																	if ($result) {
 																		while ($row = mysqli_fetch_assoc($result)) {
-																			if($row['tipoUsuario']==1){
+																			
 																				$checked = ($row['habilitado'] == 1) ? 'checked' : '';
                 																$switchId = $row['IdUsuario']; 
                 																$inputName = 'usuarioid_' . $row['IdUsuario'];
@@ -721,7 +721,7 @@ $result = $stmt->get_result();
 																	
 																		</tr>
 																	<?php
-																			}
+																			
 																		}
 																	}
 																	?>
