@@ -660,10 +660,120 @@ $result = $stmt->get_result();
 													<!--begin::Table container-->
 													<div style="max-height: 400px; overflow-y: auto;">
 														<!--begin::Table-->
+															
 														<table class="table align-middle">
-															<h1 style="text-align:center;">Datos de usuarios</h1>
-															<br>
-															<br>
+														<h1 style="text-align:center;">Datos de usuarios</h1>
+														<a href="#" class="btn btn-primary er fs-6 px-8 py-4" data-bs-toggle="modal" data-bs-target="#kt_modal_bidding">Cargar Videos</a>
+														<br>
+														<!--begin::Modal - New Target-->
+															<div class="modal fade" id="kt_modal_bidding" tabindex="-1" aria-hidden="true">
+																<!--begin::Modal dialog-->
+																<div class="modal-dialog modal-dialog-centered mw-650px">
+																	<!--begin::Modal content-->
+																	<div class="modal-content rounded">
+																		<!--begin::Modal header-->
+																		<div class="modal-header pb-0 border-0 justify-content-end">
+																			<!--begin::Close-->
+																			<div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal" id="btnCancel">
+																				<i class="ki-duotone ki-cross fs-1">
+																					<span class="path1"></span>
+																					<span class="path2"></span>
+																				</i>
+																			</div>
+																			<!--end::Close-->
+																		</div>
+																		<!--begin::Modal header-->
+																		<!--begin::Modal body-->
+																		<div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
+																			<!--begin:Form-->
+																			<form method="POST" id="cargaVideosForm" class="form" action="./Admins/cargaVideos.php" enctype="multipart/form-data">
+																				<!--begin::Heading-->
+																				<div class="mb-13 text-center">
+																					<!--begin::Title-->
+																					<h1 class="mb-3">Carga nuevos videos</h1>
+																					<!--end::Title-->
+																				</div>
+																				<!--end::Heading-->
+																				<!--begin::Input group-->
+																				<div class="d-flex flex-column mb-8 fv-row">
+																					<!--begin::Label-->
+																					<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																						<span class="required">Titulo</span>
+																						<span class="ms-1" data-bs-toggle="tooltip" title="Titulo con el que se mostrara el video.">
+																							<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																								<span class="path1"></span>
+																								<span class="path2"></span>
+																								<span class="path3"></span>
+																							</i>
+																						</span>
+																					</label>
+																					<!--end::Label-->
+																					<input type="text" class="form-control form-control-solid" placeholder="Ingresa el titulo del video" name="titulo" />
+																				</div>
+																				<!--end::Input group-->
+																				<!--begin::Input group-->
+																				<div class="fv-row mb-8">
+																					<!--begin::Label-->
+																					<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																						<span class="required">Curso</span>
+																						<span class="ms-1" data-bs-toggle="tooltip" title="Curso al que pertenece el video">
+																							<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																								<span class="path1"></span>
+																								<span class="path2"></span>
+																								<span class="path3"></span>
+																							</i>
+																						</span>
+																					</label>
+																					<!--end::Label-->
+																					<!--begin::Select2-->
+																					<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Selecciona un curso" name="curso">
+																						<option value=""></option>
+																						<option value="1">Curso Basico</option>
+																						<option value="2">Curso Plus</option>
+																						<option value="3">Curso Premium</option>
+																						<option value="4">Curso Intensivo</option>
+																					</select>
+																					<!--end::Select2-->
+																				</div>
+																				<!--end::Input group-->
+																				<!--begin::Input group-->
+																				<div class="d-flex flex-column mb-8 fv-row">
+																					<!--begin::Label-->
+																					<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																						<span class="required">Cargar video</span>
+																						<span class="ms-1" data-bs-toggle="tooltip" title="Selecciona el archivo de video.">
+																							<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																								<span class="path1"></span>
+																								<span class="path2"></span>
+																								<span class="path3"></span>
+																							</i>
+																							</span>
+																					</label>
+																					<!--end::Label-->
+																					<input type="file" class="form-control form-control-solid" accept="video/*" name="video" />
+																				</div>
+																				<!--end::Input group-->
+																				<!--begin::Actions-->
+																				<div class="text-center">
+																					<button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal" id="btnCancel">Cancel</button>
+																					<button type="submit" class="btn btn-primary" data-kt-modal-action-type="submit">
+																						<span class="indicator-label">Submit</span>
+																						<span class="indicator-progress">Please wait... 
+																						<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+																					</button>
+																				</div>
+																				<!--end::Actions-->
+																			</form>
+																			<!--end:Form-->
+																		</div>
+																		<!--end::Modal body-->
+																	</div>
+																	<!--end::Modal content-->
+																</div>
+																<!--end::Modal dialog-->
+															</div>
+															<!--end::Modal - New Target-->
+																												<br>
 															<!--begin::Table head-->
 															<thead>
 																<tr>
@@ -6039,6 +6149,38 @@ $result = $stmt->get_result();
 		<script src="assets/js/custom/utilities/modals/users-search.js"></script>
 		<script src="./Admins/cambiosAdmin.js"></script>
 		<!--end::Custom Javascript-->
+		<script>
+    		document.getElementById('btnCancel').addEventListener('click', function () {
+        		// Selecciona el formulario y resetea todos sus campos
+        		document.getElementById('cargaVideosForm').reset();
+    		});
+		</script>
+							<?php
+								if($_SESSION['videos']!=null){
+							?>
+							<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  							<div class="modal-dialog">
+    							<div class="modal-content">
+      							<div class="modal-header">
+        							<h1 class="modal-title fs-5" id="staticBackdropLabel">Actualizacion</h1>
+        							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      							</div>
+      							<div class="modal-body">
+								  	<?=$_SESSION['videos']?>
+      							</div>
+    							</div>
+  							</div>
+							</div>
+							<script>
+        						document.addEventListener('DOMContentLoaded', function() {
+            						var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'));
+            						myModal.show();
+        						});
+    							</script>
+							<?php
+								}
+								$_SESSION['videos']=null;
+							?>
 		<!--end::Javascript-->
 	</body>
 	<!--end::Body-->

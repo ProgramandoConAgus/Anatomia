@@ -788,7 +788,6 @@ if (isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['lo
 																	<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Clase de Generalidades</a>
 																	<!--end::Title-->
 																	<!--begin::Action-->
-																	
 																	<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/76sUr9gPkvk">
 																		Ver clase
 																	</a>
