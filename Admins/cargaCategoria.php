@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // obtengo los datos del post
     $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : null;
     $descripcion = isset($_POST['descripcion']) ? $_POST['descripcion'] : null;
-    $modulo = isset($_POST['descripcion']) ? $_POST['descripcion'] : null;
+    $modulo = isset($_POST['modulo']) ? $_POST['modulo'] : null;
     if ($nombre && $descripcion && $modulo ) {
         include("../con_db.php");
         
@@ -21,13 +21,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: panel-admin.php");
             exit();
         }
-
+        echo $modulo;
+        echo $descripcion;  
+        echo $nombre;
         $sql = "INSERT INTO categoria (nombre, descripcion, idModulo) VALUES (?, ?, ?)";
         $stmt = $conex->prepare($sql);
-        $stmt->bind_param("sis", $nombre, $descripcion, $modulo);
+        $stmt->bind_param("ssi", $nombre, $descripcion, $modulo);
         
         if ($stmt->execute()) {
-            $_SESSION['videos'] ="Video cargado y guardado correctamente.";
+            $_SESSION['videos'] ="Categoria agregada correctamente.";
             header("Location: panel-admin.php");
         } else {
             $_SESSION['videos'] = "Error al guardar en la base de datos: " . $stmt->error;
