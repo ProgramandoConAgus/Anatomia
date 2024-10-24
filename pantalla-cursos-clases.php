@@ -837,7 +837,7 @@ $result = $stmt->get_result();
 																</div>
 																<div class="modal-body">
 																	<!-- Reproductor de video dentro del modal -->
-																	<video id="video-<?=$row['IdVideo']?>" width="100%" controls>
+																	<video id="video-<?=$row['IdVideo']?>" width="100%" controls controlslist="nodownload" oncontextmenu="return false;">
 																		<source src="<?=$row['video_path']?>" type="video/mp4">
 																		Tu navegador no soporta el elemento de video.
 																	</video>
