@@ -663,10 +663,11 @@ $result = $stmt->get_result();
 															
 														<table class="table align-middle">
 														<h1 style="text-align:center;">Datos de usuarios</h1>
-														<a href="#" class="btn btn-primary er fs-6 px-8 py-4" data-bs-toggle="modal" data-bs-target="#kt_modal_bidding">Cargar Videos</a>
+														<a href="#" class="btn btn-primary er fs-6 me-2 px-5 py-3" data-bs-toggle="modal" data-bs-target="#kt_modal_video">Cargar Videos</a>
+														<a href="#" class="btn btn-primary er fs-6 px-5 py-3" data-bs-toggle="modal" data-bs-target="#kt_modal_categoria">Nueva categoria</a>
 														<br>
 														<!--begin::Modal - New Target-->
-															<div class="modal fade" id="kt_modal_bidding" tabindex="-1" aria-hidden="true">
+															<div class="modal fade" id="kt_modal_video" tabindex="-1" aria-hidden="true">
 																<!--begin::Modal dialog-->
 																<div class="modal-dialog modal-dialog-centered mw-650px">
 																	<!--begin::Modal content-->
@@ -686,7 +687,7 @@ $result = $stmt->get_result();
 																		<!--begin::Modal body-->
 																		<div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
 																			<!--begin:Form-->
-																			<form method="POST" id="cargaVideosForm" class="form" action="./Admins/cargaVideos.php" enctype="multipart/form-data">
+																			<form method="POST" id="cargasForm" class="form" action="./Admins/cargaVideos.php" enctype="multipart/form-data">
 																				<!--begin::Heading-->
 																				<div class="mb-13 text-center">
 																					<!--begin::Title-->
@@ -715,8 +716,8 @@ $result = $stmt->get_result();
 																				<div class="fv-row mb-8">
 																					<!--begin::Label-->
 																					<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
-																						<span class="required">Curso</span>
-																						<span class="ms-1" data-bs-toggle="tooltip" title="Curso al que pertenece el video">
+																						<span class="required">Modulo</span>
+																						<span class="ms-1" data-bs-toggle="tooltip" title="Modulo al que pertenece el video">
 																							<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
 																								<span class="path1"></span>
 																								<span class="path2"></span>
@@ -726,12 +727,46 @@ $result = $stmt->get_result();
 																					</label>
 																					<!--end::Label-->
 																					<!--begin::Select2-->
-																					<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Selecciona un curso" name="curso">
+																					<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Selecciona un Modulo" name="modulo">
 																						<option value=""></option>
-																						<option value="1">Curso Basico</option>
-																						<option value="2">Curso Plus</option>
-																						<option value="3">Curso Premium</option>
-																						<option value="4">Curso Intensivo</option>
+																						<option value="1">Modulo Locomotor</option>
+																						<option value="2">Modulo Neuroanatomía</option>
+																						<option value="3">Modulo Esplacnología</option>
+																					</select>
+																					<!--end::Select2-->
+																				</div>
+																				<!--end::Input group-->
+																				<!--begin::Input group-->
+																				<div class="fv-row mb-8">
+																					<!--begin::Label-->
+																					<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																						<span class="required">Categoria</span>
+																						<span class="ms-1" data-bs-toggle="tooltip" title="Categoria al que pertenece el video">
+																							<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																								<span class="path1"></span>
+																								<span class="path2"></span>
+																								<span class="path3"></span>
+																							</i>
+																						</span>
+																					</label>
+																					<!--end::Label-->
+																					<!--begin::Select2-->
+																					<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Selecciona la categoria" name="categoria">
+																						<option value=""></option>
+																						<?php
+																							$sql = "SELECT * FROM categoria";
+																							$stmt = $conex->prepare($sql);
+																							$stmt->execute();
+																							$result = $stmt->get_result();
+																							if ($result) {
+																								while ($row = mysqli_fetch_assoc($result)) {
+																							?>
+																							<option value="<?=$row['IdCategoria']?>"><?=$row['nombre']?></option>
+																							<?php
+																							}
+																						}
+
+																						?>
 																					</select>
 																					<!--end::Select2-->
 																				</div>
@@ -773,6 +808,119 @@ $result = $stmt->get_result();
 																<!--end::Modal dialog-->
 															</div>
 															<!--end::Modal - New Target-->
+
+
+
+
+
+															<!--begin::Modal - New Target-->
+															<div class="modal fade" id="kt_modal_categoria" tabindex="-1" aria-hidden="true">
+																<!--begin::Modal dialog-->
+																<div class="modal-dialog modal-dialog-centered mw-650px">
+																	<!--begin::Modal content-->
+																	<div class="modal-content rounded">
+																		<!--begin::Modal header-->
+																		<div class="modal-header pb-0 border-0 justify-content-end">
+																			<!--begin::Close-->
+																			<div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal" id="btnCancel">
+																				<i class="ki-duotone ki-cross fs-1">
+																					<span class="path1"></span>
+																					<span class="path2"></span>
+																				</i>
+																			</div>
+																			<!--end::Close-->
+																		</div>
+																		<!--begin::Modal header-->
+																		<!--begin::Modal body-->
+																		<div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
+																			<!--begin:Form-->
+																			<form method="POST" id="cargasForm" class="form" action="./Admins/cargaCategoria.php">
+																				<!--begin::Heading-->
+																				<div class="mb-13 text-center">
+																					<!--begin::Title-->
+																					<h1 class="mb-3">Crea una nueva Categoria</h1>
+																					<!--end::Title-->
+																				</div>
+																				<!--end::Heading-->
+																				<!--begin::Input group-->
+																				<div class="d-flex flex-column mb-8 fv-row">
+																					<!--begin::Label-->
+																					<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																						<span class="required">Nombre de la categoria</span>
+																						<span class="ms-1" data-bs-toggle="tooltip" title="Categoria nueva, por ejemplo: Generalidades">
+																							<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																								<span class="path1"></span>
+																								<span class="path2"></span>
+																								<span class="path3"></span>
+																							</i>
+																						</span>
+																					</label>
+																					<!--end::Label-->
+																					<input type="text" class="form-control form-control-solid" placeholder="Ingresa el nombre de la categoria" name="nombre" />
+																				</div>
+																				<!--end::Input group-->
+																				
+																				<!--begin::Input group-->
+																				<div class="d-flex flex-column mb-8 fv-row">
+																					<!--begin::Label-->
+																					<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																						<span class="required">Descripcion de la categoria</span>
+																						<span class="ms-1" data-bs-toggle="tooltip" title="Breve descripcion de la categoria, por ejemplo: Conceptos generales">
+																							<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																								<span class="path1"></span>
+																								<span class="path2"></span>
+																								<span class="path3"></span>
+																							</i>
+																						</span>
+																					</label>
+																					<!--end::Label-->
+																					<input type="text" class="form-control form-control-solid" placeholder="Ingresa una breve descripcion de la categoria" name="descripcion" />
+																				</div>
+																				<!--end::Input group-->
+																				<!--begin::Input group-->
+																				<div class="fv-row mb-8">
+																					<!--begin::Label-->
+																					<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																						<span class="required">Modulo</span>
+																						<span class="ms-1" data-bs-toggle="tooltip" title="Modulo al que pertenecera la categoria">
+																							<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																								<span class="path1"></span>
+																								<span class="path2"></span>
+																								<span class="path3"></span>
+																							</i>
+																						</span>
+																					</label>
+																					<!--end::Label-->
+																					<!--begin::Select2-->
+																					<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Selecciona un Modulo" name="modulo">
+																						<option value=""></option>
+																						<option value="1">Modulo Locomotor</option>
+																						<option value="2">Modulo Neuroanatomía</option>
+																						<option value="3">Modulo Esplacnología</option>
+																					</select>
+																					<!--end::Select2-->
+																				</div>
+																				<!--end::Input group-->
+																				<!--begin::Actions-->
+																				<div class="text-center">
+																					<button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal" id="btnCancel">Cancel</button>
+																					<button type="submit" class="btn btn-primary" data-kt-modal-action-type="submit">
+																						<span class="indicator-label">Submit</span>
+																						<span class="indicator-progress">Please wait... 
+																						<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+																					</button>
+																				</div>
+																				<!--end::Actions-->
+																			</form>
+																			<!--end:Form-->
+																		</div>
+																		<!--end::Modal body-->
+																	</div>
+																	<!--end::Modal content-->
+																</div>
+																<!--end::Modal dialog-->
+															</div>
+															<!--end::Modal - New Target-->
 																												<br>
 															<!--begin::Table head-->
 															<thead>
@@ -787,6 +935,10 @@ $result = $stmt->get_result();
 															<!--begin::Table body-->
 															<tbody>
 															<?php
+																$sql = "SELECT * FROM usuarios ";
+																$stmt = $conex->prepare($sql);
+																$stmt->execute();
+																$result = $stmt->get_result();
 																	if ($result) {
 																		while ($row = mysqli_fetch_assoc($result)) {
 																			
@@ -2918,266 +3070,7 @@ $result = $stmt->get_result();
 										</div>
 									</div>
 									<!--end::Step 1-->
-									<!--begin::Step 2-->
-									<div data-kt-stepper-element="content">
-										<div class="w-100">
-											<!--begin::Input group-->
-											<div class="fv-row">
-												<!--begin::Label-->
-												<label class="d-flex align-items-center fs-5 fw-semibold mb-4">
-													<span class="required">Select Framework</span>
-													<span class="ms-1" data-bs-toggle="tooltip" title="Specify your apps framework">
-														<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
-															<span class="path1"></span>
-															<span class="path2"></span>
-															<span class="path3"></span>
-														</i>
-													</span>
-												</label>
-												<!--end::Label-->
-												<!--begin:Option-->
-												<label class="d-flex flex-stack cursor-pointer mb-5">
-													<!--begin:Label-->
-													<span class="d-flex align-items-center me-2">
-														<!--begin:Icon-->
-														<span class="symbol symbol-50px me-6">
-															<span class="symbol-label bg-light-warning">
-																<i class="ki-duotone ki-html fs-2x text-warning">
-																	<span class="path1"></span>
-																	<span class="path2"></span>
-																</i>
-															</span>
-														</span>
-														<!--end:Icon-->
-														<!--begin:Info-->
-														<span class="d-flex flex-column">
-															<span class="fw-bold fs-6">HTML5</span>
-															<span class="fs-7 text-muted">Base Web Projec</span>
-														</span>
-														<!--end:Info-->
-													</span>
-													<!--end:Label-->
-													<!--begin:Input-->
-													<span class="form-check form-check-custom form-check-solid">
-														<input class="form-check-input" type="radio" checked="checked" name="framework" value="1" />
-													</span>
-													<!--end:Input-->
-												</label>
-												<!--end::Option-->
-												<!--begin:Option-->
-												<label class="d-flex flex-stack cursor-pointer mb-5">
-													<!--begin:Label-->
-													<span class="d-flex align-items-center me-2">
-														<!--begin:Icon-->
-														<span class="symbol symbol-50px me-6">
-															<span class="symbol-label bg-light-success">
-																<i class="ki-duotone ki-react fs-2x text-success">
-																	<span class="path1"></span>
-																	<span class="path2"></span>
-																</i>
-															</span>
-														</span>
-														<!--end:Icon-->
-														<!--begin:Info-->
-														<span class="d-flex flex-column">
-															<span class="fw-bold fs-6">ReactJS</span>
-															<span class="fs-7 text-muted">Robust and flexible app framework</span>
-														</span>
-														<!--end:Info-->
-													</span>
-													<!--end:Label-->
-													<!--begin:Input-->
-													<span class="form-check form-check-custom form-check-solid">
-														<input class="form-check-input" type="radio" name="framework" value="2" />
-													</span>
-													<!--end:Input-->
-												</label>
-												<!--end::Option-->
-												<!--begin:Option-->
-												<label class="d-flex flex-stack cursor-pointer mb-5">
-													<!--begin:Label-->
-													<span class="d-flex align-items-center me-2">
-														<!--begin:Icon-->
-														<span class="symbol symbol-50px me-6">
-															<span class="symbol-label bg-light-danger">
-																<i class="ki-duotone ki-angular fs-2x text-danger">
-																	<span class="path1"></span>
-																	<span class="path2"></span>
-																	<span class="path3"></span>
-																</i>
-															</span>
-														</span>
-														<!--end:Icon-->
-														<!--begin:Info-->
-														<span class="d-flex flex-column">
-															<span class="fw-bold fs-6">Angular</span>
-															<span class="fs-7 text-muted">Powerful data mangement</span>
-														</span>
-														<!--end:Info-->
-													</span>
-													<!--end:Label-->
-													<!--begin:Input-->
-													<span class="form-check form-check-custom form-check-solid">
-														<input class="form-check-input" type="radio" name="framework" value="3" />
-													</span>
-													<!--end:Input-->
-												</label>
-												<!--end::Option-->
-												<!--begin:Option-->
-												<label class="d-flex flex-stack cursor-pointer">
-													<!--begin:Label-->
-													<span class="d-flex align-items-center me-2">
-														<!--begin:Icon-->
-														<span class="symbol symbol-50px me-6">
-															<span class="symbol-label bg-light-primary">
-																<i class="ki-duotone ki-vue fs-2x text-primary">
-																	<span class="path1"></span>
-																	<span class="path2"></span>
-																</i>
-															</span>
-														</span>
-														<!--end:Icon-->
-														<!--begin:Info-->
-														<span class="d-flex flex-column">
-															<span class="fw-bold fs-6">Vue</span>
-															<span class="fs-7 text-muted">Lightweight and responsive framework</span>
-														</span>
-														<!--end:Info-->
-													</span>
-													<!--end:Label-->
-													<!--begin:Input-->
-													<span class="form-check form-check-custom form-check-solid">
-														<input class="form-check-input" type="radio" name="framework" value="4" />
-													</span>
-													<!--end:Input-->
-												</label>
-												<!--end::Option-->
-											</div>
-											<!--end::Input group-->
-										</div>
-									</div>
-									<!--end::Step 2-->
-									<!--begin::Step 3-->
-									<div data-kt-stepper-element="content">
-										<div class="w-100">
-											<!--begin::Input group-->
-											<div class="fv-row mb-10">
-												<!--begin::Label-->
-												<label class="required fs-5 fw-semibold mb-2">Database Name</label>
-												<!--end::Label-->
-												<!--begin::Input-->
-												<input type="text" class="form-control form-control-lg form-control-solid" name="dbname" placeholder="" value="master_db" />
-												<!--end::Input-->
-											</div>
-											<!--end::Input group-->
-											<!--begin::Input group-->
-											<div class="fv-row">
-												<!--begin::Label-->
-												<label class="d-flex align-items-center fs-5 fw-semibold mb-4">
-													<span class="required">Select Database Engine</span>
-													<span class="ms-1" data-bs-toggle="tooltip" title="Select your app database engine">
-														<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
-															<span class="path1"></span>
-															<span class="path2"></span>
-															<span class="path3"></span>
-														</i>
-													</span>
-												</label>
-												<!--end::Label-->
-												<!--begin:Option-->
-												<label class="d-flex flex-stack cursor-pointer mb-5">
-													<!--begin::Label-->
-													<span class="d-flex align-items-center me-2">
-														<!--begin::Icon-->
-														<span class="symbol symbol-50px me-6">
-															<span class="symbol-label bg-light-success">
-																<i class="ki-duotone ki-note text-success fs-2x">
-																	<span class="path1"></span>
-																	<span class="path2"></span>
-																</i>
-															</span>
-														</span>
-														<!--end::Icon-->
-														<!--begin::Info-->
-														<span class="d-flex flex-column">
-															<span class="fw-bold fs-6">MySQL</span>
-															<span class="fs-7 text-muted">Basic MySQL database</span>
-														</span>
-														<!--end::Info-->
-													</span>
-													<!--end::Label-->
-													<!--begin::Input-->
-													<span class="form-check form-check-custom form-check-solid">
-														<input class="form-check-input" type="radio" name="dbengine" checked="checked" value="1" />
-													</span>
-													<!--end::Input-->
-												</label>
-												<!--end::Option-->
-												<!--begin:Option-->
-												<label class="d-flex flex-stack cursor-pointer mb-5">
-													<!--begin::Label-->
-													<span class="d-flex align-items-center me-2">
-														<!--begin::Icon-->
-														<span class="symbol symbol-50px me-6">
-															<span class="symbol-label bg-light-danger">
-																<i class="ki-duotone ki-google text-danger fs-2x">
-																	<span class="path1"></span>
-																	<span class="path2"></span>
-																</i>
-															</span>
-														</span>
-														<!--end::Icon-->
-														<!--begin::Info-->
-														<span class="d-flex flex-column">
-															<span class="fw-bold fs-6">Firebase</span>
-															<span class="fs-7 text-muted">Google based app data management</span>
-														</span>
-														<!--end::Info-->
-													</span>
-													<!--end::Label-->
-													<!--begin::Input-->
-													<span class="form-check form-check-custom form-check-solid">
-														<input class="form-check-input" type="radio" name="dbengine" value="2" />
-													</span>
-													<!--end::Input-->
-												</label>
-												<!--end::Option-->
-												<!--begin:Option-->
-												<label class="d-flex flex-stack cursor-pointer">
-													<!--begin::Label-->
-													<span class="d-flex align-items-center me-2">
-														<!--begin::Icon-->
-														<span class="symbol symbol-50px me-6">
-															<span class="symbol-label bg-light-warning">
-																<i class="ki-duotone ki-microsoft text-warning fs-2x">
-																	<span class="path1"></span>
-																	<span class="path2"></span>
-																	<span class="path3"></span>
-																	<span class="path4"></span>
-																</i>
-															</span>
-														</span>
-														<!--end::Icon-->
-														<!--begin::Info-->
-														<span class="d-flex flex-column">
-															<span class="fw-bold fs-6">DynamoDB</span>
-															<span class="fs-7 text-muted">Microsoft Fast NoSQL Database</span>
-														</span>
-														<!--end::Info-->
-													</span>
-													<!--end::Label-->
-													<!--begin::Input-->
-													<span class="form-check form-check-custom form-check-solid">
-														<input class="form-check-input" type="radio" name="dbengine" value="3" />
-													</span>
-													<!--end::Input-->
-												</label>
-												<!--end::Option-->
-											</div>
-											<!--end::Input group-->
-										</div>
-									</div>
-									<!--end::Step 3-->
+									
 									<!--begin::Step 4-->
 									<div data-kt-stepper-element="content">
 										<div class="w-100">
@@ -6152,7 +6045,7 @@ $result = $stmt->get_result();
 		<script>
     		document.getElementById('btnCancel').addEventListener('click', function () {
         		// Selecciona el formulario y resetea todos sus campos
-        		document.getElementById('cargaVideosForm').reset();
+        		document.getElementById('cargasForm').reset();
     		});
 		</script>
 							<?php

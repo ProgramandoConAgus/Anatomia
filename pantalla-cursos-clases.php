@@ -26,6 +26,24 @@ if (isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['lo
    	header("Location: index.php");
    	exit;
 }
+$idCategoria=null;
+$firstTime=true;
+$sql = "SELECT 
+    v.IdVideo,
+    v.titulo,
+    v.video_path,
+    v.idCategoria,
+    c.nombre AS categoria_nombre,
+    c.descripcion
+FROM videos v
+JOIN categoria c ON v.idCategoria = c.IdCategoria
+JOIN modulos m ON c.idModulo = m.IdModulo
+WHERE c.idModulo = ?
+Order by v.idCategoria;";
+$stmt = $conex->prepare($sql);
+$stmt->bind_param("i", $numero_recibido);
+$stmt->execute();
+$result = $stmt->get_result();
 
 ?>
 
@@ -47,6 +65,8 @@ if (isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['lo
 		<meta property="og:title" content="Metronic - The World's #1 Selling Bootstrap Admin Template - Metronic by KeenThemes" />
 		<meta property="og:url" content="https://keenthemes.com/metronic" />
 		<meta property="og:site_name" content="Metronic by Keenthemes" />
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 		<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
 		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
 		<!--begin::Fonts(mandatory for all pages)-->
@@ -633,7 +653,7 @@ if (isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['lo
 							
 								<!--begin::Container-->
 								<div class="container pt-10 pt-lg-13">
-
+								
 								
 
                                 <?php
@@ -757,635 +777,84 @@ if (isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['lo
 											<!--begin::Row-->
 											<div class="row g-10">
 
-											  <?php
-											 if ($numero_recibido == 1) {
-												# code...
-											
-											  ?>
+											<?php
+											if ($result) {
+												$idCategoriaAnterior = null; 
 
+												while ($row = mysqli_fetch_assoc($result)) {
+													$idCategoriaActual = $row['idCategoria']; // Categoría actual
 
-														<div class="card-body p-10 p-lg-15">
-														
-														<div class="row">
-														<div class="col-sm-12 mb-5 mb-xl-10">
-														<!--begin::List widget 2-->
-														<div class="card card-flush h-lg-100">
-															<!--begin::Header-->
-															<div class="card-header pt-5">
-																<!--begin::Title-->
-																<h3 class="card-title align-items-start flex-column">
-																	<span class="card-label fw-bold text-gray-900">Generalidades</span>
-																	<span class="text-gray-500 mt-1 fw-semibold fs-6">Conceptos generales</span>
-																</h3>
-																<!--end::Title-->
-															</div>
-															<!--end::Header-->
-															<!--begin::Body-->
-															<div class="card-body pt-5">
-																<!--begin::Item-->
-																<div class="d-flex flex-stack">
-																	<!--begin::Title-->
-																	<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Clase de Generalidades</a>
-																	<!--end::Title-->
-																	<!--begin::Action-->
-																	<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/76sUr9gPkvk">
-																		Ver clase
-																	</a>
-																	<!--end::Action-->
-																</div>
-																<!--end::Item-->
-																<!--begin::Separator-->
-																<div class="separator separator-dashed my-3"></div>
-																<!--end::Separator-->
-																<!--begin::Item-->
-																<div class="d-flex flex-stack">
-																	<!--begin::Title-->
-																	<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Generalidades Imagenes</a>
-																	<!--end::Title-->
-																	<!--begin::Action-->
-																	
-																	<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/nA-jwu9rCvA">
-																		Ver clase
-																	</a>
-																	<!--end::Action-->
-																</div>
-																<!--end::Item-->
-															</div>
-															<!--end::Body-->
-														</div>
-														<!--end::List widget 2-->
-													
-														</div>
-
-
-
-													</div>
-
-													<div class="row">
-														<div class="col-sm-12 mb-5 mb-xl-10">
-														<!--begin::List widget 2-->
-														<div class="card card-flush h-lg-100">
-															<!--begin::Header-->
-															<div class="card-header pt-5">
-																<!--begin::Title-->
-																<h3 class="card-title align-items-start flex-column">
-																	<span class="card-label fw-bold text-gray-900">Dorso y preparados con nuca</span>
-																	<span class="text-gray-500 mt-1 fw-semibold fs-6">Conceptos sobre dorso</span>
-																</h3>
-																<!--end::Title-->
-															</div>
-															<!--end::Header-->
-															<!--begin::Body-->
-															<div class="card-body pt-5">
-																<!--begin::Item-->
-																<div class="d-flex flex-stack">
-																	<!--begin::Title-->
-																	<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Primera Clase</a>
-																	<!--end::Title-->
-																	<!--begin::Action-->
-																	
-																	<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/fLjen5mj4Yc">
-																		Ver clase
-																	</a>
-																	<!--end::Action-->
-																</div>
-																<!--end::Item-->
-																<!--begin::Separator-->
-																<div class="separator separator-dashed my-3"></div>
-																<!--end::Separator-->
-																<!--begin::Item-->
-																<div class="d-flex flex-stack">
-																	<!--begin::Title-->
-																	<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Segunda Clase</a>
-																	<!--end::Title-->
-																	<!--begin::Action-->
-																	
-																	<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/q4uhdttibCw">
-																		Ver clase
-																	</a>
-																	<!--end::Action-->
-																</div>
-																<!--end::Item-->
-																<!--begin::Separator-->
-																<div class="separator separator-dashed my-3"></div>
-																<!--end::Separator-->
-																<!--begin::Item-->
-																<div class="d-flex flex-stack">
-																	<!--begin::Title-->
-																	<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Tercera Clase</a>
-																	<!--end::Title-->
-																	<!--begin::Action-->
-																	
-																	<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/yxgJAkps3os">
-																		Ver clase
-																	</a>
-																	<!--end::Action-->
-																</div>
-																<!--end::Item-->
-																<!--begin::Separator-->
-																<div class="separator separator-dashed my-3"></div>
-																<!--end::Separator-->
-																<!--begin::Item-->
-																<div class="d-flex flex-stack">
-																	<!--begin::Title-->
-																	<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Cuarta Clase</a>
-																	<!--end::Title-->
-																	<!--begin::Action-->
-																	
-																	<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/9WUp51wjy8o">
-																		Ver clase
-																	</a>
-																	<!--end::Action-->
-																</div>
-																<!--end::Item-->
-																<!--begin::Separator-->
-																<div class="separator separator-dashed my-3"></div>
-																<!--end::Separator-->
-																<!--begin::Item-->
-																<div class="d-flex flex-stack">
-																	<!--begin::Title-->
-																	<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Quinta Clase</a>
-																	<!--end::Title-->
-																	<!--begin::Action-->
-																	
-																	<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/Sb-lowHfv1Y">
-																		Ver clase
-																	</a>
-																	<!--end::Action-->
-																</div>
-																<!--end::Item-->
-																<!--begin::Separator-->
-																<div class="separator separator-dashed my-3"></div>
-																<!--end::Separator-->
-																<!--begin::Item-->
-																<div class="d-flex flex-stack">
-																	<!--begin::Title-->
-																	<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Sexta Clase</a>
-																	<!--end::Title-->
-																	<!--begin::Action-->
-																	
-																	<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/v5xOAloh76c">
-																		Ver clase
-																	</a>
-																	<!--end::Action-->
-																</div>
-																<!--end::Item-->
-
-																<!--begin::Separator-->
-																<div class="separator separator-dashed my-3"></div>
-																<!--end::Separator-->
-																<!--begin::Item-->
-																<div class="d-flex flex-stack">
-																	<!--begin::Title-->
-																	<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Presentación de preparado de Dorso</a>
-																	<!--end::Title-->
-																	<!--begin::Action-->
-																	
-																	<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/paDuTLm6OUA">
-																		Ver clase
-																	</a>
-																	<!--end::Action-->
-																</div>
-																<!--end::Item-->
-															</div>
-															<!--end::Body-->
-														</div>
-														<!--end::List widget 2-->
-											  		</div>
-												</div>
-											</div>
-											  <?php
- 												}	
-											    else if ($numero_recibido == 2) {
-												# code...
-											
-											    ?>
-										<div class="card-body p-10 p-lg-15">			
-											<div class="row">
-												<div class="col-sm-12 mb-5 mb-xl-10">
-													<!--begin::List widget 2-->
-													<div class="card card-flush h-lg-100">
-														<!--begin::Header-->
-														<div class="card-header pt-5">
-															<!--begin::Title-->
-															<h3 class="card-title align-items-start flex-column">
-																<span class="card-label fw-bold text-gray-900">Generalidades</span>
-																<span class="text-gray-500 mt-1 fw-semibold fs-6">Conceptos generales</span>
-															</h3>
-															<!--end::Title-->
-														</div>
-														<!--end::Header-->
-														<!--begin::Body-->
-														<div class="card-body pt-5">
-															<!--begin::Item-->
-															<div class="d-flex flex-stack">
-																<!--begin::Title-->
-																<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Clase de Generalidades</a>
-																<!--end::Title-->
-																<!--begin::Action-->
-																
-																<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/76sUr9gPkvk">
-																	Ver clase
-																</a>
-																<!--end::Action-->
-															</div>
-															<!--end::Item-->
-															<!--begin::Separator-->
-															<div class="separator separator-dashed my-3"></div>
-															<!--end::Separator-->
-															<!--begin::Item-->
-															<div class="d-flex flex-stack">
-																<!--begin::Title-->
-																<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Generalidades Imagenes</a>
-																<!--end::Title-->
-																<!--begin::Action-->
-																
-																<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/nA-jwu9rCvA">
-																	Ver clase
-																</a>
-																<!--end::Action-->
-															</div>
-															<!--end::Item-->
-														</div>
-														<!--end::Body-->
-													</div>
-													<!--end::List widget 2-->												
-												</div>
-											</div>
-												<div class="row">
-														<div class="col-sm-12 mb-5 mb-xl-10">
-													<!--begin::List widget 2-->
-													<div class="card card-flush h-lg-100">
-														<!--begin::Header-->
-														<div class="card-header pt-5">
-															<!--begin::Title-->
-															<h3 class="card-title align-items-start flex-column">
-																<span class="card-label fw-bold text-gray-900">Dorso y preparados con nuca</span>
-																<span class="text-gray-500 mt-1 fw-semibold fs-6">Conceptos sobre dorso</span>
-															</h3>
-															<!--end::Title-->
-														</div>
-														<!--end::Header-->
-														<!--begin::Body-->
-														<div class="card-body pt-5">
-															<!--begin::Item-->
-															<div class="d-flex flex-stack">
-																<!--begin::Title-->
-																<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Primera Clase</a>
-																<!--end::Title-->
-																<!--begin::Action-->
-																
-																<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/fLjen5mj4Yc">
-																	Ver clase
-																</a>
-																<!--end::Action-->
-															</div>
-															<!--end::Item-->
-															<!--begin::Separator-->
-															<div class="separator separator-dashed my-3"></div>
-															<!--end::Separator-->
-															<!--begin::Item-->
-															<div class="d-flex flex-stack">
-																<!--begin::Title-->
-																<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Segunda Clase</a>
-																<!--end::Title-->
-																<!--begin::Action-->
-																
-																<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/q4uhdttibCw">
-																	Ver clase
-																</a>
-																<!--end::Action-->
-															</div>
-															<!--end::Item-->
-															<!--begin::Separator-->
-															<div class="separator separator-dashed my-3"></div>
-															<!--end::Separator-->
-															<!--begin::Item-->
-															<div class="d-flex flex-stack">
-																<!--begin::Title-->
-																<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Tercera Clase</a>
-																<!--end::Title-->
-																<!--begin::Action-->
-																
-																<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/yxgJAkps3os">
-																	Ver clase
-																</a>
-																<!--end::Action-->
-															</div>
-															<!--end::Item-->
-															<!--begin::Separator-->
-															<div class="separator separator-dashed my-3"></div>
-															<!--end::Separator-->
-															<!--begin::Item-->
-															<div class="d-flex flex-stack">
-																<!--begin::Title-->
-																<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Cuarta Clase</a>
-																<!--end::Title-->
-																<!--begin::Action-->
-																
-																<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/9WUp51wjy8o">
-																	Ver clase
-																</a>
-																<!--end::Action-->
-															</div>
-															<!--end::Item-->
-															<!--begin::Separator-->
-															<div class="separator separator-dashed my-3"></div>
-															<!--end::Separator-->
-															<!--begin::Item-->
-															<div class="d-flex flex-stack">
-																<!--begin::Title-->
-																<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Quinta Clase</a>
-																<!--end::Title-->
-																<!--begin::Action-->
-																
-																<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/Sb-lowHfv1Y">
-																	Ver clase
-																</a>
-																<!--end::Action-->
-															</div>
-															<!--end::Item-->
-															<!--begin::Separator-->
-															<div class="separator separator-dashed my-3"></div>
-															<!--end::Separator-->
-															<!--begin::Item-->
-															<div class="d-flex flex-stack">
-																<!--begin::Title-->
-																<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Sexta Clase</a>
-																<!--end::Title-->
-																<!--begin::Action-->
-																
-																<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/v5xOAloh76c">
-																	Ver clase
-																</a>
-																<!--end::Action-->
-															</div>
-															<!--end::Item-->
-
-															<!--begin::Separator-->
-															<div class="separator separator-dashed my-3"></div>
-															<!--end::Separator-->
-															<!--begin::Item-->
-															<div class="d-flex flex-stack">
-																<!--begin::Title-->
-																<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Presentación de preparado de Dorso</a>
-																<!--end::Title-->
-																<!--begin::Action-->
-																
-																<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/paDuTLm6OUA">
-																	Ver clase
-																</a>
-																<!--end::Action-->
-															</div>
-															<!--end::Item-->
-														</div>
-														<!--end::Body-->
-													</div>
-													<!--end::List widget 2-->
-																</div>
-									  			</div>
-										  	</div>
-
-												<?php
-												}
-											    else if ($numero_recibido == 3) {
-												# code...
-											
-											    ?>
-										<div class="card-body p-10 p-lg-15">			
-											<div class="row">
-												<div class="col-sm-12 mb-5 mb-xl-10">
-													<!--begin::List widget 2-->
-													<div class="card card-flush h-lg-100">
-														<!--begin::Header-->
-														<div class="card-header pt-5">
-															<!--begin::Title-->
-															<h3 class="card-title align-items-start flex-column">
-																<span class="card-label fw-bold text-gray-900">Generalidades</span>
-																<span class="text-gray-500 mt-1 fw-semibold fs-6">Conceptos generales</span>
-															</h3>
-															<!--end::Title-->
-														</div>
-														<!--end::Header-->
-														<!--begin::Body-->
-														<div class="card-body pt-5">
-															<!--begin::Item-->
-															<div class="d-flex flex-stack">
-																<!--begin::Title-->
-																<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Clase de Generalidades</a>
-																<!--end::Title-->
-																<!--begin::Action-->
-																
-																<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/76sUr9gPkvk">
-																	Ver clase
-																</a>
-																<!--end::Action-->
-															</div>
-															<!--end::Item-->
-															<!--begin::Separator-->
-															<div class="separator separator-dashed my-3"></div>
-															<!--end::Separator-->
-															<!--begin::Item-->
-															<div class="d-flex flex-stack">
-																<!--begin::Title-->
-																<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Generalidades Imagenes</a>
-																<!--end::Title-->
-																<!--begin::Action-->
-																
-																<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/nA-jwu9rCvA">
-																	Ver clase
-																</a>
-																<!--end::Action-->
-															</div>
-															<!--end::Item-->
-														</div>
-														<!--end::Body-->
-													</div>
-													<!--end::List widget 2-->
-												
-														</div>
-
-
-
-												</div>
-
-												<div class="row">
-														<div class="col-sm-12 mb-5 mb-xl-10">
-													<!--begin::List widget 2-->
-													<div class="card card-flush h-lg-100">
-														<!--begin::Header-->
-														<div class="card-header pt-5">
-															<!--begin::Title-->
-															<h3 class="card-title align-items-start flex-column">
-																<span class="card-label fw-bold text-gray-900">Dorso y preparados con nuca</span>
-																<span class="text-gray-500 mt-1 fw-semibold fs-6">Conceptos sobre dorso</span>
-															</h3>
-															<!--end::Title-->
-														</div>
-														<!--end::Header-->
-														<!--begin::Body-->
-														<div class="card-body pt-5">
-															<!--begin::Item-->
-															<div class="d-flex flex-stack">
-																<!--begin::Title-->
-																<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Primera Clase</a>
-																<!--end::Title-->
-																<!--begin::Action-->
-																
-																<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/fLjen5mj4Yc">
-																	Ver clase
-																</a>
-																<!--end::Action-->
-															</div>
-															<!--end::Item-->
-															<!--begin::Separator-->
-															<div class="separator separator-dashed my-3"></div>
-															<!--end::Separator-->
-															<!--begin::Item-->
-															<div class="d-flex flex-stack">
-																<!--begin::Title-->
-																<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Segunda Clase</a>
-																<!--end::Title-->
-																<!--begin::Action-->
-																
-																<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/q4uhdttibCw">
-																	Ver clase
-																</a>
-																<!--end::Action-->
-															</div>
-															<!--end::Item-->
-															<!--begin::Separator-->
-															<div class="separator separator-dashed my-3"></div>
-															<!--end::Separator-->
-															<!--begin::Item-->
-															<div class="d-flex flex-stack">
-																<!--begin::Title-->
-																<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Tercera Clase</a>
-																<!--end::Title-->
-																<!--begin::Action-->
-																
-																<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/yxgJAkps3os">
-																	Ver clase
-																</a>
-																<!--end::Action-->
-															</div>
-															<!--end::Item-->
-															<!--begin::Separator-->
-															<div class="separator separator-dashed my-3"></div>
-															<!--end::Separator-->
-															<!--begin::Item-->
-															<div class="d-flex flex-stack">
-																<!--begin::Title-->
-																<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Cuarta Clase</a>
-																<!--end::Title-->
-																<!--begin::Action-->
-																
-																<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/9WUp51wjy8o">
-																	Ver clase
-																</a>
-																<!--end::Action-->
-															</div>
-															<!--end::Item-->
-															<!--begin::Separator-->
-															<div class="separator separator-dashed my-3"></div>
-															<!--end::Separator-->
-															<!--begin::Item-->
-															<div class="d-flex flex-stack">
-																<!--begin::Title-->
-																<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Quinta Clase</a>
-																<!--end::Title-->
-																<!--begin::Action-->
-																
-																<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/Sb-lowHfv1Y">
-																	Ver clase
-																</a>
-																<!--end::Action-->
-															</div>
-															<!--end::Item-->
-															<!--begin::Separator-->
-															<div class="separator separator-dashed my-3"></div>
-															<!--end::Separator-->
-															<!--begin::Item-->
-															<div class="d-flex flex-stack">
-																<!--begin::Title-->
-																<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Sexta Clase</a>
-																<!--end::Title-->
-																<!--begin::Action-->
-																
-																<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/v5xOAloh76c">
-																	Ver clase
-																</a>
-																<!--end::Action-->
-															</div>
-															<!--end::Item-->
-
-															<!--begin::Separator-->
-															<div class="separator separator-dashed my-3"></div>
-															<!--end::Separator-->
-															<!--begin::Item-->
-															<div class="d-flex flex-stack">
-																<!--begin::Title-->
-																<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold">Presentación de preparado de Dorso</a>
-																<!--end::Title-->
-																<!--begin::Action-->
-																
-																<a data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/paDuTLm6OUA">
-																	Ver clase
-																</a>
-																<!--end::Action-->
-															</div>
-															<!--end::Item-->
-														</div>
-														<!--end::Body-->
-													</div>
-													<!--end::List widget 2-->
-																</div>
-									  			</div>
-										  	</div>
-
-												<?php
-												}
-											    else if ($numero_recibido == 3) {
-												# code...
-											
-											    ?>
-
-													<div class="col-md-4">
-													<!--begin::Feature post-->
-													<div class="card-xl-stretch me-md-6">
-														<!--begin::Image-->
-														<a class="d-block bgi-no-repeat bgi-size-cover bgi-position-center card-rounded position-relative min-h-175px mb-5" style="background-image:url('./src/media/js.png')" data-fslightbox="lightbox-video-tutorials" href="https://youtu.be/vYG5NpOvdyc">
-															<img src="assets/media/svg/misc/video-play.svg" class="position-absolute top-50 start-50 translate-middle" alt="" />
+													// Si la categoría cambia (o es la primera vez)
+													if ($idCategoriaActual != $idCategoriaAnterior) {
+														// Si ya hay una categoría anterior, cerramos el bloque
+														if ($idCategoriaAnterior !== null) {
+															echo '</div></div></div></div></div>'; // cierra los divs abiertos del bloque anterior
+														}
+														?>
+														<div class="card-body"> 
+															<div class="row">
+																<div class="col"> 
+																	<!--begin::List widget 2-->
+																	<div class="card card-flush h-lg-100" > 
+																		<!--begin::Header-->
+																		<div class="card-header pt-5">
+																			<!--begin::Title-->
+																			<h3 class="card-title align-items-start flex-column">
+																				<span class="card-label fw-bold text-gray-900"><?=$row['categoria_nombre']?></span>
+																				<span class="text-gray-500 mt-1 fw-semibold fs-6"><?=$row['descripcion']?></span>
+																			</h3>
+																			<!--end::Title-->
+																		</div>
+																		<!--end::Header-->
+																		<!--begin::Body-->
+																		<div class="card-body pt-5"> 
+														<?php
+													}
+													?>
+													<div class="d-flex flex-stack">
+														<!--begin::Title-->
+														<a href="#" class="text-primary opacity-75-hover fs-6 fw-semibold"><?=$row['titulo']?></a>
+														<!--end::Title-->
+														<!--begin::Action-->
+														<a data-fslightbox="lightbox-video-tutorials" href="" data-toggle="modal" data-target="#modalVideo<?=$row['IdVideo']?>">
+															Ver clase
 														</a>
-														<!--end::Image-->
-														<!--begin::Body-->
-														<div class="m-0">
-															<!--begin::Title-->
-															<a href="pages/user-profile/overview.html" class="fs-4 text-gray-900 fw-bold text-hover-primary text-gray-900 lh-base">Primera clase - Variables y tipos de datos</a>
-															<!--end::Title-->
-															<!--begin::Text-->
-															<div class="fw-semibold fs-5 text-gray-600 text-gray-900 my-4">introduce los conceptos fundamentales de las variables y los tipos de datos en programación. Explica cómo se definen y utilizan las variables para almacenar información, y describe los diferentes tipos de datos como enteros, flotantes, cadenas de texto y booleanos.</div>
-															<!--end::Text-->
-															<!--begin::Content-->
-															<div class="fs-6 fw-bold">
-																<!--begin::Author-->
-																<a href="pages/user-profile/overview.html" class="text-gray-700 text-hover-primary">Agustin Aponte Angotti</a>
-																<!--end::Author-->
-																<!--begin::Date-->
-																<span class="text-muted">Subido 7/03/24</span>
-																<!--end::Date-->
-															</div>
-															<!--end::Content-->
-														</div>
-														<!--end::Body-->
+														<!--end::Action-->
 													</div>
-													<!--end::Feature post-->
-												</div>
-												<!--end::Col-->
+													<!--begin::Separator-->
+													<div class="separator separator-dashed my-3"></div>
+													<!--end::Separator-->
 
-												<?php
+													<!-- Modal -->
+													<div class="modal fade" id="modalVideo<?=$row['IdVideo']?>" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel<?=$row['IdVideo']?>" aria-hidden="true">
+														<div class="modal-dialog modal-xl" role="document">
+															<div class="modal-content">
+																<div class="modal-header">
+																	<h5 class="modal-title" id="videoModalLabel<?=$row['IdVideo']?>"><?=$row['titulo']?></h5>
+																	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																		<span aria-hidden="true">&times;</span>
+																	</button>
+																</div>
+																<div class="modal-body">
+																	<!-- Reproductor de video dentro del modal -->
+																	<video id="video-<?=$row['IdVideo']?>" width="100%" controls>
+																		<source src="<?=$row['video_path']?>" type="video/mp4">
+																		Tu navegador no soporta el elemento de video.
+																	</video>
+																</div>
+															</div>
+														</div>
+													</div>
+													<?php
+
+													// Al final de el bucle, actualiza la categoría anterior
+													$idCategoriaAnterior = $idCategoriaActual;
 												}
-												?>
+
+												
+											}
+											?>
+
 											</div>
 											<!--end::Row-->
 										</div>
@@ -4745,6 +4214,20 @@ if (isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['lo
 		<script src="assets/js/custom/apps/chat/chat.js"></script>
 		<script src="assets/js/custom/utilities/modals/upgrade-plan.js"></script>
 		<script src="assets/js/custom/utilities/modals/users-search.js"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+		<script>
+			// Función para detener el video cuando se cierra el modal
+			$('.modal').on('hidden.bs.modal', function (e) {
+				var video = $(this).find('video')[0];
+				if (video) {
+					video.pause();         // Pausar el video
+					video.currentTime = 0; // Reiniciar el tiempo del video
+				}
+			});
+   		</script>
 		<!--end::Custom Javascript-->
 		<!--end::Javascript-->
 	</body>
