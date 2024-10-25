@@ -1177,6 +1177,24 @@ License: For each use you must have a valid license purchased only from above li
 													<!--end::Link-->
 												</li>
 												<!--end::Item-->
+												<li class="nav-item mb-3 me-3 me-lg-6" role="presentation">
+													<!--begin::Link-->
+													<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_9" aria-selected="true" role="tab">
+														<!--begin::Icon-->
+														<div class="nav-icon">
+															<img alt="" src="./images/pdf.png" class="nav-icon">
+														</div>
+														<!--end::Icon-->
+														<!--begin::Subtitle-->
+														<span class="nav-text text-gray-600 fw-bold fs-6 lh-1">Planner</span>
+														<!--end::Subtitle-->
+														<!--begin::Bullet-->
+														<span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
+														<!--end::Bullet-->
+													</a>
+													<!--end::Link-->
+												</li>
+												<!--end::Item-->
 												
 											</ul>
 											<!--end::Nav-->
@@ -1904,6 +1922,54 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/dorso/5. Tp dorso - clínica - CAT 1.pdf" download="Clínica TP muñeca - mano - CAT 1.pdf">Descargar PPT</a></span>
 																	</td>
 																</tr>
+															</tbody>
+															<!--end::Table body-->
+														</table>
+														<!--end::Table-->
+													</div>
+													<!--end::Table container-->
+												</div>
+												<!--end::Tap pane-->
+												<!--begin::Tap pane-->
+												<div class="tab-pane fade active show" id="kt_stats_widget_1_tab_9" role="tabpanel">
+													<!--begin::Table container-->
+													<div class="table-responsive">
+														<!--begin::Table-->
+														<table class="table align-middle gs-0 gy-4 my-0">
+															<!--begin::Table head-->
+															<thead>
+																<tr class="fs-7 fw-bold text-gray-500">
+																	<th class="p-0 min-w-150px d-block pt-3">Nombre Archivo</th>
+																	<th class="text-end min-w-140px pt-3">Módulo</th>
+																	<th class="pe-0 text-end min-w-120px pt-3">Descargar</th>
+																</tr>
+															</thead>
+															<!--end::Table head-->
+															<!--begin::Table body-->
+															<tbody>
+																<tr>
+																	<td>
+																		<a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Cronograma de clases sincrónicas - final diciembre</a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-success fs-7 fw-bold">Planner</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/hombro/Cronograma de clases sincrónicas - final diciembre.pdf" download="diapositivas-hombro.pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+																		<a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Planner final de diciembre</a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-warning fs-7 fw-bold">Planner</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/hombro/Planner final de diciembre.pdf" download="diapositivas-hombro.pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+																
 															</tbody>
 															<!--end::Table body-->
 														</table>
@@ -2941,7 +3007,7 @@ License: For each use you must have a valid license purchased only from above li
 														</div>
 														<!--end::Icon-->
 														<!--begin::Subtitle-->
-														<span class="nav-text text-gray-600 fw-bold fs-6 lh-1">Vazcu</span>
+														<span class="nav-text text-gray-600 fw-bold fs-6 lh-1">Vascu</span>
 														<!--end::Subtitle-->
 														<!--begin::Bullet-->
 														<span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
@@ -2996,7 +3062,25 @@ License: For each use you must have a valid license purchased only from above li
 														</div>
 														<!--end::Icon-->
 														<!--begin::Subtitle-->
-														<span class="nav-text text-gray-600 fw-bold fs-6 lh-1">Modelos</span>
+														<span class="nav-text text-gray-600 fw-bold fs-6 lh-1">Planner</span>
+														<!--end::Subtitle-->
+														<!--begin::Bullet-->
+														<span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
+														<!--end::Bullet-->
+													</a>
+													<!--end::Link-->
+												</li>
+												<!--end::Item-->
+												<li class="nav-item mb-3 me-3 me-lg-6" role="presentation">
+													<!--begin::Link-->
+													<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_9" aria-selected="true" role="tab">
+														<!--begin::Icon-->
+														<div class="nav-icon">
+															<img alt="" src="./images/pdf.png" class="nav-icon">
+														</div>
+														<!--end::Icon-->
+														<!--begin::Subtitle-->
+														<span class="nav-text text-gray-600 fw-bold fs-6 lh-1">Imagenes</span>
 														<!--end::Subtitle-->
 														<!--begin::Bullet-->
 														<span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
@@ -3252,10 +3336,10 @@ License: For each use you must have a valid license purchased only from above li
 															<tbody>
 																<tr>
 																	<td>
-																		<a  class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Diapositivas Vazcularización</a>
+																		<a  class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Diapositivas Vascularización</a>
 																	</td>
 																	<td class="text-end">
-																		<span class="badge badge-light-success fs-7 fw-bold">Vazcularización</span>
+																		<span class="badge badge-light-success fs-7 fw-bold">Vascularización</span>
 																	</td>
 																	<td class="text-end">
 																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/vascularizacion/1. Diapositivas - vascularización.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
@@ -3266,7 +3350,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<a  class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Resumen cisternas subarancnoideas</a>
 																	</td>
 																	<td class="text-end">
-																		<span class="badge badge-light-warning fs-7 fw-bold">Vazcularización</span>
+																		<span class="badge badge-light-warning fs-7 fw-bold">Vascularización</span>
 																	</td>
 																	<td class="text-end">
 																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/vascularizacion/2. Resumen cisternas subaracnoideas.pdf" download="Tips-muñeca.pdf">Descargar PDF</a></span>
@@ -3277,7 +3361,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<a  class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Pro-Forlizzi - Cisternas</a>
 																	</td>
 																	<td class="text-end">
-																		<span class="badge badge-light-success fs-7 fw-bold">Vazcularización</span>
+																		<span class="badge badge-light-success fs-7 fw-bold">Vascularización</span>
 																	</td>
 																	<td class="text-end">
 																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/vascularizacion/3. Pro-Forlizzi - Cisternas.pdf" download="Drenaje-venoso-linfatico.pdf">Descargar PDF</a></span>
@@ -3422,6 +3506,93 @@ License: For each use you must have a valid license purchased only from above li
 																	</td>
 																	<td class="text-end">
 																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/modelo-neuro/Módelos de oral teórico neuro.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+																		<a  class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Temas a priorizar neuro</a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-success fs-7 fw-bold">Modelos Exámen</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/modelo-neuro/3. TEMAS A PRIORIZAR NEURO.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+																		<a  class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Modelo de examen neuro</a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-success fs-7 fw-bold">Modelos Exámen</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/modelo-neuro/4. MODELOS DE EXAMEN NEURO.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+																		<a  class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Planner Parcial neuro</a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-success fs-7 fw-bold">Modelos Exámen</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/modelo-neuro/5. PLANNER PARCIAL NEURO.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+																<?php
+																if($_SESSION['IdCurso']==6){
+																    ?>
+																    <tr>
+																	<td>
+																		<a  class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Cronograma clases sincronicas</a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-success fs-7 fw-bold">Modelos Exámen</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/modelo-neuro/6. CRONOGRAMA CLASES SINCRÓNICAS.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+																    
+																    <?php
+																}
+																?>
+															</tbody>
+															<!--end::Table body-->
+														</table>
+														<!--end::Table-->
+													</div>
+													<!--end::Table container-->
+												</div>
+												<!--end::Tap pane-->
+												<!--begin::Tap pane-->
+												<div class="tab-pane fade" id="kt_stats_widget_1_tab_9" role="tabpanel">
+													<!--begin::Table container-->
+													<div class="table-responsive">
+													<!--begin::Table-->
+														<table class="table align-middle gs-0 gy-4 my-0">
+															<!--begin::Table head-->
+															<thead>
+																<tr class="fs-7 fw-bold text-gray-500">
+																	<th class="p-0 min-w-150px d-block pt-3">Nombre Archivo</th>
+																	<th class="text-end min-w-140px pt-3">Módulo</th>
+																	<th class="pe-0 text-end min-w-120px pt-3">Descargar</th>
+																</tr>
+															</thead>
+															<!--end::Table head-->
+															<!--begin::Table body-->
+															<tbody>
+																<tr>
+																	<td>
+																		<a  class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Imagenes</a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-success fs-7 fw-bold">NeuroImagenes</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/imagenes/FICHAS DE NEUROIMÁGENES.pdf" download="diapositivas-brazo.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 															</tbody>
