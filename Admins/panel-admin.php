@@ -131,6 +131,8 @@ $result = $stmt->get_result();
 															<div class="col-lg-12 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
 																<!--begin:Row-->
 																<div class="row">
+																<?php
+																/*
 																<!--begin:Col-->
 																	<div class="col-lg-6 mb-3">
 																		<!--begin:Menu item-->
@@ -169,6 +171,8 @@ $result = $stmt->get_result();
 																		<!--end:Menu item-->
 																	</div>
 																	<!--end:Col-->
+																	*/
+																	?>
 																	<!--begin:Col-->
 																	<div class="col-lg-6 mb-3">
 																		<!--begin:Menu item-->
@@ -190,6 +194,15 @@ $result = $stmt->get_result();
 																	<!--end:Col-->
 																</div>
 																<!--end:Row-->
+															<div class="separator separator-dashed mx-5 my-5"></div>
+																<!--begin:Landing-->
+																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																	<div class="d-flex flex-column me-5">
+																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
+																	</div>
+																	<a href="https://chat.whatsapp.com/JLLvUE67QR4KwpdtuuqgrP" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																</div>
+																<!--end:Landing-->
 															</div>
 															<!--end:Col-->
 														</div>
@@ -222,6 +235,8 @@ $result = $stmt->get_result();
 															<div class="col-lg-12 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
 																<!--begin:Row-->
 																<div class="row">
+																<?php
+																/*
 																<!--begin:Col-->
 																	<div class="col-lg-6 mb-3">
 																		<!--begin:Menu item-->
@@ -260,6 +275,8 @@ $result = $stmt->get_result();
 																		<!--end:Menu item-->
 																	</div>
 																	<!--end:Col-->
+																	*/
+															?>
 																	<!--begin:Col-->
 																	<div class="col-lg-6 mb-3">
 																		<!--begin:Menu item-->
@@ -281,9 +298,18 @@ $result = $stmt->get_result();
 																	<!--end:Col-->
 																</div>
 																<!--end:Row-->
-																
+																<div class="separator separator-dashed mx-5 my-5"></div>
+																<!--begin:Landing-->
+																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																	<div class="d-flex flex-column me-5">
+																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
+																	</div>
+																	<a href="https://chat.whatsapp.com/E5moK87IMQACIj4invFhH4" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																</div>
+																<!--end:Landing-->
 															</div>
 															<!--end:Col-->
+															
 														</div>
 														<!--end:Row-->
 													</div>
@@ -314,6 +340,9 @@ $result = $stmt->get_result();
 															<div class="col-lg-12 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
 																<!--begin:Row-->
 																<div class="row">
+																<?php
+																/*
+																
 																<!--begin:Col-->
 																	<div class="col-lg-6 mb-3">
 																		<!--begin:Menu item-->
@@ -352,6 +381,10 @@ $result = $stmt->get_result();
 																		<!--end:Menu item-->
 																	</div>
 																	<!--end:Col-->
+																	<?php
+																	
+																	*/
+																	?>
 																	<!--begin:Col-->
 																	<div class="col-lg-6 mb-3">
 																		<!--begin:Menu item-->
@@ -377,10 +410,16 @@ $result = $stmt->get_result();
 																<!--begin:Landing-->
 																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
 																	<div class="d-flex flex-column me-5">
-																		<div class="fs-6 fw-bold text-gray-800">¿Necesitas ayuda?</div>
-																		<div class="fs-7 fw-semibold text-muted">Podes consultar las dudas que tengas sobre un lenguaje con un experto</div>
+																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
 																	</div>
-																	<a href="https://wa.me/+5491158202348" class="btn btn-sm btn-primary fw-bold" target="_blank">Enviar mensaje</a>
+																	<a href="https://chat.whatsapp.com/CIOmSvXyf5v385140jkeku" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																</div>
+																<br>
+																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																	<div class="d-flex flex-column me-5">
+																		<div class="fs-6 fw-bold text-gray-800">Drive de Clases sincrónicas</div>
+																	</div>
+																	<a href="https://drive.google.com/drive/folders/1j0yrqhYnqfm0sKtIjK-Y-nRrKa2KyZJT" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
 																</div>
 																<!--end:Landing-->
 															</div>
@@ -475,6 +514,14 @@ $result = $stmt->get_result();
 																</div>
 																<!--end:Row-->
 															</div>
+															<!--begin:Landing-->
+																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																	<div class="d-flex flex-column me-5">
+																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
+																	</div>
+																	<a href="https://drive.google.com/drive/folders/1vFoYVKYfMX7eX-8p4UEmRfs8l6jJTd6M" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																</div>
+																<!--end:Landing-->
 															<!--end:Col-->
 														</div>
 														<!--end:Row-->
@@ -486,6 +533,183 @@ $result = $stmt->get_result();
 											<!--end:Menu item-->
 											<?php
 											break;
+											case 5:
+												?>
+												<!--begin:Menu item-->
+											<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
+												<!--begin:Menu link-->
+												<span class="menu-link py-3">
+													<span class="menu-title">Curso Final</span>
+													<span class="menu-arrow d-lg-none"></span>
+												</span>
+												<!--end:Menu link-->
+												<!--begin:Menu sub-->
+												<div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px">
+													<!--begin:Dashboards menu-->
+													<div class="menu-state-bg menu-extended overflow-hidden overflow-lg-visible" data-kt-menu-dismiss="true">
+														<!--begin:Row-->
+														<div class="row">
+															<!--begin:Col-->
+															<div class="col-lg-12 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
+																<!--begin:Row-->
+																<div class="row">
+																<!--begin:Col-->
+																<!--begin:Col-->
+																	<div class="col-lg-6 mb-3">
+																		<!--begin:Menu item-->
+																		<div class="menu-item p-0 m-0">
+																			<!--begin:Menu link-->
+																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroLocomotor?>" class="menu-link">
+																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+																					<img src="./images/locomotor-removebg-preview.png" width="40px" height="40px" alt="">
+																				</span>
+																				<span class="d-flex flex-column">
+																					<span class="fs-6 fw-bold text-gray-800">Locomotor</span>
+																					<span class="fs-7 fw-semibold text-muted">Huesos,  músculos, tendones y ligamentos</span>
+																				</span>
+																			</a>
+																			<!--end:Menu link-->
+																		</div>
+																		<!--end:Menu item-->
+																	</div>
+																	<!--end:Col-->
+																	<!--begin:Col-->
+																	<div class="col-lg-6 mb-3">
+																		<!--begin:Menu item-->
+																		<div class="menu-item p-0 m-0">
+																			<!--begin:Menu link-->
+																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroEspla?>"class="menu-link">
+																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+																					<img src="./images/espac-removebg-preview.png" height="40px" width="40px" alt="">
+																				</span>
+																				<span class="d-flex flex-column">
+																					<span class="fs-6 fw-bold text-gray-800">Esplacnología</span>
+																					<span class="fs-7 fw-semibold text-muted">Estudio y descripción de las vísceras</span>
+																				</span>
+																			</a>
+																			<!--end:Menu link-->
+																		</div>
+																		<!--end:Menu item-->
+																	</div>
+																	<!--end:Col-->
+																	<!--begin:Col-->
+																	<div class="col-lg-6 mb-3">
+																		<!--begin:Menu item-->
+																		<div class="menu-item p-0 m-0">
+																			<!--begin:Menu link-->
+																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroNeuro?>" class="menu-link">
+																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+																					<img src="./images/neuro-removebg-preview.png" height="40px" width="40px" alt="">
+																				</span>
+																				<span class="d-flex flex-column">
+																					<span class="fs-6 fw-bold text-gray-800">Neuroanatomía</span>
+																					<span class="fs-7 fw-semibold text-muted">Estructura y organización del sistema nervioso</span>
+																				</span>
+																			</a>
+																			<!--end:Menu link-->
+																		</div>
+																		<!--end:Menu item-->
+																	</div>
+																	<!--end:Col-->
+																</div>
+																<!--end:Row-->
+															<!--begin:Landing-->
+																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																	<div class="d-flex flex-column me-5">
+																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
+																	</div>
+																	<a href="https://chat.whatsapp.com/FQexnKoa2yqARWynAvIIwo" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																</div>
+																<br>
+																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																	<div class="d-flex flex-column me-5">
+																		<div class="fs-6 fw-bold text-gray-800">Drive de Clases sincrónicas</div>
+																	</div>
+																	<a href="https://drive.google.com/drive/folders/1lpgb_Fw1QQGySZzRr1I54Em5s25NZL72" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																</div>
+																<!--end:Landing-->
+															</div>
+															<!--end:Col-->
+														</div>
+														<!--end:Row-->
+													</div>
+													<!--end:Dashboards menu-->
+												</div>
+												<!--end:Menu sub-->
+											</div>
+											<!--end:Menu item-->
+											<?php
+											break;
+											case 6:
+												?>
+												<!--begin:Menu item-->
+											<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
+												<!--begin:Menu link-->
+												<span class="menu-link py-3">
+													<span class="menu-title">Curso Intensivo Neuroanatomia</span>
+													<span class="menu-arrow d-lg-none"></span>
+												</span>
+												<!--end:Menu link-->
+												<!--begin:Menu sub-->
+												<div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px">
+													<!--begin:Dashboards menu-->
+													<div class="menu-state-bg menu-extended overflow-hidden overflow-lg-visible" data-kt-menu-dismiss="true">
+														<!--begin:Row-->
+														<div class="row">
+															<!--begin:Col-->
+															<div class="col-lg-12 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
+																<!--begin:Row-->
+																<div class="row">
+																<!--begin:Col-->
+																	<!--begin:Col-->
+																	<div class="col-lg-6 mb-3">
+																		<!--begin:Menu item-->
+																		<div class="menu-item p-0 m-0">
+																			<!--begin:Menu link-->
+																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroNeuro?>" class="menu-link">
+																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+																					<img src="./images/neuro-removebg-preview.png" height="40px" width="40px" alt="">
+																				</span>
+																				<span class="d-flex flex-column">
+																					<span class="fs-6 fw-bold text-gray-800">Neuroanatomía</span>
+																					<span class="fs-7 fw-semibold text-muted">Estructura y organización del sistema nervioso</span>
+																				</span>
+																			</a>
+																			<!--end:Menu link-->
+																		</div>
+																		<!--end:Menu item-->
+																	</div>
+																	<!--end:Col-->
+																</div>
+																<!--end:Row-->
+															<!--begin:Landing-->
+																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																	<div class="d-flex flex-column me-5">
+																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
+																	</div>
+																	<a href="https://chat.whatsapp.com/FhFHFXcOPvo4rRFsvoOQ0V" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																</div>
+																<br>
+																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																	<div class="d-flex flex-column me-5">
+																		<div class="fs-6 fw-bold text-gray-800">Drive de Clases sincrónicas</div>
+																	</div>
+																	<a href="https://drive.google.com/drive/folders/1vFoYVKYfMX7eX-8p4UEmRfs8l6jJTd6M" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																</div>
+																<!--end:Landing-->
+															</div>
+															<!--end:Col-->
+														</div>
+														<!--end:Row-->
+													</div>
+													<!--end:Dashboards menu-->
+												</div>
+												<!--end:Menu sub-->
+											</div>
+											<!--end:Menu item-->
+											<?php
+											break;
+
 											}
 											?>
 											
@@ -527,6 +751,9 @@ $result = $stmt->get_result();
 											<!--end::Heading-->
 											<!--begin:Nav-->
 											<div class="row g-0">
+											<?php
+											if($_SESSION['IdCurso']==5){
+												?>
 												<!--begin:Item-->
 												<div class="col-6">
 													<a href="pantalla-cursos-clases.php?numero=<?=$numeroLocomotor?>" class="d-flex flex-column flex-center h-100 p-6 bg-hover-light border-end border-bottom">
@@ -537,17 +764,20 @@ $result = $stmt->get_result();
 												<!--end:Item-->
 												<!--begin:Item-->
 												<div class="col-6">
-													<a href="pantalla-cursos-clases.php?numero=<?=$numeroNeuro?>" class="d-flex flex-column flex-center h-100 p-6 bg-hover-light border-bottom">
-													    <img alt="Logo" src="./images/neuro-removebg-preview.png" class="logo-sticky h-25px" />
-													    <span class="fs-5 fw-semibold text-gray-800 mb-0">Neuroanatomía</span>
+													<a href="pantalla-cursos-clases.php?numero=<?=$numeroEspla?>" class="d-flex flex-column flex-center h-100 p-6 bg-hover-light border-end">
+														<img alt="Logo" src="./images/espac-removebg-preview.png" class="logo-sticky h-25px" />
+														<span class="fs-5 fw-semibold text-gray-800 mb-0">Esplacnología</span>
 													</a>
 												</div>
 												<!--end:Item-->
+												<?php
+											}
+											?>
 												<!--begin:Item-->
 												<div class="col-6">
-													<a href="pantalla-cursos-clases.php?numero=<?=$numeroEspla?>" class="d-flex flex-column flex-center h-100 p-6 bg-hover-light border-end">
-													    <img alt="Logo" src="./images/espac-removebg-preview.png" class="logo-sticky h-25px" />
-													    <span class="fs-5 fw-semibold text-gray-800 mb-0">Esplacnología</span>
+													<a href="pantalla-cursos-clases.php?numero=<?=$numeroNeuro?>" class="d-flex flex-column flex-center h-100 p-6 bg-hover-light border-bottom">
+														<img alt="Logo" src="./images/neuro-removebg-preview.png" class="logo-sticky h-25px" />
+														<span class="fs-5 fw-semibold text-gray-800 mb-0">Neuroanatomía</span>
 													</a>
 												</div>
 												<!--end:Item-->
@@ -892,11 +1122,11 @@ $result = $stmt->get_result();
 																					</label>
 																					<!--end::Label-->
 																					<!--begin::Select2-->
-																					<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Selecciona un Modulo" name="modulo">
-																						<option value=""></option>
+																					<select class="form-select form-select-solid" data-hide-search="true" data-placeholder="Selecciona un Modulo" name="modulo">
+																						<option value="">Selecciona un Modulo</option>
 																						<option value="1">Modulo Locomotor</option>
-																						<option value="2">Modulo Neuroanatomía</option>
-																						<option value="3">Modulo Esplacnología</option>
+																						<option value="2">Modulo Esplacnología</option>
+																						<option value="3">Modulo Neuroanatomía</option>
 																					</select>
 																					<!--end::Select2-->
 																				</div>
@@ -966,7 +1196,9 @@ $result = $stmt->get_result();
 																						<option value="1.<?=$row['IdUsuario']?>" <?php if ($row['idCurso'] == 1) echo 'selected'; ?>>Curso Basico</option>
 																						<option value="2.<?=$row['IdUsuario']?>" <?php if ($row['idCurso'] == 2) echo 'selected'; ?>>Curso Plus</option>
 																						<option value="3.<?=$row['IdUsuario']?>" <?php if ($row['idCurso'] == 3) echo 'selected'; ?>>Curso Premium</option>
-																						<option value="4.<?=$row['IdUsuario']?>" <?php if ($row['idCurso'] == 4) echo 'selected'; ?>>Curso Intensivo</option>
+																					<!--	<option value="4.<?=$row['IdUsuario']?>" <?php if ($row['idCurso'] == 4) echo 'selected'; ?>>Curso Intensivo</option>-->
+																						<option value="5.<?=$row['IdUsuario']?>" <?php if ($row['idCurso'] == 5) echo 'selected'; ?>>Curso Final</option>
+																						<option value="6.<?=$row['IdUsuario']?>" <?php if ($row['idCurso'] == 6) echo 'selected'; ?>>Curso Intensivo Neuroanatomía</option>
 																					</select>
 																					</span></td>
 																					<td class="fs-6 fw-bold text-gray-500"><div class="form-check form-switch">

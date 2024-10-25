@@ -7,6 +7,10 @@ $numeroLocomotor=1;
 $numeroEspla=2;
 $numeroNeuro=3;
 
+if(!$_SESSION['loggedin']){
+	header('Location: usuario-no-encontrado.php');
+	exit();
+}
 // Mostrar todos los errores y advertencias
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -157,6 +161,8 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 															<div class="col-lg-12 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
 																<!--begin:Row-->
 																<div class="row">
+																<?php
+																/*
 																<!--begin:Col-->
 																	<div class="col-lg-6 mb-3">
 																		<!--begin:Menu item-->
@@ -195,6 +201,8 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 																		<!--end:Menu item-->
 																	</div>
 																	<!--end:Col-->
+																	*/
+																	?>
 																	<!--begin:Col-->
 																	<div class="col-lg-6 mb-3">
 																		<!--begin:Menu item-->
@@ -216,6 +224,15 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 																	<!--end:Col-->
 																</div>
 																<!--end:Row-->
+															<div class="separator separator-dashed mx-5 my-5"></div>
+																<!--begin:Landing-->
+																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																	<div class="d-flex flex-column me-5">
+																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
+																	</div>
+																	<a href="https://chat.whatsapp.com/JLLvUE67QR4KwpdtuuqgrP" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																</div>
+																<!--end:Landing-->
 															</div>
 															<!--end:Col-->
 														</div>
@@ -248,6 +265,8 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 															<div class="col-lg-12 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
 																<!--begin:Row-->
 																<div class="row">
+																<?php
+																/*
 																<!--begin:Col-->
 																	<div class="col-lg-6 mb-3">
 																		<!--begin:Menu item-->
@@ -286,6 +305,8 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 																		<!--end:Menu item-->
 																	</div>
 																	<!--end:Col-->
+																	*/
+															?>
 																	<!--begin:Col-->
 																	<div class="col-lg-6 mb-3">
 																		<!--begin:Menu item-->
@@ -307,9 +328,18 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 																	<!--end:Col-->
 																</div>
 																<!--end:Row-->
-																
+																<div class="separator separator-dashed mx-5 my-5"></div>
+																<!--begin:Landing-->
+																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																	<div class="d-flex flex-column me-5">
+																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
+																	</div>
+																	<a href="https://chat.whatsapp.com/E5moK87IMQACIj4invFhH4" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																</div>
+																<!--end:Landing-->
 															</div>
 															<!--end:Col-->
+															
 														</div>
 														<!--end:Row-->
 													</div>
@@ -340,6 +370,9 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 															<div class="col-lg-12 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
 																<!--begin:Row-->
 																<div class="row">
+																<?php
+																/*
+																
 																<!--begin:Col-->
 																	<div class="col-lg-6 mb-3">
 																		<!--begin:Menu item-->
@@ -378,6 +411,10 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 																		<!--end:Menu item-->
 																	</div>
 																	<!--end:Col-->
+																	<?php
+																	
+																	*/
+																	?>
 																	<!--begin:Col-->
 																	<div class="col-lg-6 mb-3">
 																		<!--begin:Menu item-->
@@ -403,10 +440,16 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 																<!--begin:Landing-->
 																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
 																	<div class="d-flex flex-column me-5">
-																		<div class="fs-6 fw-bold text-gray-800">¿Necesitas ayuda?</div>
-																		<div class="fs-7 fw-semibold text-muted">Podes consultar las dudas que tengas sobre un lenguaje con un experto</div>
+																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
 																	</div>
-																	<a href="https://wa.me/+5491158202348" class="btn btn-sm btn-primary fw-bold" target="_blank">Enviar mensaje</a>
+																	<a href="https://chat.whatsapp.com/CIOmSvXyf5v385140jkeku" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																</div>
+																<br>
+																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																	<div class="d-flex flex-column me-5">
+																		<div class="fs-6 fw-bold text-gray-800">Drive de Clases sincrónicas</div>
+																	</div>
+																	<a href="https://drive.google.com/drive/folders/1j0yrqhYnqfm0sKtIjK-Y-nRrKa2KyZJT" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
 																</div>
 																<!--end:Landing-->
 															</div>
@@ -501,6 +544,14 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 																</div>
 																<!--end:Row-->
 															</div>
+															<!--begin:Landing-->
+																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																	<div class="d-flex flex-column me-5">
+																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
+																	</div>
+																	<a href="https://drive.google.com/drive/folders/1vFoYVKYfMX7eX-8p4UEmRfs8l6jJTd6M" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																</div>
+																<!--end:Landing-->
 															<!--end:Col-->
 														</div>
 														<!--end:Row-->
@@ -512,6 +563,183 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 											<!--end:Menu item-->
 											<?php
 											break;
+											case 5:
+												?>
+												<!--begin:Menu item-->
+											<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
+												<!--begin:Menu link-->
+												<span class="menu-link py-3">
+													<span class="menu-title">Curso Final</span>
+													<span class="menu-arrow d-lg-none"></span>
+												</span>
+												<!--end:Menu link-->
+												<!--begin:Menu sub-->
+												<div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px">
+													<!--begin:Dashboards menu-->
+													<div class="menu-state-bg menu-extended overflow-hidden overflow-lg-visible" data-kt-menu-dismiss="true">
+														<!--begin:Row-->
+														<div class="row">
+															<!--begin:Col-->
+															<div class="col-lg-12 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
+																<!--begin:Row-->
+																<div class="row">
+																<!--begin:Col-->
+																<!--begin:Col-->
+																	<div class="col-lg-6 mb-3">
+																		<!--begin:Menu item-->
+																		<div class="menu-item p-0 m-0">
+																			<!--begin:Menu link-->
+																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroLocomotor?>" class="menu-link">
+																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+																					<img src="./images/locomotor-removebg-preview.png" width="40px" height="40px" alt="">
+																				</span>
+																				<span class="d-flex flex-column">
+																					<span class="fs-6 fw-bold text-gray-800">Locomotor</span>
+																					<span class="fs-7 fw-semibold text-muted">Huesos,  músculos, tendones y ligamentos</span>
+																				</span>
+																			</a>
+																			<!--end:Menu link-->
+																		</div>
+																		<!--end:Menu item-->
+																	</div>
+																	<!--end:Col-->
+																	<!--begin:Col-->
+																	<div class="col-lg-6 mb-3">
+																		<!--begin:Menu item-->
+																		<div class="menu-item p-0 m-0">
+																			<!--begin:Menu link-->
+																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroEspla?>"class="menu-link">
+																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+																					<img src="./images/espac-removebg-preview.png" height="40px" width="40px" alt="">
+																				</span>
+																				<span class="d-flex flex-column">
+																					<span class="fs-6 fw-bold text-gray-800">Esplacnología</span>
+																					<span class="fs-7 fw-semibold text-muted">Estudio y descripción de las vísceras</span>
+																				</span>
+																			</a>
+																			<!--end:Menu link-->
+																		</div>
+																		<!--end:Menu item-->
+																	</div>
+																	<!--end:Col-->
+																	<!--begin:Col-->
+																	<div class="col-lg-6 mb-3">
+																		<!--begin:Menu item-->
+																		<div class="menu-item p-0 m-0">
+																			<!--begin:Menu link-->
+																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroNeuro?>" class="menu-link">
+																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+																					<img src="./images/neuro-removebg-preview.png" height="40px" width="40px" alt="">
+																				</span>
+																				<span class="d-flex flex-column">
+																					<span class="fs-6 fw-bold text-gray-800">Neuroanatomía</span>
+																					<span class="fs-7 fw-semibold text-muted">Estructura y organización del sistema nervioso</span>
+																				</span>
+																			</a>
+																			<!--end:Menu link-->
+																		</div>
+																		<!--end:Menu item-->
+																	</div>
+																	<!--end:Col-->
+																</div>
+																<!--end:Row-->
+															<!--begin:Landing-->
+																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																	<div class="d-flex flex-column me-5">
+																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
+																	</div>
+																	<a href="https://chat.whatsapp.com/FQexnKoa2yqARWynAvIIwo" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																</div>
+																<br>
+																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																	<div class="d-flex flex-column me-5">
+																		<div class="fs-6 fw-bold text-gray-800">Drive de Clases sincrónicas</div>
+																	</div>
+																	<a href="https://drive.google.com/drive/folders/1lpgb_Fw1QQGySZzRr1I54Em5s25NZL72" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																</div>
+																<!--end:Landing-->
+															</div>
+															<!--end:Col-->
+														</div>
+														<!--end:Row-->
+													</div>
+													<!--end:Dashboards menu-->
+												</div>
+												<!--end:Menu sub-->
+											</div>
+											<!--end:Menu item-->
+											<?php
+											break;
+											case 6:
+												?>
+												<!--begin:Menu item-->
+											<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
+												<!--begin:Menu link-->
+												<span class="menu-link py-3">
+													<span class="menu-title">Curso Intensivo Neuroanatomia</span>
+													<span class="menu-arrow d-lg-none"></span>
+												</span>
+												<!--end:Menu link-->
+												<!--begin:Menu sub-->
+												<div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px">
+													<!--begin:Dashboards menu-->
+													<div class="menu-state-bg menu-extended overflow-hidden overflow-lg-visible" data-kt-menu-dismiss="true">
+														<!--begin:Row-->
+														<div class="row">
+															<!--begin:Col-->
+															<div class="col-lg-12 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
+																<!--begin:Row-->
+																<div class="row">
+																<!--begin:Col-->
+																	<!--begin:Col-->
+																	<div class="col-lg-6 mb-3">
+																		<!--begin:Menu item-->
+																		<div class="menu-item p-0 m-0">
+																			<!--begin:Menu link-->
+																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroNeuro?>" class="menu-link">
+																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+																					<img src="./images/neuro-removebg-preview.png" height="40px" width="40px" alt="">
+																				</span>
+																				<span class="d-flex flex-column">
+																					<span class="fs-6 fw-bold text-gray-800">Neuroanatomía</span>
+																					<span class="fs-7 fw-semibold text-muted">Estructura y organización del sistema nervioso</span>
+																				</span>
+																			</a>
+																			<!--end:Menu link-->
+																		</div>
+																		<!--end:Menu item-->
+																	</div>
+																	<!--end:Col-->
+																</div>
+																<!--end:Row-->
+															<!--begin:Landing-->
+																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																	<div class="d-flex flex-column me-5">
+																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
+																	</div>
+																	<a href="https://chat.whatsapp.com/FhFHFXcOPvo4rRFsvoOQ0V" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																</div>
+																<br>
+																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																	<div class="d-flex flex-column me-5">
+																		<div class="fs-6 fw-bold text-gray-800">Drive de Clases sincrónicas</div>
+																	</div>
+																	<a href="https://drive.google.com/drive/folders/1vFoYVKYfMX7eX-8p4UEmRfs8l6jJTd6M" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																</div>
+																<!--end:Landing-->
+															</div>
+															<!--end:Col-->
+														</div>
+														<!--end:Row-->
+													</div>
+													<!--end:Dashboards menu-->
+												</div>
+												<!--end:Menu sub-->
+											</div>
+											<!--end:Menu item-->
+											<?php
+											break;
+
 											}
 											?>
 											
@@ -553,6 +781,9 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 											<!--end::Heading-->
 											<!--begin:Nav-->
 											<div class="row g-0">
+											<?php
+											if($_SESSION['IdCurso']==5){
+												?>
 												<!--begin:Item-->
 												<div class="col-6">
 													<a href="pantalla-cursos-clases.php?numero=<?=$numeroLocomotor?>" class="d-flex flex-column flex-center h-100 p-6 bg-hover-light border-end border-bottom">
@@ -563,17 +794,20 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 												<!--end:Item-->
 												<!--begin:Item-->
 												<div class="col-6">
-													<a href="pantalla-cursos-clases.php?numero=<?=$numeroNeuro?>" class="d-flex flex-column flex-center h-100 p-6 bg-hover-light border-bottom">
-													    <img alt="Logo" src="./images/neuro-removebg-preview.png" class="logo-sticky h-25px" />
-													    <span class="fs-5 fw-semibold text-gray-800 mb-0">Neuroanatomía</span>
+													<a href="pantalla-cursos-clases.php?numero=<?=$numeroEspla?>" class="d-flex flex-column flex-center h-100 p-6 bg-hover-light border-end">
+														<img alt="Logo" src="./images/espac-removebg-preview.png" class="logo-sticky h-25px" />
+														<span class="fs-5 fw-semibold text-gray-800 mb-0">Esplacnología</span>
 													</a>
 												</div>
 												<!--end:Item-->
+												<?php
+											}
+											?>
 												<!--begin:Item-->
 												<div class="col-6">
-													<a href="pantalla-cursos-clases.php?numero=<?=$numeroEspla?>" class="d-flex flex-column flex-center h-100 p-6 bg-hover-light border-end">
-													    <img alt="Logo" src="./images/espac-removebg-preview.png" class="logo-sticky h-25px" />
-													    <span class="fs-5 fw-semibold text-gray-800 mb-0">Esplacnología</span>
+													<a href="pantalla-cursos-clases.php?numero=<?=$numeroNeuro?>" class="d-flex flex-column flex-center h-100 p-6 bg-hover-light border-bottom">
+														<img alt="Logo" src="./images/neuro-removebg-preview.png" class="logo-sticky h-25px" />
+														<span class="fs-5 fw-semibold text-gray-800 mb-0">Neuroanatomía</span>
 													</a>
 												</div>
 												<!--end:Item-->
@@ -717,6 +951,10 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 											<div class="row g-10">
 
 											<div class="row g-5 g-xl-10">
+											<?php
+												if($_SESSION['IdCurso']==5){
+
+											?>
 										<!--begin::Col-->
 										<div class="col-xl-4 mb-5 mb-xl-10">
 										<div class="card-body d-flex flex-column flex-center">
@@ -766,7 +1004,9 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 										</div>
 										</div>
 										<!--end::Col-->
-
+										<?php
+										}
+										?>
 										<!--begin::Col-->
 										<div class="col-xl-4 mb-5 mb-xl-10">
 										<div class="card-body d-flex flex-column flex-center">
@@ -813,209 +1053,7 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 							</div>
 							<!--end::Container-->
 							
-							<!--begin::Modal - Support Center - Create Ticket-->
-							<div class="modal fade" id="kt_modal_new_ticket" tabindex="-1" aria-hidden="true">
-								<!--begin::Modal dialog-->
-								<div class="modal-dialog modal-dialog-centered mw-750px">
-									<!--begin::Modal content-->
-									<div class="modal-content rounded">
-										<!--begin::Modal header-->
-										<div class="modal-header pb-0 border-0 justify-content-end">
-											<!--begin::Close-->
-											<div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
-												<i class="ki-duotone ki-cross fs-1">
-													<span class="path1"></span>
-													<span class="path2"></span>
-												</i>
-											</div>
-											<!--end::Close-->
-										</div>
-										<!--begin::Modal header-->
-										<!--begin::Modal body-->
-										<div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
-											<!--begin:Form-->
-											<form id="kt_modal_new_ticket_form" class="form" action="#">
-												<!--begin::Heading-->
-												<div class="mb-13 text-center">
-													<!--begin::Title-->
-													<h1 class="mb-3">Create Ticket</h1>
-													<!--end::Title-->
-													<!--begin::Description-->
-													<div class="text-gray-500 fw-semibold fs-5">If you need more info, please check 
-													<a href="" class="fw-bold link-primary">Support Guidelines</a>.</div>
-													<!--end::Description-->
-												</div>
-												<!--end::Heading-->
-												<!--begin::Input group-->
-												<div class="d-flex flex-column mb-8 fv-row">
-													<!--begin::Label-->
-													<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
-														<span class="required">Subject</span>
-														<span class="ms-2" data-bs-toggle="tooltip" title="Specify a subject for your issue">
-															<i class="ki-duotone ki-information fs-7">
-																<span class="path1"></span>
-																<span class="path2"></span>
-																<span class="path3"></span>
-															</i>
-														</span>
-													</label>
-													<!--end::Label-->
-													<input type="text" class="form-control form-control-solid" placeholder="Enter your ticket subject" name="subject" />
-												</div>
-												<!--end::Input group-->
-												<!--begin::Input group-->
-												<div class="row g-9 mb-8">
-													<!--begin::Col-->
-													<div class="col-md-6 fv-row">
-														<label class="required fs-6 fw-semibold mb-2">Product</label>
-														<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a product" name="product">
-															<option value="">Select a product...</option>
-															<option value="1">HTML Theme</option>
-															<option value="1">Angular App</option>
-															<option value="1">Vue App</option>
-															<option value="1">React Theme</option>
-															<option value="1">Figma UI Kit</option>
-															<option value="3">Laravel App</option>
-															<option value="4">Blazor App</option>
-															<option value="5">Django App</option>
-														</select>
-													</div>
-													<!--end::Col-->
-													<!--begin::Col-->
-													<div class="col-md-6 fv-row">
-														<label class="required fs-6 fw-semibold mb-2">Assign</label>
-														<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Select a Team Member" name="user">
-															<option value="">Select a user...</option>
-															<option value="1">Karina Clark</option>
-															<option value="2">Robert Doe</option>
-															<option value="3">Niel Owen</option>
-															<option value="4">Olivia Wild</option>
-															<option value="5">Sean Bean</option>
-														</select>
-													</div>
-													<!--end::Col-->
-												</div>
-												<!--end::Input group-->
-												<!--begin::Input group-->
-												<div class="row g-9 mb-8">
-													<!--begin::Col-->
-													<div class="col-md-6 fv-row">
-														<label class="required fs-6 fw-semibold mb-2">Status</label>
-														<select class="form-select form-select-solid" data-control="select2" data-placeholder="Open" data-hide-search="true">
-															<option value=""></option>
-															<option value="1" selected="selected">Open</option>
-															<option value="2">Pending</option>
-															<option value="3">Resolved</option>
-															<option value="3">Closed</option>
-														</select>
-													</div>
-													<!--end::Col-->
-													<!--begin::Col-->
-													<div class="col-md-6 fv-row">
-														<label class="required fs-6 fw-semibold mb-2">Due Date</label>
-														<!--begin::Input-->
-														<div class="position-relative d-flex align-items-center">
-															<!--begin::Icon-->
-															<div class="symbol symbol-20px me-4 position-absolute ms-4">
-																<span class="symbol-label bg-secondary">
-																	<i class="ki-duotone ki-element-11">
-																		<span class="path1"></span>
-																		<span class="path2"></span>
-																		<span class="path3"></span>
-																		<span class="path4"></span>
-																	</i>
-																</span>
-															</div>
-															<!--end::Icon-->
-															<!--begin::Datepicker-->
-															<input class="form-control form-control-solid ps-12" placeholder="Select a date" name="due_date" />
-															<!--end::Datepicker-->
-														</div>
-														<!--end::Input-->
-													</div>
-													<!--end::Col-->
-												</div>
-												<!--end::Input group-->
-												<!--begin::Input group-->
-												<div class="d-flex flex-column mb-8 fv-row">
-													<label class="fs-6 fw-semibold mb-2">Description</label>
-													<textarea class="form-control form-control-solid" rows="4" name="description" placeholder="Type your ticket description"></textarea>
-												</div>
-												<!--end::Input group-->
-												<!--begin::Input group-->
-												<div class="fv-row mb-8">
-													<label class="fs-6 fw-semibold mb-2">Attachments</label>
-													<!--begin::Dropzone-->
-													<div class="dropzone" id="kt_modal_create_ticket_attachments">
-														<!--begin::Message-->
-														<div class="dz-message needsclick align-items-center">
-															<!--begin::Icon-->
-															<i class="ki-duotone ki-file-up fs-3hx text-primary">
-																<span class="path1"></span>
-																<span class="path2"></span>
-															</i>
-															<!--end::Icon-->
-															<!--begin::Info-->
-															<div class="ms-4">
-																<h3 class="fs-5 fw-bold text-gray-900 mb-1">Drop files here or click to upload.</h3>
-																<span class="fw-semibold fs-7 text-gray-500">Upload up to 10 files</span>
-															</div>
-															<!--end::Info-->
-														</div>
-													</div>
-													<!--end::Dropzone-->
-												</div>
-												<!--end::Input group-->
-												<!--begin::Input group-->
-												<div class="mb-15 fv-row">
-													<!--begin::Wrapper-->
-													<div class="d-flex flex-stack">
-														<!--begin::Label-->
-														<div class="fw-semibold me-5">
-															<label class="fs-6">Notifications</label>
-															<div class="fs-7 text-gray-500">Allow Notifications by Phone or Email</div>
-														</div>
-														<!--end::Label-->
-														<!--begin::Checkboxes-->
-														<div class="d-flex align-items-center">
-															<!--begin::Checkbox-->
-															<label class="form-check form-check-custom form-check-solid me-10">
-																<input class="form-check-input h-20px w-20px" type="checkbox" name="notifications[]" value="email" checked="checked" />
-																<span class="form-check-label fw-semibold">Email</span>
-															</label>
-															<!--end::Checkbox-->
-															<!--begin::Checkbox-->
-															<label class="form-check form-check-custom form-check-solid">
-																<input class="form-check-input h-20px w-20px" type="checkbox" name="notifications[]" value="phone" />
-																<span class="form-check-label fw-semibold">Phone</span>
-															</label>
-															<!--end::Checkbox-->
-														</div>
-														<!--end::Checkboxes-->
-													</div>
-													<!--end::Wrapper-->
-												</div>
-												<!--end::Input group-->
-												<!--begin::Actions-->
-												<div class="text-center">
-													<button type="reset" id="kt_modal_new_ticket_cancel" class="btn btn-light me-3">Cancel</button>
-													<button type="submit" id="kt_modal_new_ticket_submit" class="btn btn-primary">
-														<span class="indicator-label">Submit</span>
-														<span class="indicator-progress">Please wait... 
-														<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-													</button>
-												</div>
-												<!--end::Actions-->
-											</form>
-											<!--end:Form-->
-										</div>
-										<!--end::Modal body-->
-									</div>
-									<!--end::Modal content-->
-								</div>
-								<!--end::Modal dialog-->
-							</div>
-							<!--end::Modal - Support Center - Create Ticket-->
+							
 						</div>
 						<!--end::Post-->
 					</div>
@@ -4170,4 +4208,4 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 
 <?php
 
-?>
+?>  

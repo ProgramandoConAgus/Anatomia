@@ -7,9 +7,6 @@ let selects = document.querySelectorAll("select");
 selects.forEach(function(select) {
     select.addEventListener("change", function() {
         let data=select.value.split(".")//El primer valor es el idCurso y el segundo IdUsuario
-        if(data[0]==null){
-            data[0]=0
-        }
         accion=1
         actualizarUsuario(data[1],data[0],accion)
     });
@@ -40,13 +37,6 @@ switches.forEach(function(switchElement) {
 function actualizarUsuario(userId, id, tipoAccion) {
     // Crear el cuerpo de los datos que se enviarán en la solicitud
     let data = new FormData();
-    //debugger
-    console.log('userId:', userId); 
-    console.log('id:', id);
-    console.log('tipoAccion:', tipoAccion);
-    data.append('userId', userId);
-    data.append('id', id);
-    data.append('tipoAccion', tipoAccion);
    
     console.log(data)
     // Enviar la solicitud al archivo PHP que hará el UPDATE en la base de datos
