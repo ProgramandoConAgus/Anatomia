@@ -6,15 +6,10 @@ $_SESSION['notificacion']=null;
 $numeroLocomotor=1;
 $numeroEspla=2;
 $numeroNeuro=3;
-
 if(!$_SESSION['loggedin']){
 	header('Location: usuario-no-encontrado.php');
 	exit();
 }
-// Mostrar todos los errores y advertencias
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 include('con_db.php');
 include('usuarios-clase.php'); // Incluye la clase Usuario

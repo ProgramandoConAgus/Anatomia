@@ -54,7 +54,7 @@
 							<!--begin::Logo-->
 							<div class="mb-7">
 								<a href="./index.php" class="">
-									<img alt="Logo" src="./images/generalidades.png" class="h-80px" />
+									<img alt="Logo" src="../images/generalidades.png" class="h-80px" />
 								</a>
 							</div>
 							<!--end::Logo-->

@@ -2,9 +2,9 @@
 include('con_db.php');
 $message='';
 if (isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['email']) && isset($_POST['password'])) {
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-    $email = $_POST['email'];
+    $nombre = strtolower(trim($_POST['nombre']));
+    $apellido = strtolower(trim($_POST['apellido']));
+    $email = strtolower(trim($_POST['email']));
     $password = $_POST['password'];
 	$confirmPassword = $_POST['confirmPassword'];
 	

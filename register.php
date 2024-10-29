@@ -120,10 +120,10 @@ License: For each use you must have a valid license purchased only from above li
 								<div class="d-grid mb-10">
 									<button type="submit" id="kt_sign_up_submit" class="btn btn-primary">
 										<!--begin::Indicator label-->
-										<span class="indicator-label">Sign up</span>
+										<span class="indicator-label">Registrarme</span>
 										<!--end::Indicator label-->
 										<!--begin::Indicator progress-->
-										<span class="indicator-progress">Please wait... 
+										<span class="indicator-progress">Espere... 
 										<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
 										<!--end::Indicator progress-->
 									</button>
@@ -131,8 +131,8 @@ License: For each use you must have a valid license purchased only from above li
 								<!--end::Submit button-->
                                 
 								<!--begin::Sign up-->
-								<div class="text-gray-500 text-center fw-semibold fs-6">Already have an Account? 
-								<a href="index.php" class="link-primary fw-semibold">Sign in</a></div>
+								<div class="text-gray-500 text-center fw-semibold fs-6">Ya tenes cuenta? 
+								<a href="index.php" class="link-primary fw-semibold">Ingresa a la plataforma</a></div>
 								<!--end::Sign up-->
 							</form>
 							<!--end::Form-->

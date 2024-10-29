@@ -915,6 +915,11 @@ $result = $stmt->get_result();
 																		</div>
 																		<!--begin::Modal header-->
 																		<!--begin::Modal body-->
+																		<!-- Agrega este contenedor de progreso dentro del modal -->
+																		<div class="progress mt-4" style="display:none;" id="uploadProgressContainer">
+																			<div id="uploadProgressBar" class="progress-bar progress-bar-striped progress-bar-animated" style="width: 0%">0%</div>
+																		</div>
+
 																		<div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
 																			<!--begin:Form-->
 																			<form method="POST" id="cargasForm" class="form" action="./Admins/cargaVideos.php" enctype="multipart/form-data">
@@ -1185,7 +1190,8 @@ $result = $stmt->get_result();
 																				<!--begin::Stats-->
 																				<div class="m-0">
 																					<!--begin::Number-->
-																					<td class="fs-6 fw-bold text-gray-800"><h3><?= $row['nombre'] ?> <?= $row['apellido'] ?></h3></td>
+																					<td class="fs-6 fw-bold text-gray-800"><h3><?= ucfirst(strtolower($row['nombre'])) ?> <?= ucfirst(strtolower($row['apellido'])) ?>
+</h3></td>
 																					<!--end::Number-->
 																					<!--begin::Desc-->
 																					<td class="fs-6 fw-bold text-gray-800">Última conexión: <?=$row['last_time_connected']?></td>
@@ -6306,6 +6312,55 @@ $result = $stmt->get_result();
 								}
 								$_SESSION['videos']=null;
 							?>
+							<script>
+							document.getElementById("cargasForm").addEventListener("submit", function(event) {
+								event.preventDefault(); // Prevenir el envío por defecto del formulario
+
+								// Elementos para la barra de progreso
+								const progressContainer = document.getElementById("uploadProgressContainer");
+								const progressBar = document.getElementById("uploadProgressBar");
+
+								// Mostrar la barra de progreso
+								progressContainer.style.display = "block";
+
+								// Obtener el archivo de video y otros datos del formulario
+								const formData = new FormData(this);
+
+								// Crear una solicitud XMLHttpRequest
+								const xhr = new XMLHttpRequest();
+
+								xhr.open("POST", "./Admins/cargaVideos.php", true);
+
+								// Evento de progreso
+								xhr.upload.addEventListener("progress", function(e) {
+									if (e.lengthComputable) {
+										const percentComplete = (e.loaded / e.total) * 100;
+										progressBar.style.width = percentComplete + "%";
+										progressBar.innerHTML = Math.floor(percentComplete) + "%";
+									}
+								});
+
+								// Evento de finalización de la carga
+								xhr.onload = function() {
+									if (xhr.status === 200) {
+										progressBar.classList.add("bg-success"); // Cambia el color al verde si la carga fue exitosa
+										progressBar.innerHTML = "¡Carga completa!";
+										setTimeout(() => {
+											progressContainer.style.display = "none"; // Oculta la barra después de un breve momento
+											progressBar.classList.remove("bg-success");
+											progressBar.style.width = "0%";
+										}, 2000);
+									} else {
+										progressBar.classList.add("bg-danger");
+										progressBar.innerHTML = "Error en la carga.";
+									}
+								};
+
+								// Enviar la solicitud
+								xhr.send(formData);
+							});
+
+							</script>
 		<!--end::Javascript-->
 	</body>
 	<!--end::Body-->

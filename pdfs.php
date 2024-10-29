@@ -1029,7 +1029,27 @@ License: For each use you must have a valid license purchased only from above li
 												<!--begin::Item-->
 												<li class="nav-item mb-3 me-3 me-lg-6" role="presentation">
 													<!--begin::Link-->
-													<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4 active" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_2" aria-selected="false" role="tab" tabindex="-1">
+													<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4 active" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_200" aria-selected="false" role="tab" tabindex="-1">
+													<!--begin::Icon-->
+														<div class="nav-icon">
+															<img alt="" src="./images/pdf.png" class="" >
+														</div>
+														<!--end::Icon-->
+														<!--begin::Subtitle-->
+														<span class="nav-text text-gray-700 fw-bold fs-6 lh-1">General</span>
+														<!--end::Subtitle-->
+														<!--begin::Bullet-->
+														<span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
+														<!--end::Bullet-->
+													</a>
+													<!--end::Link-->
+												</li>
+												<!--end::Item-->
+												
+													<!--begin::Item-->
+												<li class="nav-item mb-3 me-3 me-lg-6" role="presentation">
+													<!--begin::Link-->
+													<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4 " data-bs-toggle="pill" href="#kt_stats_widget_1_tab_2" aria-selected="false" role="tab" tabindex="-1">
 													<!--begin::Icon-->
 														<div class="nav-icon">
 															<img alt="" src="./images/pdf.png" class="" >
@@ -1067,7 +1087,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--begin::Item-->
 												<li class="nav-item mb-3 me-3 me-lg-6" role="presentation">
 													<!--begin::Link-->
-													<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_90" aria-selected="true" role="tab">
+													<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_90" aria-selected="true" role="tab" tabindex="-1">
 														<!--begin::Icon-->
 														<div class="nav-icon">
 															<img alt="" src="./images/pdf.png" class="nav-icon">
@@ -1087,7 +1107,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--begin::Item-->
 												<li class="nav-item mb-3 me-3 me-lg-6" role="presentation">
 													<!--begin::Link-->
-													<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_4" aria-selected="true" role="tab">
+													<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_4" aria-selected="true" role="tab" tabindex="-1">
 														<!--begin::Icon-->
 														<div class="nav-icon">
 															<img alt="" src="./images/pdf.png" class="nav-icon">
@@ -1106,7 +1126,7 @@ License: For each use you must have a valid license purchased only from above li
 
 												<li class="nav-item mb-3 me-3 me-lg-6" role="presentation">
 													<!--begin::Link-->
-													<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_5" aria-selected="true" role="tab">
+													<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_5" aria-selected="true" role="tab" tabindex="-1">
 														<!--begin::Icon-->
 														<div class="nav-icon">
 															<img alt="" src="./images/pdf.png" class="nav-icon">
@@ -1125,7 +1145,7 @@ License: For each use you must have a valid license purchased only from above li
 												
 												<li class="nav-item mb-3 me-3 me-lg-6" role="presentation">
 													<!--begin::Link-->
-													<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_6" aria-selected="true" role="tab">
+													<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_6" aria-selected="true" role="tab" tabindex="-1">
 														<!--begin::Icon-->
 														<div class="nav-icon">
 															<img alt="" src="./images/pdf.png" class="nav-icon">
@@ -1143,7 +1163,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Item-->
 												<li class="nav-item mb-3 me-3 me-lg-6" role="presentation">
 													<!--begin::Link-->
-													<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_7" aria-selected="true" role="tab">
+													<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_7" aria-selected="true" role="tab" tabindex="-1">
 														<!--begin::Icon-->
 														<div class="nav-icon">
 															<img alt="" src="./images/pdf.png" class="nav-icon">
@@ -1161,7 +1181,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Item-->
 												<li class="nav-item mb-3 me-3 me-lg-6" role="presentation">
 													<!--begin::Link-->
-													<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_8" aria-selected="true" role="tab">
+													<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_8" aria-selected="true" role="tab" tabindex="-1">
 														<!--begin::Icon-->
 														<div class="nav-icon">
 															<img alt="" src="./images/pdf.png" class="nav-icon">
@@ -1179,7 +1199,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Item-->
 												<li class="nav-item mb-3 me-3 me-lg-6" role="presentation">
 													<!--begin::Link-->
-													<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_9" aria-selected="true" role="tab">
+													<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_9" aria-selected="true" role="tab" tabindex="-1">
 														<!--begin::Icon-->
 														<div class="nav-icon">
 															<img alt="" src="./images/pdf.png" class="nav-icon">
@@ -1199,9 +1219,123 @@ License: For each use you must have a valid license purchased only from above li
 											</ul>
 											<!--end::Nav-->
 											<!--begin::Tab Content-->
+											<!--begin::Tap pane-->
+												<div class="tab-pane fade active show" id="kt_stats_widget_1_tab_200" role="tabpanel">
+													<!--begin::Table container-->
+													<div class="table-responsive">
+														<!--begin::Table-->
+														<table class="table align-middle gs-0 gy-4 my-0">
+															<!--begin::Table head-->
+															<thead>
+																<tr class="fs-7 fw-bold text-gray-500">
+																	<th class="p-0 min-w-150px d-block pt-3">Nombre Archivo</th>
+																	<th class="text-end min-w-140px pt-3">Módulo</th>
+																	<th class="pe-0 text-end min-w-120px pt-3">Descargar</th>
+																</tr>
+															</thead>
+															<!--end::Table head-->
+															<!--begin::Table body-->
+															<tbody>
+																<tr>
+																	<td>
+																		<a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Temas a priorizar</a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-success fs-7 fw-bold">Generalidades</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/generalidades-loco/Lista de temas a priorizar de generalidades.pdf" download="Lista de temas a priorizar de generalidades.pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+																		<a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Diapositivas - Generalidades de anatomía</a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-warning fs-7 fw-bold">Generalidades</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/generalidades-loco/1. Diapositivas - Generalidades de anatomía..pdf" download="1. Diapositivas - Generalidades de anatomía..pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+																		<a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Generalidades - Articulaciones</a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-success fs-7 fw-bold">Generalidades</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/generalidades-loco/2. Generalidades - Articulaciones_.pdf" download="2. Generalidades - Articulaciones_.pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+																		<a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Resumen de generalidades de anatomía</a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-primary fs-7 fw-bold">Generalidades</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/generalidades-loco/3. Resumen de generalidades de anatomía_.pdf" download="3. Resumen de generalidades de anatomía_.pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+																		<a  class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Generalidades de imágenes</a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-primary fs-7 fw-bold">Generalidades</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/generalidades-loco/4. Generalidades de imágenes.pdf" download="4. Generalidades de imágenes.pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+																		<a  class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">¿Cómo presentar preparados_ Tips de oratoria</a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-primary fs-7 fw-bold">Generalidades</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/generalidades-loco/5. ¿Cómo presentar preparados_ Tips de oratoria.pdf" download="5. ¿Cómo presentar preparados_ Tips de oratoria.pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+																		<a  class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">¿Cómo presentar imágenes_ Tips de oratoria?</a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-primary fs-7 fw-bold">Generalidades</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/generalidades-loco/6. ¿Cómo presentar imágenes_ Tips de oratoria.pdf" download="6. ¿Cómo presentar imágenes_ Tips de oratoria.pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+																		<a  class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Tp 1 - aplicación clínica - CAT 1</a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-primary fs-7 fw-bold">Generalidades</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/generalidades-loco/7. Tp 1 - aplicación clínica - CAT 1.pdf" download="7. Tp 1 - aplicación clínica - CAT 1.pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+																
+															</tbody>
+															<!--end::Table body-->
+														</table>
+														<!--end::Table-->
+													</div>
+													<!--end::Table container-->
+												</div>
+												<!--end::Tap pane-->
 											<div class="tab-content">
 												<!--begin::Tap pane-->
-												<div class="tab-pane fade active show" id="kt_stats_widget_1_tab_2" role="tabpanel">
+												<div class="tab-pane fade" id="kt_stats_widget_1_tab_2" role="tabpanel">
 													<!--begin::Table container-->
 													<div class="table-responsive">
 														<!--begin::Table-->
@@ -1236,7 +1370,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-warning fs-7 fw-bold">Hombro</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/hombro/2. Tips preparados de hombro.pdf" download="diapositivas-hombro.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/hombro/2. Tips preparados de hombro.pdf" download="Tips preparados de hombro.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1258,7 +1392,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Hombro</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/hombro/4. Biomecánica de hombro - CAT 3.pdf" download="Biomecánica-hombro.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/hombro/4. Biomecánica de hombro - CAT 3.pdf" download="Biomecánica-hombro-CAT-3.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1269,7 +1403,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Hombro</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/hombro/5. Px braquial - colaterales.pptx" download="Px-braquial - colaterales.pptx">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/hombro/5. Px braquial - colaterales.PDFx" download="Px-braquial - colaterales.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1316,7 +1450,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Brazo/Codo/Antebrazo</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/brazo/2. Imágenes brazo - codo - AB.pdf" download="diapositivas-brazo.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/brazo/2. Imágenes brazo - codo - AB.pdf" download="Imagenes brazo.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1327,7 +1461,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-warning fs-7 fw-bold">Brazo/Codo/Antebrazo</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/brazo/2. Imágenes brazo - codo - AB.pdf" download="Tips-brazo.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/brazo/2. Imágenes brazo - codo - AB.pdf" download="Tips-preparados-brazo.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1349,7 +1483,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Brazo/Codo/Antebrazo</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/hombro/4. Biomecánica de hombro - CAT 3.pdf" download="Biomecánica-hombro.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/hombro/4. Biomecánica de hombro - CAT 3.pdf" download="Biomecánica de codo - CAT 3 - Kapandji.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1360,7 +1494,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Brazo/Codo/Antebrazo</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/brazo/6. Círculos anastomóticos del codo y de la rodilla.pdf" download="Círculos anastomóticos del codo y de la rodilla.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/brazo/6. Círculos anastomóticos del codo y de la rodilla.pdf" download="Círculos anastomóticos del codo y de la rodilla.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1383,7 +1517,7 @@ License: For each use you must have a valid license purchased only from above li
 												</div>
 												<!--end::Tap pane-->
 												<!--begin::Tap pane-->
-												<div class="tab-pane" id="kt_stats_widget_1_tab_90" role="tabpanel">
+												<div class="tab-pane fade" id="kt_stats_widget_1_tab_90" role="tabpanel">
 													<!--begin::Table container-->
 													<div class="table-responsive">
 													<!--begin::Table-->
@@ -1418,7 +1552,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-warning fs-7 fw-bold">Mano</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/mano/7. Tips preparados muñeca - mano.pdf" download="Tips-muñeca.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/mano/7. Tips preparados muñeca - mano.pdf" download="Tips-preparados-muñeca.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1451,7 +1585,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Mano</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/mano/5. Biomecánica de muñeca - CAT 3.pdf" download="Biomecánica de muñeca - CAT 3.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/mano/5. Biomecánica de muñeca - CAT 3.pdf" download="Biomecánica de muñeca - CAT 3.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1462,7 +1596,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Mano</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/mano/6. Clínica TP muñeca - mano - CAT 1.pdf" download="Clínica TP muñeca - mano - CAT 1.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/mano/6. Clínica TP muñeca - mano - CAT 1.pdf" download="Clínica TP muñeca - mano - CAT 1.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1486,7 +1620,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Tap pane-->
 
 												<!--begin::Tap pane-->
-												<div class="tab-pane" id="kt_stats_widget_1_tab_4" role="tabpanel">
+												<div class="tab-pane fade" id="kt_stats_widget_1_tab_4" role="tabpanel">
 													<!--begin::Table container-->
 													<div class="table-responsive">
 													<!--begin::Table-->
@@ -1521,7 +1655,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-warning fs-7 fw-bold">Cadera</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cadera/2. Imágenes de miembro inferior.pdf" download="Tips-muñeca.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cadera/2. Imágenes de miembro inferior.pdf" download="Imagenes de miembro inferior.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1532,7 +1666,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Cadera</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cadera/3. Tips preparados glútea - px lumbar.pdf" download="Drenaje-venoso-linfatico.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cadera/3. Tips preparados glútea - px lumbar.pdf" download="Tips Glútea y Px Lumbar.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1543,7 +1677,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Cadera</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cadera/4. Biomecánica de la cadera.pdf" download="4. CAT 3 - Drenaje linfático mmss - Ciucci.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cadera/4. Biomecánica de la cadera.pdf" download="Biomecánica de la cadera.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1554,7 +1688,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Cadera</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cadera/5. Biomecánica sacroilíaca.pdf" download="Biomecánica de muñeca - CAT 3.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cadera/5. Biomecánica sacroilíaca.pdf" download="Biomecánica sacroilíaca.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1565,7 +1699,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Cadera</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cadera/6. Clínica TP glútea - cadera - CAT 1.pdf" download="Clínica TP muñeca - mano - CAT 1.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cadera/6. Clínica TP glútea - cadera - CAT 1.pdf" download="Clínica TP glútea - cadera - CAT 1.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1576,7 +1710,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Cadera</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cadera/Lista de temas a priorizar glútea - cadera.pdf" download="temas-a-priorizar-mano.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cadera/Lista de temas a priorizar glútea - cadera.pdf" download="temas-a-priorizar-cadera.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 															</tbody>
@@ -1588,7 +1722,7 @@ License: For each use you must have a valid license purchased only from above li
 												</div>
 												<!--end::Tap pane-->
 												<!--begin::Tap pane-->
-												<div class="tab-pane" id="kt_stats_widget_1_tab_5" role="tabpanel">
+												<div class="tab-pane fade" id="kt_stats_widget_1_tab_5" role="tabpanel">
 													<!--begin::Table container-->
 													<div class="table-responsive">
 													<!--begin::Table-->
@@ -1612,7 +1746,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Rodilla</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/rodilla/Copia de 1. Muslo y rodilla.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/rodilla/Copia de 1. Muslo y rodilla.pdf" download="Muslo y Rodilla.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1623,7 +1757,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-warning fs-7 fw-bold">Rodilla</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/rodilla/Copia de 2. Tips preparados muslo - rodilla.pdf" download="Tips-muñeca.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/rodilla/Copia de 2. Tips preparados muslo - rodilla.pdf" download="Tips preparados muslo y rodilla.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1634,7 +1768,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Rodilla</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/rodilla/Copia de 3. Clínica TP muslo - rodilla - CAT 1.pdf" download="Drenaje-venoso-linfatico.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/rodilla/Copia de 3. Clínica TP muslo - rodilla - CAT 1.pdf" download="Clínica TP muslo - rodilla - CAT 1.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																
@@ -1646,7 +1780,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Rodilla</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/rodilla/Copia de 4. Biomecánica de rodilla - CAT 3.pdf" download="Biomecánica de muñeca - CAT 3.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/rodilla/Copia de 4. Biomecánica de rodilla - CAT 3.pdf" download="Biomecánica de rodilla - CAT 3.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1657,7 +1791,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Rodilla</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/rodilla/Lista de temas a priorizar muslo - rodilla.pdf" download="temas-a-priorizar-mano.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/rodilla/Lista de temas a priorizar muslo - rodilla.pdf" download="temas-a-priorizar-rodilla.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 															</tbody>
@@ -1669,7 +1803,7 @@ License: For each use you must have a valid license purchased only from above li
 												</div>
 												<!--end::Tap pane-->
 												<!--begin::Tap pane-->
-												<div class="tab-pane" id="kt_stats_widget_1_tab_6" role="tabpanel">
+												<div class="tab-pane fade" id="kt_stats_widget_1_tab_6" role="tabpanel">
 													<!--begin::Table container-->
 													<div class="table-responsive">
 													<!--begin::Table-->
@@ -1693,7 +1827,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Pierna</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pierna/1. Pierna - tobillo - pie.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pierna/1. Pierna - tobillo - pie.pdf" download="Pierna - Tobillo - Pie.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1704,7 +1838,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-warning fs-7 fw-bold">Pierna</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pierna/2. Resumen de inervación de mmii.pdf" download="Tips-muñeca.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pierna/2. Resumen de inervación de mmii.pdf" download="Resumen de inervación de mmii.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1715,7 +1849,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Pierna</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pierna/3. Resumen de bóveda plantar.pdf" download="Drenaje-venoso-linfatico.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pierna/3. Resumen de bóveda plantar.pdf" download="Resumen de bóveda plantar.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1726,7 +1860,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Pierna</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pierna/4. Tips preparados pierna - tob - pie.pdf" download="4. CAT 3 - Drenaje linfático mmss - Ciucci.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pierna/4. Tips preparados pierna - tob - pie.pdf" download="Tips pierna - tob - pie.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1737,7 +1871,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Pierna</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pierna/5. Clínica TP pierna - tobillo - pie - CAT 1.pdf" download="Clínica TP muñeca - mano - CAT 1.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pierna/5. Clínica TP pierna - tobillo - pie - CAT 1.pdf" download="Clínica TP pierna- tobillo - pie - CAT 1.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1748,7 +1882,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Pierna</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pierna/6. Drenaje linfático mmii - CAT 3 - Ciucci.pdf" download="Biomecánica de muñeca - CAT 3.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pierna/6. Drenaje linfático mmii - CAT 3 - Ciucci.pdf" download="Drenaje linfático mmii - CAT 3.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1759,7 +1893,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Pierna</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pierna/8. Biomecánica de tobillo y pie_.pdf" download="Clínica TP muñeca - mano - CAT 1.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pierna/8. Biomecánica de tobillo y pie_.pdf" download="Biomecánica de tobillo y pie.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1770,7 +1904,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Pierna</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pierna/Lista de temas a priorizar pierna - tobillo - pie.pdf" download="temas-a-priorizar-mano.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pierna/Lista de temas a priorizar pierna - tobillo - pie.pdf" download="temas-a-priorizar-Pierna.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 															</tbody>
@@ -1782,7 +1916,7 @@ License: For each use you must have a valid license purchased only from above li
 												</div>
 												<!--end::Tap pane-->
 												<!--begin::Tap pane-->
-												<div class="tab-pane" id="kt_stats_widget_1_tab_7" role="tabpanel">
+												<div class="tab-pane fade" id="kt_stats_widget_1_tab_7" role="tabpanel">
 													<!--begin::Table container-->
 													<div class="table-responsive">
 													<!--begin::Table-->
@@ -1806,7 +1940,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Craneo</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/craneo/1. Cráneo.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/craneo/1. Cráneo.pdf" download="Craneo.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1817,7 +1951,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Craneo</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/craneo/2. Clínica TP cráneo - CAT 1.pdf" download="Clínica TP muñeca - mano - CAT 1.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/craneo/2. Clínica TP cráneo - CAT 1.pdf" download="Clínica TP cráneo - CAT 1.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1828,7 +1962,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Craneo</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/craneo/Lista de temas a priorizar cráneo.pdf" download="temas-a-priorizar-mano.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/craneo/Lista de temas a priorizar cráneo.pdf" download="temas-a-priorizar-Craneo.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 															</tbody>
@@ -1840,7 +1974,7 @@ License: For each use you must have a valid license purchased only from above li
 												</div>
 												<!--end::Tap pane-->
 												<!--begin::Tap pane-->
-												<div class="tab-pane " id="kt_stats_widget_1_tab_8" role="tabpanel">
+												<div class="tab-pane fade" id="kt_stats_widget_1_tab_8" role="tabpanel">
 													<!--begin::Table container-->
 													<div class="table-responsive">
 													<!--begin::Table-->
@@ -1864,7 +1998,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Dorso</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/dorso/1. Diapositivas - dorso.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/dorso/1. Diapositivas - dorso.pdf" download="Diapositivas - dorso.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1875,7 +2009,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-warning fs-7 fw-bold">Dorso</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/dorso/2. Imágenes dorso.pdf" download="Tips-muñeca.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/dorso/2. Imágenes dorso.pdf" download="Imagenes Dorso.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1886,7 +2020,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Dorso</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/dorso/3. Resumen dorso.pdf" download="Drenaje-venoso-linfatico.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/dorso/3. Resumen dorso.pdf" download="Resumen Dorso.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1897,7 +2031,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Dorso</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/dorso/4. Tips preparados dorso.pdf" download="4. CAT 3 - Drenaje linfático mmss - Ciucci.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/dorso/4. Tips preparados dorso.pdf" download="Tips dorso.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1908,7 +2042,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Dorso</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/dorso/6. Biomecánica de dorso - CAT 3 - Kapandji.pdf" download="Biomecánica de muñeca - CAT 3.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/dorso/6. Biomecánica de dorso - CAT 3 - Kapandji.pdf" download="Biomecánica de dorso - CAT 3.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -1919,7 +2053,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Dorso</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/dorso/5. Tp dorso - clínica - CAT 1.pdf" download="Clínica TP muñeca - mano - CAT 1.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/dorso/5. Tp dorso - clínica - CAT 1.pdf" download="TP dorso - clínica - CAT 1.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 															</tbody>
@@ -1931,7 +2065,7 @@ License: For each use you must have a valid license purchased only from above li
 												</div>
 												<!--end::Tap pane-->
 												<!--begin::Tap pane-->
-												<div class="tab-pane fade active show" id="kt_stats_widget_1_tab_9" role="tabpanel">
+												<div class="tab-pane fade" id="kt_stats_widget_1_tab_9" role="tabpanel">
 													<!--begin::Table container-->
 													<div class="table-responsive">
 														<!--begin::Table-->
@@ -1947,6 +2081,39 @@ License: For each use you must have a valid license purchased only from above li
 															<!--end::Table head-->
 															<!--begin::Table body-->
 															<tbody>
+															    <tr>
+																	<td>
+																		<a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Lista de temas tomados en teórico locomotor</a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-success fs-7 fw-bold">Planner</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/planner-loco/1. Lista de temas tomados en teórico locomotor.pdf" download="1. Lista de temas tomados en teórico locomotor.pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+																		<a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Modelos de exámenes teóricos locomotor</a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-success fs-7 fw-bold">Planner</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/planner-loco/2. Modelos de exámenes teóricos locomotor (1).pdf" download="2. Modelos de exámenes teóricos locomotor (1).pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+																		<a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Check list locomotor</a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-success fs-7 fw-bold">Planner</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/planner-loco/Check list locomotor.pdf" download="Check list locomotor.pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
 																<tr>
 																	<td>
 																		<a class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Cronograma de clases sincrónicas - final diciembre</a>
@@ -1966,7 +2133,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-warning fs-7 fw-bold">Planner</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/hombro/Planner final de diciembre.pdf" download="diapositivas-hombro.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/hombro/Planner final de diciembre.pdf" download="Planner final de diciembre.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																
@@ -2162,6 +2329,25 @@ License: For each use you must have a valid license purchased only from above li
 													<!--end::Link-->
 												</li>
 												<!--end::Item-->
+												<!--begin::Item-->
+												<li class="nav-item mb-3 me-3 me-lg-6" role="presentation">
+													<!--begin::Link-->
+													<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_11" aria-selected="true" role="tab">
+														<!--begin::Icon-->
+														<div class="nav-icon">
+															<img alt="" src="./images/pdf.png" class="nav-icon">
+														</div>
+														<!--end::Icon-->
+														<!--begin::Subtitle-->
+														<span class="nav-text text-gray-600 fw-bold fs-6 lh-1">Abdomen Supra</span>
+														<!--end::Subtitle-->
+														<!--begin::Bullet-->
+														<span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
+														<!--end::Bullet-->
+													</a>
+													<!--end::Link-->
+												</li>
+												<!--end::Item-->
 												
 											</ul>
 											<!--end::Nav-->
@@ -2192,7 +2378,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Cara</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cara/1. Diapositivas cara - Parte I.pdf" download="diapositivas-hombro.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cara/1. Diapositivas cara - Parte I.pdf" download="Diapositivas cara - Parte I.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2203,7 +2389,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Cara</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cara/2. Diapositivas cara - Parte II.pdf" download="diapositivas-hombro.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cara/2. Diapositivas cara - Parte II.pdf" download="Diapositivas cara - Parte II.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2214,7 +2400,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-warning fs-7 fw-bold">Cara</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cara/3. Tips prácticos - cara y cuello .pdf" download="diapositivas-hombro.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cara/3. Tips prácticos - cara y cuello .pdf" download="Tips practicos cara y cuello.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2225,7 +2411,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-warning fs-7 fw-bold">Cara</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cara/4. Resumen cara.pdf" download="diapositivas-hombro.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cara/4. Resumen cara.pdf" download="Resumen cara.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2236,7 +2422,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-warning fs-7 fw-bold">Cara</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cara/5. Preparados de cara.pdf" download="diapositivas-hombro.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cara/5. Preparados de cara.pdf" download="Preparados de cara.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2247,7 +2433,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Cara</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cara/6. Cara, aplicación clínica, CAT 1.pdf" download="TP-Hombro-Clinica-CAT 1.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cara/6. Cara, aplicación clínica, CAT 1.pdf" download="Cara - aplicación Clinica - CAT 1.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2258,7 +2444,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Cara</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cara/TEMAS A PRIORIZAR - CARA (1).pdf" download="temas-a-priorizar-hombro.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cara/TEMAS A PRIORIZAR - CARA (1).pdf" download="temas-a-priorizar-Cara.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 															</tbody>
@@ -2294,7 +2480,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Cuello</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cuello/1. Diapos cuello- primera parte.pdf" download="diapositivas-brazo.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cuello/1. Diapos cuello- primera parte.pdf" download="1. Diapos cuello- primera parte.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2305,7 +2491,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-warning fs-7 fw-bold">Cuello</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cuello/2. Diapositivas cuello - parte II.pdf" download="Tips-brazo.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cuello/2. Diapositivas cuello - parte II.pdf" download="Diapositivas Cuello Parte II.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2316,7 +2502,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Cuello</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cuello/3. Tips prácticos - cara y cuello.pdf" download="B - C - AB-Clinica-CAT 1.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cuello/3. Tips prácticos - cara y cuello.pdf" download="Tips prácticos - cara y cuello.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2327,7 +2513,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Cuello</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cuello/4.Arterias de cara y cuello.pdf" download="Biomecánica-hombro.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cuello/4.Arterias de cara y cuello.pdf" download="Arterias de cara y cuello.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2338,7 +2524,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Cuello</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cuello/5.triangulos cuello.pdf" download="Círculos anastomóticos del codo y de la rodilla.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cuello/5.triangulos cuello.pdf" download="Triangulos cuello.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2349,7 +2535,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Cuello</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cuello/6. Nervios craneales - esplacnología.pdf" download="Círculos anastomóticos del codo y de la rodilla.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cuello/6. Nervios craneales - esplacnología.pdf" download="Nervios craneales.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2360,7 +2546,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Cuello</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cuello/7. Cuadros - nervios craneales.pdf" download="Círculos anastomóticos del codo y de la rodilla.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cuello/7. Cuadros - nervios craneales.pdf" download="Cuadros - nervios craneales.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2371,7 +2557,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Cuello</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cuello/8. Preparados cuello.pdf" download="Círculos anastomóticos del codo y de la rodilla.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cuello/8. Preparados cuello.pdf" download="Preparando cuello.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2382,7 +2568,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Cuello</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cuello/9. Cuello, aplicación clínica, CAT 1.pdf" download="Círculos anastomóticos del codo y de la rodilla.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cuello/9. Cuello, aplicación clínica, CAT 1.pdf" download="Cuello, aplicación clínica , CAT 1.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2393,7 +2579,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Cuello</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cuello/TEMAS A PRIORIZAR - CUELLO (1).pdf" download="temas-a-priorizar-brazo-codo-ab.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/cuello/TEMAS A PRIORIZAR - CUELLO (1).pdf" download="temas-a-priorizar-Cuello.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 															</tbody>
@@ -2429,7 +2615,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Torax</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/torax/1. Diapositivas tórax.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/torax/1. Diapositivas tórax.pdf" download="Diapositivas Tórax.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2440,7 +2626,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-warning fs-7 fw-bold">Torax</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/torax/2. Resumen de tórax.pdf" download="Tips-muñeca.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/torax/2. Resumen de tórax.pdf" download="Resumen de Tórax.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2451,7 +2637,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Torax</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/torax/3. Tips practicos torax y mediastino.pdf" download="Drenaje-venoso-linfatico.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/torax/3. Tips practicos torax y mediastino.pdf" download="Tips practicos tórax y mediastino.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2462,7 +2648,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Torax</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/torax/4. Nervio frénico.pdf" download="4. CAT 3 - Drenaje linfático mmss - Ciucci.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/torax/4. Nervio frénico.pdf" download="Nervio frénico.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2473,7 +2659,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Torax</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/torax/5. Preparados tórax.pdf" download="Biomecánica de muñeca - CAT 3.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/torax/5. Preparados tórax.pdf" download="Preparados Tórax.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2484,7 +2670,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Torax</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/torax/6. Tórax, aplicación clínica, CAT 1.pdf" download="Clínica TP muñeca - mano - CAT 1.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/torax/6. Tórax, aplicación clínica, CAT 1.pdf" download="Tórax, aplicación clínica - CAT 1.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2495,7 +2681,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Torax</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/torax/TEMAS A PRIORIZAR - TÓRAX (1).pdf" download="temas-a-priorizar-mano.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/torax/TEMAS A PRIORIZAR - TÓRAX (1).pdf" download="temas-a-priorizar-Torax.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 															</tbody>
@@ -2532,7 +2718,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Mediastino</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/mediastino/1. Diapositivas mediastino.pdf" download="Región-Glútea.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/mediastino/1. Diapositivas mediastino.pdf" download="Diapositivas Mediastino.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2543,7 +2729,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Mediastino</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/mediastino/2. Tips practicos torax y mediastino .pdf" download="Drenaje-venoso-linfatico.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/mediastino/2. Tips practicos torax y mediastino .pdf" download="Tips practicos Torax y Mediastino.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2554,7 +2740,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Mediastino</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/mediastino/3. Mediastino - Martinez - Casiraghi LEER SI SOS CAT3.pdf" download="Biomecánica de muñeca - CAT 3.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/mediastino/3. Mediastino - Martinez - Casiraghi LEER SI SOS CAT3.pdf" download="Biomecánica de muñeca - CAT 3.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2565,7 +2751,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Mediastino</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/mediastino/4. Preparados mediastino.pdf" download="Clínica TP muñeca - mano - CAT 1.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/mediastino/4. Preparados mediastino.pdf" download="Preparados Mediastino.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2576,7 +2762,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Mediastino</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/mediastino/TEMAS A PRIORIZAR - MEDIASTINO (1).pdf" download="temas-a-priorizar-mano.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/mediastino/TEMAS A PRIORIZAR - MEDIASTINO (1).pdf" download="temas-a-priorizar-Mediastino.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 															</tbody>
@@ -2612,7 +2798,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Paredes de Abdomen</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/paredes-abdomen/1. Diapositivas paredes de abdomen - peritoneo.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/paredes-abdomen/1. Diapositivas paredes de abdomen - peritoneo.pdf" download="Diapositivas Paredes de Abdomen.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2623,7 +2809,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-warning fs-7 fw-bold">Paredes de Abdomen</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/paredes-abdomen/2. Peritoneo - Casiraghi LEER SI SOS CAT1_3.pdf" download="Tips-muñeca.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/paredes-abdomen/2. Peritoneo - Casiraghi LEER SI SOS CAT1_3.pdf" download="Peritoneo - Casiragui (Solo CAT 1).pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2634,7 +2820,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Paredes de Abdomen</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/paredes-abdomen/3. Disecciones paredes de abdomen.pdf" download="Drenaje-venoso-linfatico.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/paredes-abdomen/3. Disecciones paredes de abdomen.pdf" download="Disecciones paredes de abdomen.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																
@@ -2646,7 +2832,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Paredes de Abdomen</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/paredes-abdomen/4. Conducto inguinal - preparandoanato.pdf" download="Biomecánica de muñeca - CAT 3.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/paredes-abdomen/4. Conducto inguinal - preparandoanato.pdf" download="Conducto inguinal.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2657,7 +2843,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Paredes de Abdomen</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/paredes-abdomen/TEMAS A PRIORIZAR - PAREDES DE ABDOMEN (1).pdf" download="temas-a-priorizar-mano.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/paredes-abdomen/TEMAS A PRIORIZAR - PAREDES DE ABDOMEN (1).pdf" download="temas-a-priorizar-Paredes de Abdomen.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 															</tbody>
@@ -2693,7 +2879,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Abdomen Inframeso</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/inframeso/1. Diapositivas abdomen infra - retro.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/inframeso/1. Diapositivas abdomen infra - retro.pdf" download="Diapositivas abdomen infra.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2704,7 +2890,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Abdomen Inframeso</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/inframeso/2. Anastomosis portocava.pdf" download="Drenaje-venoso-linfatico.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/inframeso/2. Anastomosis portocava.pdf" download="Anastomosis portocava.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2715,7 +2901,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Abdomen Inframeso</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/inframeso/3. Tips practicos inframesocolico y retroperitoneo.pdf" download="4. CAT 3 - Drenaje linfático mmss - Ciucci.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/inframeso/3. Tips practicos inframesocolico y retroperitoneo.pdf" download="Tips practicos inframesocolico y retroperitoneo.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																
@@ -2727,7 +2913,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Abdomen Inframeso</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/inframeso/4. Disecciones abdomen infra-retroperitoneo.pdf" download="Clínica TP muñeca - mano - CAT 1.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/inframeso/4. Disecciones abdomen infra-retroperitoneo.pdf" download="Disecciones abdomen infra-retroperitoneo.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2738,7 +2924,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Abdomen Inframeso</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/inframeso/TEMAS A PRIORIZAR - ABDOMEN INFRAMESOCOLICO Y RETROPERITONEO (1).pdf" download="temas-a-priorizar-mano.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/inframeso/TEMAS A PRIORIZAR - ABDOMEN INFRAMESOCOLICO Y RETROPERITONEO (1).pdf" download="temas-a-priorizar-Abdomen Inframeso.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 															</tbody>
@@ -2774,7 +2960,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Pelvis</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pelvis/1. Diapositivas pelvis.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pelvis/1. Diapositivas pelvis.pdf" download="Diapositivas pelvis.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2785,7 +2971,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Pelvis</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pelvis/2. Px celíaco - hipogástrico - Candela Casado.pdf" download="Clínica TP muñeca - mano - CAT 1.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pelvis/2. Px celíaco - hipogástrico - Candela Casado.pdf" download="Px celíaco - hipogástrico.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2796,7 +2982,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Pelvis</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pelvis/3. Tips practicos pelvis.pdf" download="Clínica TP muñeca - mano - CAT 1.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pelvis/3. Tips practicos pelvis.pdf" download="Tips practicos pelvis.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2807,7 +2993,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Pelvis</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pelvis/4. Disecciones pelvis y periné.pdf" download="Clínica TP muñeca - mano - CAT 1.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pelvis/4. Disecciones pelvis y periné.pdf" download="4. Disecciones pelvis y periné.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2818,7 +3004,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Pelvis</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pelvis/TEMAS A PRIORIZAR - PELVIS (1).pdf" download="temas-a-priorizar-mano.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/pelvis/TEMAS A PRIORIZAR - PELVIS (1).pdf" download="TEMAS A PRIORIZAR - PELVIS.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 															</tbody>
@@ -2854,7 +3040,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Modelo Exámen</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/modelos-espa/Check list esplacnología.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/modelos-espa/Check list esplacnología.pdf" download="Check list esplacnología.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2865,7 +3051,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-warning fs-7 fw-bold">Modelo Exámen</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/modelos-espa/Modelos de examen teórico esplacnologia.pdf" download="Tips-muñeca.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/modelos-espa/Modelos de examen teórico esplacnologia.pdf" download="Modelos de examen teórico esplacnologia.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -2876,7 +3062,87 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Modelo Exámen</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/modelos-espa/Temas tomados teorico esplacno.pdf" download="Drenaje-venoso-linfatico.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/modelos-espa/Temas tomados teorico esplacno.pdf" download="Temas tomados teorico esplacno.pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+															</tbody>
+															<!--end::Table body-->
+														</table>
+														<!--end::Table-->
+													</div>
+													<!--end::Table container-->
+												</div>
+												<!--end::Tap pane-->
+												<!--begin::Tap pane-->
+												<div class="tab-pane" id="kt_stats_widget_1_tab_11" role="tabpanel">
+													<!--begin::Table container-->
+													<div class="table-responsive">
+													<!--begin::Table-->
+														<table class="table align-middle gs-0 gy-4 my-0">
+															<!--begin::Table head-->
+															<thead>
+																<tr class="fs-7 fw-bold text-gray-500">
+																	<th class="p-0 min-w-150px d-block pt-3">Nombre Archivo</th>
+																	<th class="text-end min-w-140px pt-3">Módulo</th>
+																	<th class="pe-0 text-end min-w-120px pt-3">Descargar</th>
+																</tr>
+															</thead>
+															<!--end::Table head-->
+															<!--begin::Table body-->
+															<tbody>
+																<tr>
+																	<td>
+																		<a  class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Diapositivas abdomen supramesocólico</a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-success fs-7 fw-bold">Abdomen Supramesocolico</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/suprameso/1. Diapositivas abdomen supramesocólico.pdf" download="1. Diapositivas abdomen supramesocólico.pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+																	<tr>
+																	<td>
+																		<a  class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Segmentacion hepatica + TAC RNM</a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-success fs-7 fw-bold">Abdomen Supramesocolico</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/suprameso/2. Segmentacion hepatica + TAC RNM.pdf" download="2. Segmentacion hepatica + TAC RNM.pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+																	<tr>
+																	<td>
+																		<a  class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Tips practicos</a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-success fs-7 fw-bold">Abdomen Supramesocolico</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/suprameso/3. Tips practicos abdomen supramesocolico.pdf" download="3. Tips practicos abdomen supramesocolico.pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+																	<tr>
+																	<td>
+																		<a  class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Preparados </a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-success fs-7 fw-bold">Abdomen Supramesocolico</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/suprameso/4. Preparados abdomen supramesocólico.pdf" download="4. Preparados abdomen supramesocólico.pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+																	<tr>
+																	<td>
+																		<a  class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">TEMAS A PRIORIZAR </a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-success fs-7 fw-bold">Abdomen Supramesocolico</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/suprameso/TEMAS A PRIORIZAR - ABDOMEN SUPRAMESOCOLICO (1).pdf" download="TEMAS A PRIORIZAR - ABDOMEN SUPRAMESOCOLICO (1).pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 															</tbody>
@@ -3089,6 +3355,24 @@ License: For each use you must have a valid license purchased only from above li
 													<!--end::Link-->
 												</li>
 												<!--end::Item-->
+												<li class="nav-item mb-3 me-3 me-lg-6" role="presentation">
+													<!--begin::Link-->
+													<a class="nav-link d-flex justify-content-between flex-column flex-center overflow-hidden w-80px h-85px py-4" data-bs-toggle="pill" href="#kt_stats_widget_1_tab_10" aria-selected="true" role="tab">
+														<!--begin::Icon-->
+														<div class="nav-icon">
+															<img alt="" src="./images/pdf.png" class="nav-icon">
+														</div>
+														<!--end::Icon-->
+														<!--begin::Subtitle-->
+														<span class="nav-text text-gray-600 fw-bold fs-6 lh-1">Generalidad</span>
+														<!--end::Subtitle-->
+														<!--begin::Bullet-->
+														<span class="bullet-custom position-absolute bottom-0 w-100 h-4px bg-primary"></span>
+														<!--end::Bullet-->
+													</a>
+													<!--end::Link-->
+												</li>
+												<!--end::Item-->
 												
 											</ul>
 											<!--end::Nav-->
@@ -3119,7 +3403,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Tronco Cerebelo</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/tronco-cerebelo/1. Diapositivas - tronco y cerebelo.pdf" download="diapositivas-hombro.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/tronco-cerebelo/1. Diapositivas - tronco y cerebelo.pdf" download="1. Diapositivas - tronco y cerebelo.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -3130,7 +3414,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-warning fs-7 fw-bold">Tronco Cerebelo</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/tronco-cerebelo/2. VÍAS - Módulos_circuitos cerebelosos.pdf" download="diapositivas-hombro.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/tronco-cerebelo/2. VÍAS - Módulos_circuitos cerebelosos.pdf" download="Vías - Cuitcuitos cerebelosos.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -3141,7 +3425,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Tronco Cerebelo</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/tronco-cerebelo/3.  Repaso práctico – Tronco del encéfalo y cerebelo.pdf" download="TP-Hombro-Clinica-CAT 1.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/tronco-cerebelo/3.  Repaso práctico – Tronco del encéfalo y cerebelo.pdf" download="3.  Repaso práctico – Tronco del encéfalo y cerebelo.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -3152,7 +3436,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Tronco Cerebelo</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/tronco-cerebelo/Anatomia del angulo pontocerebeloso.pdf" download="Biomecánica-hombro.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/tronco-cerebelo/Anatomia del angulo pontocerebeloso.pdf" download="Anatomia del angulo pontocerebeloso.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																
@@ -3189,7 +3473,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Nervios Craneales</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/nervios-craneales/1. Nervios craneales parte 1.pdf" download="diapositivas-brazo.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/nervios-craneales/1. Nervios craneales parte 1.pdf" download="1. Nervios craneales parte 1.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -3200,7 +3484,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-warning fs-7 fw-bold">Nervios Craneales</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/nervios-craneales/2. Nervios craneales parte 2.pdf" download="Tips-brazo.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/nervios-craneales/2. Nervios craneales parte 2.pdf" download="2. Nervios craneales parte 2.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -3211,7 +3495,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Nervios Craneales</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/nervios-craneales/3. Resumen - nervios craneales.pdf" download="B - C - AB-Clinica-CAT 1.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/nervios-craneales/3. Resumen - nervios craneales.pdf" download="3. Resumen - nervios craneales.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -3222,7 +3506,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Nervios Craneales</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/nervios-craneales/4. Casos clínicos nervios craneales.pdf" download="Biomecánica-hombro.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/nervios-craneales/4. Casos clínicos nervios craneales.pdf" download="4. Casos clínicos nervios craneales.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 															</tbody>
@@ -3258,7 +3542,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Prosencefalo</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/prosencefalo/1. Diapositivas - Prosencéfalo.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/prosencefalo/1. Diapositivas - Prosencéfalo.pdf" download="1. Diapositivas - Prosencéfalo.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 															</tbody>
@@ -3295,7 +3579,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Vías</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/vias/1. Diapositivas - vías.pdf" download="Región-Glútea.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/vias/1. Diapositivas - vías.pdf" download="1. Diapositivas - vías.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -3306,7 +3590,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-warning fs-7 fw-bold">Vías</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/vias/2. Resumen vías.pdf" download="Tips-muñeca.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/vias/2. Resumen vías.pdf" download="2. Resumen vías.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 															</tbody>
@@ -3342,7 +3626,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Vascularización</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/vascularizacion/1. Diapositivas - vascularización.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/vascularizacion/1. Diapositivas - vascularización.pdf" download="1. Diapositivas - vascularización.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -3353,7 +3637,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-warning fs-7 fw-bold">Vascularización</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/vascularizacion/2. Resumen cisternas subaracnoideas.pdf" download="Tips-muñeca.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/vascularizacion/2. Resumen cisternas subaracnoideas.pdf" download="2. Resumen cisternas subaracnoideas.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -3364,7 +3648,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Vascularización</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/vascularizacion/3. Pro-Forlizzi - Cisternas.pdf" download="Drenaje-venoso-linfatico.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/vascularizacion/3. Pro-Forlizzi - Cisternas.pdf" download="3. Pro-Forlizzi - Cisternas.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 															</tbody>
@@ -3400,7 +3684,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Sensorial</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/sensorial/1. Gusto - visión - audición.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/sensorial/1. Gusto - visión - audición.pdf" download="1. Gusto - visión - audición.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -3411,7 +3695,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-warning fs-7 fw-bold">Sensorial</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/sensorial/2. Audición.pdf" download="Tips-muñeca.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/sensorial/2. Audición.pdf" download="2. Audición.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -3422,7 +3706,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Sensorial</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/sensorial/Sistema vestibular.pdf" download="Drenaje-venoso-linfatico.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/sensorial/Sistema vestibular.pdf" download="Sistema vestibular.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 															</tbody>
@@ -3458,7 +3742,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Diencefalo</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/diencefalo/1. Diapositivas - Diencéfalo - sna - olfato.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/diencefalo/1. Diapositivas - Diencéfalo - sna - olfato.pdf" download="1. Diapositivas - Diencéfalo - sna - olfato.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -3469,7 +3753,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-primary fs-7 fw-bold">Diencefalo</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/diencefalo/2. Sistema límbico.pdf" download="Clínica TP muñeca - mano - CAT 1.pdf">Descargar PPT</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/diencefalo/2. Sistema límbico.pdf" download="Sistema Límbico.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 															</tbody>
@@ -3497,17 +3781,7 @@ License: For each use you must have a valid license purchased only from above li
 															<!--end::Table head-->
 															<!--begin::Table body-->
 															<tbody>
-																<tr>
-																	<td>
-																		<a  class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Modelo oral Teórico</a>
-																	</td>
-																	<td class="text-end">
-																		<span class="badge badge-light-success fs-7 fw-bold">Modelos Exámen</span>
-																	</td>
-																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/modelo-neuro/Módelos de oral teórico neuro.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
-																	</td>
-																</tr>
+																
 																<tr>
 																	<td>
 																		<a  class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Temas a priorizar neuro</a>
@@ -3516,7 +3790,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Modelos Exámen</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/modelo-neuro/3. TEMAS A PRIORIZAR NEURO.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/modelo-neuro/3. TEMAS A PRIORIZAR NEURO.pdf" download=". TEMAS A PRIORIZAR NEURO.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -3527,7 +3801,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Modelos Exámen</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/modelo-neuro/4. MODELOS DE EXAMEN NEURO.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/modelo-neuro/4. MODELOS DE EXAMEN NEURO.pdf" download="4. MODELOS DE EXAMEN NEURO.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<tr>
@@ -3538,7 +3812,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Modelos Exámen</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/modelo-neuro/5. PLANNER PARCIAL NEURO.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/modelo-neuro/5. PLANNER PARCIAL NEURO.pdf" download="5. PLANNER PARCIAL NEURO.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																<?php
@@ -3552,13 +3826,14 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">Modelos Exámen</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/modelo-neuro/6. CRONOGRAMA CLASES SINCRÓNICAS.pdf" download="Integracion-MMSS.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/modelo-neuro/6. CRONOGRAMA CLASES SINCRÓNICAS.pdf" download="6. CRONOGRAMA CLASES SINCRÓNICAS.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 																    
 																    <?php
 																}
 																?>
+																
 															</tbody>
 															<!--end::Table body-->
 														</table>
@@ -3592,7 +3867,54 @@ License: For each use you must have a valid license purchased only from above li
 																		<span class="badge badge-light-success fs-7 fw-bold">NeuroImagenes</span>
 																	</td>
 																	<td class="text-end">
-																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/imagenes/FICHAS DE NEUROIMÁGENES.pdf" download="diapositivas-brazo.pdf">Descargar PDF</a></span>
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/imagenes/FICHAS DE NEUROIMÁGENES.pdf" download="FICHAS DE NEUROIMÁGENES.pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+															</tbody>
+															<!--end::Table body-->
+														</table>
+														<!--end::Table-->
+													</div>
+													<!--end::Table container-->
+												</div>
+												<!--end::Tap pane-->
+													<!--begin::Tap pane-->
+												<div class="tab-pane fade" id="kt_stats_widget_1_tab_10" role="tabpanel">
+													<!--begin::Table container-->
+													<div class="table-responsive">
+													<!--begin::Table-->
+														<table class="table align-middle gs-0 gy-4 my-0">
+															<!--begin::Table head-->
+															<thead>
+																<tr class="fs-7 fw-bold text-gray-500">
+																	<th class="p-0 min-w-150px d-block pt-3">Nombre Archivo</th>
+																	<th class="text-end min-w-140px pt-3">Módulo</th>
+																	<th class="pe-0 text-end min-w-120px pt-3">Descargar</th>
+																</tr>
+															</thead>
+															<!--end::Table head-->
+															<!--begin::Table body-->
+															<tbody>
+																<tr>
+																	<td>
+																		<a  class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Generalidades de neuroanatomía médula espinal reflejo miotático</a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-success fs-7 fw-bold">Generalidades</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/generalidades-neuro/1. Generalidades de neuroanatomía médula espinal reflejo miotático.pdf" download="1. Generalidades de neuroanatomía médula espinal reflejo miotático.pdf">Descargar PDF</a></span>
+																	</td>
+																</tr>
+																<tr>
+																	<td>
+																		<a  class="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Repaso práctico – generalidades de neuroanatomía</a>
+																	</td>
+																	<td class="text-end">
+																		<span class="badge badge-light-success fs-7 fw-bold">Generalidades</span>
+																	</td>
+																	<td class="text-end">
+																		<span class="text-gray-800 fw-bold d-block fs-6"><a href="./materiales/generalidades-neuro/2. Repaso práctico – generalidades de neuroanatomía.pdf" download="2. Repaso práctico – generalidades de neuroanatomía.pdf">Descargar PDF</a></span>
 																	</td>
 																</tr>
 															</tbody>

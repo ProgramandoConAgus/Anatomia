@@ -1,10 +1,12 @@
 <?php
 include('con_db.php');
+$message = "";
 
 if (isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['email']) && isset($_POST['password'])) {
-    $nombre = $_POST['nombre'];
-    $apellido = $_POST['apellido'];
-    $email = $_POST['email'];
+    $nombre = strtolower(trim($_POST['nombre']));
+    $apellido = strtolower(trim($_POST['apellido']));
+    $email = strtolower(trim($_POST['email']));
+
     $password = $_POST['password'];
 
     // Consultar la base de datos para obtener el registro del usuario
@@ -17,46 +19,45 @@ if (isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['email'
     if ($result) {
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
-			
-			if($user['habilitado']==1){
-            	// Verificar que el nombre y apellido coincidan
-            	if ($user['nombre'] == $nombre && $user['apellido'] == $apellido) {
-                	// Verificar la contraseña
-                	if (password_verify($password, $user['password'])) {
-                    	session_start();
-                    	$_SESSION['loggedin'] = true;
-                    	$_SESSION['IdUser'] = $user['IdUsuario']; // Asegúrate de que el nombre de la columna de ID sea correcto
-						$date = new DateTime();
-            			$date= $date->format('Y-m-d H:i:s');
-						$_SESSION['loggedin']=true;
-						$userId=$user['IdUsuario'];
-            			$conex->query("UPDATE usuarios SET last_time_connected='$date' WHERE idUsuario='$userId'" );
-                    	header('Location: panel-inicial.php?id=' . $user['IdUsuario']);
-                    	exit();
-                	} else {
-                    $message= "Contraseña incorrecta.";
+
+            // Verificar si el usuario está habilitado
+            if ($user['habilitado'] == 1) {
+                // Verificar que el nombre y apellido coincidan
+                if (strtolower($user['nombre']) == $nombre && strtolower($user['apellido']) == $apellido) {
+                    // Verificar la contraseña
+                    if (password_verify($password, $user['password'])) {
+                        session_start();
+                        $_SESSION['loggedin'] = true;
+                        $_SESSION['IdUser'] = $user['IdUsuario'];
+
+                        // Actualizar la última conexión
+                        $date = (new DateTime())->format('Y-m-d H:i:s');
+                        $userId = $user['IdUsuario'];
+                        $conex->query("UPDATE usuarios SET last_time_connected='$date' WHERE idUsuario='$userId'");
+
+                        header('Location: panel-inicial.php?id='. $user['IdUsuario']);
+                        exit();
+                    } else {
+                        $message = "Contraseña incorrecta.";
+                    }
+                } else {
+                    $message = "Nombre o apellido incorrecto";
                 }
-            	} else {
-                	$message= "Nombre o apellido incorrecto";
-            	}
-			}
-			else{
-                $message="No tienes permiso para acceder a la plataforma";
-				//header('Location: usuario-no-encontrado.php');
-            	//exit();
-			}
+            } else {
+                $message = "No tienes permiso para acceder a la plataforma";
+            }
         } else {
-            $message= "Usuario no encontrado.";
+            $message = "Usuario no encontrado.";
         }
     } else {
-        $message="Error en la consulta: " . $conex->error . "<br>";
+        $message = "Error en la consulta: " . $conex->error . "<br>";
     }
 
     $stmt->close();
 } else {
-    $message= "Todos los campos son requeridos.";
-    header('Location: usuario-no-encontrado.php');
+    $message = "Todos los campos son requeridos.";
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

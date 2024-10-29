@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
-        header('Location: panel-inicial.php?id=' . $_SESSION['idUsuario'] );
+        header('Location: ../panel-inicial.php?id=' . $_SESSION['idUsuario'] );
         exit();
     } else {
         echo "Error al eliminar el video.";
