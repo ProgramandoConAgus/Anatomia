@@ -440,7 +440,7 @@ $result = $stmt->get_result();
 																	<!--end:Col-->
 																</div>
 																<!--end:Row-->
-															</div>
+															
 															<?php
 																if(strlen($_SESSION['linkWhatsapp'])!=0){
 																	?>
@@ -471,6 +471,7 @@ $result = $stmt->get_result();
 																<?php
 																}
 																?>
+																</div>
 															<!--end:Col-->
 														</div>
 														<!--end:Row-->

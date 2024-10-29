@@ -468,7 +468,6 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 																	<!--end:Col-->
 																</div>
 																<!--end:Row-->
-															</div>
 															<?php
 																if(strlen($_SESSION['linkWhatsapp'])!=0){
 																	?>
@@ -499,6 +498,7 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 																<?php
 																}
 																?>
+																</div>
 															<!--end:Col-->
 														</div>
 														<!--end:Row-->

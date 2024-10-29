@@ -449,7 +449,7 @@ License: For each use you must have a valid license purchased only from above li
 																	<!--end:Col-->
 																</div>
 																<!--end:Row-->
-															</div>
+															
 															<?php
 																if(strlen($_SESSION['linkWhatsapp'])!=0){
 																	?>
@@ -480,6 +480,7 @@ License: For each use you must have a valid license purchased only from above li
 																<?php
 																}
 																?>
+																</div>
 															<!--end:Col-->
 														</div>
 														<!--end:Row-->
