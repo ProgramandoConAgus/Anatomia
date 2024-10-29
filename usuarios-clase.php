@@ -9,7 +9,11 @@ class Usuario {
     }
 
     public function obtenerUsuarioPorId($id) {
-        $sql = "SELECT * FROM usuarios WHERE IdUsuario = ?";
+        $sql = "SELECT *
+        FROM usuarios
+        JOIN cursos ON usuarios.idCurso = cursos.IdCurso
+        WHERE usuarios.IdUsuario = ?;
+        ";
         $stmt = $this->conex->prepare($sql);
         $stmt->bind_param("i", $id);
         $stmt->execute();

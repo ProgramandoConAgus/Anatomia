@@ -119,14 +119,14 @@ License: For each use you must have a valid license purchased only from above li
 										<!--begin::Menu-->
 										<div class="menu menu-rounded menu-column menu-lg-row menu-active-bg menu-title-gray-700 menu-state-primary menu-arrow-gray-500 fw-semibold my-5 my-lg-0 align-items-stretch px-2 px-lg-0" id="#kt_header_menu" data-kt-menu="true">
 										<?php
-											switch($_SESSION['IdCurso']){
+											switch($_SESSION['moduloPermitido']){
 												case 1:
 										?>
 										<!--begin:Menu item-->
 											<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
 												<!--begin:Menu link-->
 												<span class="menu-link py-3">
-													<span class="menu-title">Curso Básico</span>
+													<span class="menu-title"><?=$_SESSION['nombreCurso']?></span>
 													<span class="menu-arrow d-lg-none"></span>
 												</span>
 												<!--end:Menu link-->
@@ -140,8 +140,6 @@ License: For each use you must have a valid license purchased only from above li
 															<div class="col-lg-12 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
 																<!--begin:Row-->
 																<div class="row">
-																<?php
-																/*
 																<!--begin:Col-->
 																	<div class="col-lg-6 mb-3">
 																		<!--begin:Menu item-->
@@ -161,57 +159,39 @@ License: For each use you must have a valid license purchased only from above li
 																		<!--end:Menu item-->
 																	</div>
 																	<!--end:Col-->
-																	<!--begin:Col-->
-																	<div class="col-lg-6 mb-3">
-																		<!--begin:Menu item-->
-																		<div class="menu-item p-0 m-0">
-																			<!--begin:Menu link-->
-																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroEspla?>"class="menu-link">
-																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
-																					<img src="./images/espac-removebg-preview.png" height="40px" width="40px" alt="">
-																				</span>
-																				<span class="d-flex flex-column">
-																					<span class="fs-6 fw-bold text-gray-800">Esplacnología</span>
-																					<span class="fs-7 fw-semibold text-muted">Estudio y descripción de las vísceras</span>
-																				</span>
-																			</a>
-																			<!--end:Menu link-->
-																		</div>
-																		<!--end:Menu item-->
-																	</div>
-																	<!--end:Col-->
-																	*/
-																	?>
-																	<!--begin:Col-->
-																	<div class="col-lg-6 mb-3">
-																		<!--begin:Menu item-->
-																		<div class="menu-item p-0 m-0">
-																			<!--begin:Menu link-->
-																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroNeuro?>" class="menu-link">
-																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
-																					<img src="./images/neuro-removebg-preview.png" height="40px" width="40px" alt="">
-																				</span>
-																				<span class="d-flex flex-column">
-																					<span class="fs-6 fw-bold text-gray-800">Neuroanatomía</span>
-																					<span class="fs-7 fw-semibold text-muted">Estructura y organización del sistema nervioso</span>
-																				</span>
-																			</a>
-																			<!--end:Menu link-->
-																		</div>
-																		<!--end:Menu item-->
-																	</div>
-																	<!--end:Col-->
 																</div>
 																<!--end:Row-->
-															<div class="separator separator-dashed mx-5 my-5"></div>
+																<?php
+																if(strlen($_SESSION['linkWhatsapp'])!=0){
+																	?>
+																<div class="separator separator-dashed mx-5 my-5"></div>
 																<!--begin:Landing-->
 																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
 																	<div class="d-flex flex-column me-5">
 																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
 																	</div>
-																	<a href="https://chat.whatsapp.com/JLLvUE67QR4KwpdtuuqgrP" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																	<a href="<?=$_SESSION['linkWhatsapp']?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
 																</div>
 																<!--end:Landing-->
+																<?php
+																}
+																?>
+																<?php
+																if(strlen($_SESSION['linkDrive'])!=0){
+																	?>
+																<div class="separator separator-dashed mx-5 my-5"></div>
+																<!--begin:Landing-->
+																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																	<div class="d-flex flex-column me-5">
+																		<div class="fs-6 fw-bold text-gray-800">Drive</div>
+																	</div>
+																	<a href="<?=$_SESSION['linkDrive']?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																</div>
+																<!--end:Landing-->
+																<?php
+																}
+																?>
+																
 															</div>
 															<!--end:Col-->
 														</div>
@@ -230,7 +210,7 @@ License: For each use you must have a valid license purchased only from above li
 											<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
 												<!--begin:Menu link-->
 												<span class="menu-link py-3">
-													<span class="menu-title">Curso Plus</span>
+													<span class="menu-title"><?=$_SESSION['nombreCurso']?></span>
 													<span class="menu-arrow d-lg-none"></span>
 												</span>
 												<!--end:Menu link-->
@@ -244,27 +224,6 @@ License: For each use you must have a valid license purchased only from above li
 															<div class="col-lg-12 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
 																<!--begin:Row-->
 																<div class="row">
-																<?php
-																/*
-																<!--begin:Col-->
-																	<div class="col-lg-6 mb-3">
-																		<!--begin:Menu item-->
-																		<div class="menu-item p-0 m-0">
-																			<!--begin:Menu link-->
-																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroLocomotor?>" class="menu-link">
-																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
-																					<img src="./images/locomotor-removebg-preview.png" width="40px" height="40px" alt="">
-																				</span>
-																				<span class="d-flex flex-column">
-																					<span class="fs-6 fw-bold text-gray-800">Locomotor</span>
-																					<span class="fs-7 fw-semibold text-muted">Huesos,  músculos, tendones y ligamentos</span>
-																				</span>
-																			</a>
-																			<!--end:Menu link-->
-																		</div>
-																		<!--end:Menu item-->
-																	</div>
-																	<!--end:Col-->
 																	<!--begin:Col-->
 																	<div class="col-lg-6 mb-3">
 																		<!--begin:Menu item-->
@@ -284,38 +243,38 @@ License: For each use you must have a valid license purchased only from above li
 																		<!--end:Menu item-->
 																	</div>
 																	<!--end:Col-->
-																	*/
-															?>
-																	<!--begin:Col-->
-																	<div class="col-lg-6 mb-3">
-																		<!--begin:Menu item-->
-																		<div class="menu-item p-0 m-0">
-																			<!--begin:Menu link-->
-																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroNeuro?>" class="menu-link">
-																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
-																					<img src="./images/neuro-removebg-preview.png" height="40px" width="40px" alt="">
-																				</span>
-																				<span class="d-flex flex-column">
-																					<span class="fs-6 fw-bold text-gray-800">Neuroanatomía</span>
-																					<span class="fs-7 fw-semibold text-muted">Estructura y organización del sistema nervioso</span>
-																				</span>
-																			</a>
-																			<!--end:Menu link-->
-																		</div>
-																		<!--end:Menu item-->
-																	</div>
-																	<!--end:Col-->
 																</div>
 																<!--end:Row-->
+																<?php
+																if(strlen($_SESSION['linkWhatsapp'])!=0){
+																	?>
 																<div class="separator separator-dashed mx-5 my-5"></div>
 																<!--begin:Landing-->
 																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
 																	<div class="d-flex flex-column me-5">
 																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
 																	</div>
-																	<a href="https://chat.whatsapp.com/E5moK87IMQACIj4invFhH4" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																	<a href="<?=$_SESSION['linkWhatsapp']?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
 																</div>
 																<!--end:Landing-->
+																<?php
+																}
+																?>
+																<?php
+																if(strlen($_SESSION['linkDrive'])!=0){
+																	?>
+																<div class="separator separator-dashed mx-5 my-5"></div>
+																<!--begin:Landing-->
+																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																	<div class="d-flex flex-column me-5">
+																		<div class="fs-6 fw-bold text-gray-800">Drive</div>
+																	</div>
+																	<a href="<?=$_SESSION['linkDrive']?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																</div>
+																<!--end:Landing-->
+																<?php
+																}
+																?>
 															</div>
 															<!--end:Col-->
 															
@@ -335,7 +294,7 @@ License: For each use you must have a valid license purchased only from above li
 											<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
 												<!--begin:Menu link-->
 												<span class="menu-link py-3">
-													<span class="menu-title">Curso Premium</span>
+													<span class="menu-title"><?=$_SESSION['nombreCurso']?></span>
 													<span class="menu-arrow d-lg-none"></span>
 												</span>
 												<!--end:Menu link-->
@@ -349,51 +308,6 @@ License: For each use you must have a valid license purchased only from above li
 															<div class="col-lg-12 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
 																<!--begin:Row-->
 																<div class="row">
-																<?php
-																/*
-																
-																<!--begin:Col-->
-																	<div class="col-lg-6 mb-3">
-																		<!--begin:Menu item-->
-																		<div class="menu-item p-0 m-0">
-																			<!--begin:Menu link-->
-																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroLocomotor?>" class="menu-link">
-																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
-																					<img src="./images/locomotor-removebg-preview.png" width="40px" height="40px" alt="">
-																				</span>
-																				<span class="d-flex flex-column">
-																					<span class="fs-6 fw-bold text-gray-800">Locomotor</span>
-																					<span class="fs-7 fw-semibold text-muted">Huesos,  músculos, tendones y ligamentos</span>
-																				</span>
-																			</a>
-																			<!--end:Menu link-->
-																		</div>
-																		<!--end:Menu item-->
-																	</div>
-																	<!--end:Col-->
-																	<!--begin:Col-->
-																	<div class="col-lg-6 mb-3">
-																		<!--begin:Menu item-->
-																		<div class="menu-item p-0 m-0">
-																			<!--begin:Menu link-->
-																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroEspla?>"class="menu-link">
-																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
-																					<img src="./images/espac-removebg-preview.png" height="40px" width="40px" alt="">
-																				</span>
-																				<span class="d-flex flex-column">
-																					<span class="fs-6 fw-bold text-gray-800">Esplacnología</span>
-																					<span class="fs-7 fw-semibold text-muted">Estudio y descripción de las vísceras</span>
-																				</span>
-																			</a>
-																			<!--end:Menu link-->
-																		</div>
-																		<!--end:Menu item-->
-																	</div>
-																	<!--end:Col-->
-																	<?php
-																	
-																	*/
-																	?>
 																	<!--begin:Col-->
 																	<div class="col-lg-6 mb-3">
 																		<!--begin:Menu item-->
@@ -414,23 +328,36 @@ License: For each use you must have a valid license purchased only from above li
 																	</div>
 																	<!--end:Col-->
 																</div>
-																<!--end:Row-->
+																<?php
+																if(strlen($_SESSION['linkWhatsapp'])!=0){
+																	?>
 																<div class="separator separator-dashed mx-5 my-5"></div>
 																<!--begin:Landing-->
 																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
 																	<div class="d-flex flex-column me-5">
 																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
 																	</div>
-																	<a href="https://chat.whatsapp.com/CIOmSvXyf5v385140jkeku" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
-																</div>
-																<br>
-																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
-																	<div class="d-flex flex-column me-5">
-																		<div class="fs-6 fw-bold text-gray-800">Drive de Clases sincrónicas</div>
-																	</div>
-																	<a href="https://drive.google.com/drive/folders/1j0yrqhYnqfm0sKtIjK-Y-nRrKa2KyZJT" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																	<a href="<?=$_SESSION['linkWhatsapp']?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
 																</div>
 																<!--end:Landing-->
+																<?php
+																}
+																?>
+																<?php
+																if(strlen($_SESSION['linkDrive'])!=0){
+																	?>
+																<div class="separator separator-dashed mx-5 my-5"></div>
+																<!--begin:Landing-->
+																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																	<div class="d-flex flex-column me-5">
+																		<div class="fs-6 fw-bold text-gray-800">Drive</div>
+																	</div>
+																	<a href="<?=$_SESSION['linkDrive']?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																</div>
+																<!--end:Landing-->
+																<?php
+																}
+																?>
 															</div>
 															<!--end:Col-->
 														</div>
@@ -445,106 +372,6 @@ License: For each use you must have a valid license purchased only from above li
 												case 4:
 											?>
 											<!--begin:Menu item-->
-											<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
-												<!--begin:Menu link-->
-												<span class="menu-link py-3">
-													<span class="menu-title">Curso Intensivo</span>
-													<span class="menu-arrow d-lg-none"></span>
-												</span>
-												<!--end:Menu link-->
-												<!--begin:Menu sub-->
-												<div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px">
-													<!--begin:Dashboards menu-->
-													<div class="menu-state-bg menu-extended overflow-hidden overflow-lg-visible" data-kt-menu-dismiss="true">
-														<!--begin:Row-->
-														<div class="row">
-															<!--begin:Col-->
-															<div class="col-lg-12 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
-																<!--begin:Row-->
-																<div class="row">
-																<!--begin:Col-->
-																<!--begin:Col-->
-																	<div class="col-lg-6 mb-3">
-																		<!--begin:Menu item-->
-																		<div class="menu-item p-0 m-0">
-																			<!--begin:Menu link-->
-																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroLocomotor?>" class="menu-link">
-																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
-																					<img src="./images/locomotor-removebg-preview.png" width="40px" height="40px" alt="">
-																				</span>
-																				<span class="d-flex flex-column">
-																					<span class="fs-6 fw-bold text-gray-800">Locomotor</span>
-																					<span class="fs-7 fw-semibold text-muted">Huesos,  músculos, tendones y ligamentos</span>
-																				</span>
-																			</a>
-																			<!--end:Menu link-->
-																		</div>
-																		<!--end:Menu item-->
-																	</div>
-																	<!--end:Col-->
-																	<!--begin:Col-->
-																	<div class="col-lg-6 mb-3">
-																		<!--begin:Menu item-->
-																		<div class="menu-item p-0 m-0">
-																			<!--begin:Menu link-->
-																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroEspla?>"class="menu-link">
-																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
-																					<img src="./images/espac-removebg-preview.png" height="40px" width="40px" alt="">
-																				</span>
-																				<span class="d-flex flex-column">
-																					<span class="fs-6 fw-bold text-gray-800">Esplacnología</span>
-																					<span class="fs-7 fw-semibold text-muted">Estudio y descripción de las vísceras</span>
-																				</span>
-																			</a>
-																			<!--end:Menu link-->
-																		</div>
-																		<!--end:Menu item-->
-																	</div>
-																	<!--end:Col-->
-																	<!--begin:Col-->
-																	<div class="col-lg-6 mb-3">
-																		<!--begin:Menu item-->
-																		<div class="menu-item p-0 m-0">
-																			<!--begin:Menu link-->
-																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroNeuro?>" class="menu-link">
-																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
-																					<img src="./images/neuro-removebg-preview.png" height="40px" width="40px" alt="">
-																				</span>
-																				<span class="d-flex flex-column">
-																					<span class="fs-6 fw-bold text-gray-800">Neuroanatomía</span>
-																					<span class="fs-7 fw-semibold text-muted">Estructura y organización del sistema nervioso</span>
-																				</span>
-																			</a>
-																			<!--end:Menu link-->
-																		</div>
-																		<!--end:Menu item-->
-																	</div>
-																	<!--end:Col-->
-																</div>
-																<!--end:Row-->
-															</div>
-															<!--begin:Landing-->
-																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
-																	<div class="d-flex flex-column me-5">
-																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
-																	</div>
-																	<a href="https://drive.google.com/drive/folders/1vFoYVKYfMX7eX-8p4UEmRfs8l6jJTd6M" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
-																</div>
-																<!--end:Landing-->
-															<!--end:Col-->
-														</div>
-														<!--end:Row-->
-													</div>
-													<!--end:Dashboards menu-->
-												</div>
-												<!--end:Menu sub-->
-											</div>
-											<!--end:Menu item-->
-											<?php
-											break;
-											case 5:
-												?>
-												<!--begin:Menu item-->
 											<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
 												<!--begin:Menu link-->
 												<span class="menu-link py-3">
@@ -622,91 +449,37 @@ License: For each use you must have a valid license purchased only from above li
 																	<!--end:Col-->
 																</div>
 																<!--end:Row-->
-															<!--begin:Landing-->
+															</div>
+															<?php
+																if(strlen($_SESSION['linkWhatsapp'])!=0){
+																	?>
+																<div class="separator separator-dashed mx-5 my-5"></div>
+																<!--begin:Landing-->
 																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
 																	<div class="d-flex flex-column me-5">
 																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
 																	</div>
-																	<a href="https://chat.whatsapp.com/FQexnKoa2yqARWynAvIIwo" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
-																</div>
-																<br>
-																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
-																	<div class="d-flex flex-column me-5">
-																		<div class="fs-6 fw-bold text-gray-800">Drive de Clases sincrónicas</div>
-																	</div>
-																	<a href="https://drive.google.com/drive/folders/1lpgb_Fw1QQGySZzRr1I54Em5s25NZL72" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																	<a href="<?=$_SESSION['linkWhatsapp']?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
 																</div>
 																<!--end:Landing-->
-															</div>
-															<!--end:Col-->
-														</div>
-														<!--end:Row-->
-													</div>
-													<!--end:Dashboards menu-->
-												</div>
-												<!--end:Menu sub-->
-											</div>
-											<!--end:Menu item-->
-											<?php
-											break;
-											case 6:
-												?>
-												<!--begin:Menu item-->
-											<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
-												<!--begin:Menu link-->
-												<span class="menu-link py-3">
-													<span class="menu-title">Curso Intensivo Neuroanatomia</span>
-													<span class="menu-arrow d-lg-none"></span>
-												</span>
-												<!--end:Menu link-->
-												<!--begin:Menu sub-->
-												<div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px">
-													<!--begin:Dashboards menu-->
-													<div class="menu-state-bg menu-extended overflow-hidden overflow-lg-visible" data-kt-menu-dismiss="true">
-														<!--begin:Row-->
-														<div class="row">
-															<!--begin:Col-->
-															<div class="col-lg-12 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
-																<!--begin:Row-->
-																<div class="row">
-																<!--begin:Col-->
-																	<!--begin:Col-->
-																	<div class="col-lg-6 mb-3">
-																		<!--begin:Menu item-->
-																		<div class="menu-item p-0 m-0">
-																			<!--begin:Menu link-->
-																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroNeuro?>" class="menu-link">
-																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
-																					<img src="./images/neuro-removebg-preview.png" height="40px" width="40px" alt="">
-																				</span>
-																				<span class="d-flex flex-column">
-																					<span class="fs-6 fw-bold text-gray-800">Neuroanatomía</span>
-																					<span class="fs-7 fw-semibold text-muted">Estructura y organización del sistema nervioso</span>
-																				</span>
-																			</a>
-																			<!--end:Menu link-->
-																		</div>
-																		<!--end:Menu item-->
-																	</div>
-																	<!--end:Col-->
-																</div>
-																<!--end:Row-->
-															<!--begin:Landing-->
+																<?php
+																}
+																?>
+																<?php
+																if(strlen($_SESSION['linkDrive'])!=0){
+																	?>
+																<div class="separator separator-dashed mx-5 my-5"></div>
+																<!--begin:Landing-->
 																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
 																	<div class="d-flex flex-column me-5">
-																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
+																		<div class="fs-6 fw-bold text-gray-800">Drive</div>
 																	</div>
-																	<a href="https://chat.whatsapp.com/FhFHFXcOPvo4rRFsvoOQ0V" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
-																</div>
-																<br>
-																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
-																	<div class="d-flex flex-column me-5">
-																		<div class="fs-6 fw-bold text-gray-800">Drive de Clases sincrónicas</div>
-																	</div>
-																	<a href="https://drive.google.com/drive/folders/1vFoYVKYfMX7eX-8p4UEmRfs8l6jJTd6M" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																	<a href="<?=$_SESSION['linkDrive']?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
 																</div>
 																<!--end:Landing-->
-															</div>
+																<?php
+																}
+																?>
 															<!--end:Col-->
 														</div>
 														<!--end:Row-->
@@ -761,7 +534,7 @@ License: For each use you must have a valid license purchased only from above li
 											<!--begin:Nav-->
 											<div class="row g-0">
 											<?php
-											if($_SESSION['IdCurso']==5){
+											if($_SESSION['moduloPermitido']==4 ||$_SESSION['moduloPermitido']==1 ){
 												?>
 												<!--begin:Item-->
 												<div class="col-6">
@@ -771,6 +544,11 @@ License: For each use you must have a valid license purchased only from above li
 													</a>
 												</div>
 												<!--end:Item-->
+												<?php
+											}
+											if($_SESSION['moduloPermitido']==4 ||$_SESSION['moduloPermitido']==2 ){
+												
+											?>
 												<!--begin:Item-->
 												<div class="col-6">
 													<a href="pantalla-cursos-clases.php?numero=<?=$numeroEspla?>" class="d-flex flex-column flex-center h-100 p-6 bg-hover-light border-end">
@@ -781,7 +559,8 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end:Item-->
 												<?php
 											}
-											?>
+											if($_SESSION['moduloPermitido']==4 ||$_SESSION['moduloPermitido']==3 ){
+												?>
 												<!--begin:Item-->
 												<div class="col-6">
 													<a href="pantalla-cursos-clases.php?numero=<?=$numeroNeuro?>" class="d-flex flex-column flex-center h-100 p-6 bg-hover-light border-bottom">
@@ -790,6 +569,9 @@ License: For each use you must have a valid license purchased only from above li
 													</a>
 												</div>
 												<!--end:Item-->
+												<?php
+											}
+											?>
 											</div>
 											<!--end:Nav-->
 										</div>
@@ -815,7 +597,7 @@ License: For each use you must have a valid license purchased only from above li
 													<!--end::Avatar-->
 													<!--begin::Username-->
 													<div class="d-flex flex-column">
-														<div class="fw-bold d-flex align-items-center fs-5"> <?=$_SESSION['nombre']?> <?=$_SESSION['apellido']?> <br>
+														<div class="fw-bold d-flex align-items-center fs-5"> <?= ucfirst($_SESSION['nombre'])?> <?= ucfirst($_SESSION['apellido']) ?> <br>
 													
 														
                                                        
