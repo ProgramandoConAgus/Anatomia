@@ -1,8 +1,8 @@
 <?php
     $host = 'localhost'; // Cambia esto si tu host es diferente
     $db = 'u981249563_anato_platform';
-    $user = 'u981249563_anato_platform';
-    $password = '4n4t0_Plat4f0rm4';
+    $user = 'root';
+    $password = '';
     
     $conex = new mysqli($host, $user, $password, $db);
     
