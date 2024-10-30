@@ -678,6 +678,17 @@ $result = $stmt->get_result();
 														<h1 style="text-align:center;">Datos de usuarios</h1>
 														<a href="#" class="btn btn-primary er fs-6 me-2 px-5 py-3" data-bs-toggle="modal" data-bs-target="#kt_modal_video">Cargar Videos</a>
 														<a href="#" class="btn btn-primary er fs-6 px-5 py-3" data-bs-toggle="modal" data-bs-target="#kt_modal_categoria">Nueva categoria</a>
+														
+														<form method="" action="">
+    
+                                                       <div class= "d-flex flex-column ml-2 fv-row"> 
+													   <input class= "form-control" type="text" name="busqueda" id="busqueda" placeholder="Buscar...">
+													   </div> 
+                                                        <button class= "btn btn-primary er fs-6 me-2 px-5 py-3" type="submit">Buscar</button>
+                                                         </form>
+
+
+														
 														<br>
 														<!--begin::Modal - New Target-->
 															<div class="modal fade" id="kt_modal_video" tabindex="-1" aria-hidden="true">
@@ -974,6 +985,9 @@ $result = $stmt->get_result();
 																				<div class="m-0">
 																					<!--begin::Number-->
 																					<td class="fs-6 fw-bold text-gray-800"><h3><?= ucfirst(strtolower($row['nombre'])) ?> <?= ucfirst(strtolower($row['apellido'])) ?> </h3>
+
+
+
 </h3></td>
 																					<!--end::Number-->
 																					<!--begin::Desc-->
