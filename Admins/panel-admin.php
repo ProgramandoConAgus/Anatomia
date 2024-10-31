@@ -703,7 +703,7 @@ $result = $stmt->get_result();
 															<a href="#" class="btn btn-primary er fs-6 px-5 py-3" data-bs-toggle="modal" data-bs-target="#kt_modal_categoria">Nueva categoria</a>
 															<div class="container col-lg-8">
 																<!--Formulario de busqueda-->
-																<form method="" action="">
+																<form method="POST" action="./service/buqueda-usuario.php">
 																	<div class="d-flex flex-row">
 																		<select class="form-select w-50  " name="id-curso-busqueda" id ="id-curso-busqueda">
 																		<option value="-1">Todos los cursos</option>
@@ -1007,13 +1007,10 @@ $result = $stmt->get_result();
 														<!--begin::Table body-->
 														<tbody>
 															<?php
-															$sql = "SELECT * FROM usuarios ";
-															$stmt = $conex->prepare($sql);
-															$stmt->execute();
-															$result = $stmt->get_result();
-															if ($result) {
-																while ($row = mysqli_fetch_assoc($result)) {
-
+															if (isset($_SESSION['usuario-busqueda'])){
+																$usuarios = $_SESSION['usuario-busqueda'];
+																foreach ($usuarios as $row) {
+																		
 																	$checked = ($row['habilitado'] == 1) ? 'checked' : '';
 																	$switchId = $row['IdUsuario'];
 																	$inputName = 'usuarioid_' . $row['IdUsuario'];
@@ -1071,9 +1068,79 @@ $result = $stmt->get_result();
 
 																	</tr>
 															<?php
-
+																	
+																}
+															}else{
+																$sql = "SELECT * FROM usuarios ";
+																$stmt = $conex->prepare($sql);
+																$stmt->execute();
+																$result = $stmt->get_result();
+																if ($result) {
+																	while ($row = mysqli_fetch_assoc($result)) {
+	
+																		$checked = ($row['habilitado'] == 1) ? 'checked' : '';
+																		$switchId = $row['IdUsuario'];
+																		$inputName = 'usuarioid_' . $row['IdUsuario'];
+																?>
+																		<tr>
+																			<!--begin::Col-->
+																			<div class="col-4">
+																				<!--begin::Items-->
+																				<div class="bg-gray-100 bg-opacity-70 rounded-2 px-6 ">
+	
+																					<!--begin::Stats-->
+																					<div class="m-0">
+																						<!--begin::Number-->
+																						<td class="fs-6 fw-bold text-gray-800">
+																							<h3><?= ucfirst(strtolower($row['nombre'])) ?> <?= ucfirst(strtolower($row['apellido'])) ?> </h3>
+	
+	
+	
+																							</h3>
+																						</td>
+																						<!--end::Number-->
+																						<!--begin::Desc-->
+																						<td class="fs-6 fw-bold text-gray-800">Última conexión: <?= $row['last_time_connected'] ?></td>
+																						<td class="fs-6 fw-bold">Cursos:
+																							<span class="text-gray-800">
+																								<select id="cursos">
+																									<?php
+																									$sqlQuery = "SELECT * FROM cursos ";
+																									$stm = $conex->prepare($sqlQuery);
+																									$stm->execute();
+																									$resultCursos = $stm->get_result();
+																									while ($rowCurso = mysqli_fetch_assoc($resultCursos)) {
+	
+																									?>
+																										<option value="<?= $rowCurso['IdCurso'] ?>.<?= $row['IdUsuario'] ?>" <?php if ($row['idCurso'] == $rowCurso['IdCurso']) echo 'selected'; ?>><?= $rowCurso['Titulo'] ?></option>
+																									<?php
+																									}
+																									?>
+																								</select>
+																							</span>
+																						</td>
+																						<td class="fs-6 fw-bold text-gray-500">
+																							<div class="form-check form-switch">
+																								<label class="form-check-label" for="<?= $switchId ?>">Suscripción:</label>
+																								<input class="form-check-input" name="<?= $inputName ?>" type="checkbox" role="switch" id="<?= $switchId ?>" value="1" <?= $checked ?>>
+																							</div>
+																						</td>
+																						<!--end::Desc-->
+																					</div>
+																					<!--end::Stats-->
+																				</div>
+																				<!--end::Items-->
+																			</div>
+																			<!--end::Col-->
+	
+																		</tr>
+																<?php
+	
+																	}
 																}
 															}
+															
+
 															?>
 														</tbody>
 														<!--end::Table body-->
@@ -6229,5 +6296,7 @@ $result = $stmt->get_result();
 	<!--end::Javascript-->
 </body>
 <!--end::Body-->
-
+<?php
+unset($_SESSION['usuario-busqueda']);
+?>
 </html>
