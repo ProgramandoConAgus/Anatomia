@@ -53,6 +53,7 @@ public function buscarUsuario($texto,$idCurso) {
             $stmt = $this->conex->prepare($sql);
             $stmt->bind_param("i", $idCurso);
             
+
          }
     }
     
