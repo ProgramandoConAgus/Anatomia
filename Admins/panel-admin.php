@@ -708,19 +708,21 @@ $result = $stmt->get_result();
 																		<select class="form-select w-50  " name="id-curso-busqueda" id ="id-curso-busqueda">
 																		<option value="-1">Todos los cursos</option>
 																		<?php
+																			$curso_seleccionado = $_SESSION['parametro-busqueda-idCurso'] ?? '';
+																			$valueText = $_SESSION['parametro-busqueda-texto'] ?? '';
 																			$sqlQuery = "SELECT * FROM cursos where idCurso <> 0";
 																			$stm = $conex->prepare($sqlQuery);
 																			$stm->execute();
 																			$resultCursos = $stm->get_result();
 																			while ($rowCurso = mysqli_fetch_assoc($resultCursos)) {
-
+																				$selected = ($rowCurso['IdCurso'] == $curso_seleccionado) ? 'selected' : '';
 																			?>
-																				<option value="<?= $rowCurso['IdCurso'] ?>"><?= $rowCurso['Titulo'] ?></option>
+																				<option value="<?= $rowCurso['IdCurso'] ?>" <?= $selected ?>><?= $rowCurso['Titulo'] ?></option>
 																			<?php
 																				}
 																			?>
 																		</select>
-																		<input name="busqueda-texto" id="" class="form-control w-50 ms-3" type="text" name="busqueda" id="busqueda" placeholder="Buscar...">
+																		<input value="<?= htmlspecialchars($valueText) ?>" name="busqueda-texto" id="" class="form-control w-50 ms-3" type="text" name="busqueda" id="busqueda" placeholder="Buscar...">
 																		<button class="ms-3 btn btn-primary er fs-6 me-2 px-5 py-3" type="submit">Buscar</button>
 																	</div>
 
@@ -6299,5 +6301,7 @@ $result = $stmt->get_result();
 <?php
 unset($_SESSION['usuario-busqueda']);
 unset($_SESSION['busqueda-usuario-activo']);
+unset($_SESSION['parametro-busqueda-texto']);
+unset($_SESSION['parametro-busqueda-idCurso']);
 ?>
 </html>

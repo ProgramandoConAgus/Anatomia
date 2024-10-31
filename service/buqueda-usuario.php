@@ -13,6 +13,9 @@ $usuario = new Usuario($conex);
 
 $usuarioBuscado = $usuario->buscarUsuario($text,$idCurso);
 
+$_SESSION['parametro-busqueda-texto'] = $text; 
+$_SESSION['parametro-busqueda-idCurso'] = $idCurso; 
+
 $_SESSION['busqueda-usuario-activo'] = true; 
 $_SESSION['usuario-busqueda'] = $usuarioBuscado;
 
