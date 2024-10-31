@@ -1007,7 +1007,7 @@ $result = $stmt->get_result();
 														<!--begin::Table body-->
 														<tbody>
 															<?php
-															if (isset($_SESSION['usuario-busqueda'])){
+															if (isset($_SESSION['usuario-busqueda']) && $_SESSION['usuario-busqueda'] != null){
 																$usuarios = $_SESSION['usuario-busqueda'];
 																foreach ($usuarios as $row) {
 																		
@@ -1070,7 +1070,7 @@ $result = $stmt->get_result();
 															<?php
 																	
 																}
-															}else{
+															}else if (!isset($_SESSION['busqueda-usuario-activo'])){
 																$sql = "SELECT * FROM usuarios ";
 																$stmt = $conex->prepare($sql);
 																$stmt->execute();
@@ -6298,5 +6298,6 @@ $result = $stmt->get_result();
 <!--end::Body-->
 <?php
 unset($_SESSION['usuario-busqueda']);
+unset($_SESSION['busqueda-usuario-activo']);
 ?>
 </html>

@@ -13,11 +13,8 @@ $usuario = new Usuario($conex);
 
 $usuarioBuscado = $usuario->buscarUsuario($text,$idCurso);
 
-if ($usuarioBuscado) {
-    $_SESSION['usuario-busqueda'] = $usuarioBuscado;
-} else {
-   
-}
+$_SESSION['busqueda-usuario-activo'] = true; 
+$_SESSION['usuario-busqueda'] = $usuarioBuscado;
 
 header('Location: ../Admins/panel-admin.php');
 exit(); 
