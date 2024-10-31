@@ -37,14 +37,22 @@ public function buscarUsuario($texto,$idCurso) {
         $sql= "SELECT * FROM usuarios WHERE nombre like ? or apellido like ? or email like ? AND idCurso = ?";
         $texto = strtolower($texto);
         $stmt = $this->conex->prepare($sql);
-        $stmt->bind_param("ssss", $texto);
+        $stmt->bind_param("sssi", $texto, $texto, $texto, $idCurso);
     }else if ($texto != null && $idCurso == $todosLosCursos){
         $sql = "SELECT * FROM usuarios WHERE nombre like ? or apellido like ? or email like ?" 
+        $texto = strtolower($texto);
+        $stmt = $this->conex->prepare($sql);
+        $stmt->bind_param("sss", $texto, $texto, $texto);
     }else if ($texto == null){
          if ($idCurso == $todosLosCursos){
             $sql = "SELECT * FROM usuarios"
+            $stmt = $this->conex->prepare($sql);
          }else{
             $sql = "SELECT * FROM usuarios WHERE idCurso = ?"
+            $texto = strtolower($texto);
+            $stmt = $this->conex->prepare($sql);
+            $stmt->bind_param("i", $idCurso);
+            
          }
     }
     
