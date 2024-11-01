@@ -13,7 +13,7 @@ if(!$_SESSION['loggedin']){
 
 include('con_db.php');
 include('usuarios-clase.php'); // Incluye la clase Usuario
-
+include('usuariosCurso-clase.php');
 // Obtén el ID del usuario desde la URL (suponiendo que se pasa como parámetro GET o POST)
 $idUsuario = $_GET['id']; // Ajusta según cómo obtienes el ID desde la ruta
 
@@ -23,24 +23,25 @@ $usuario = new Usuario($conex);
 // Obtén los datos del usuario por su ID
 $datosUsuario = $usuario->obtenerUsuarioPorId((int)$idUsuario);
 
+$cursosUsuario=new UsuarioCurso($conex);
 if ($datosUsuario) {
-	if($datosUsuario['idCurso']==null){
+	/*if($datosUsuario['idCurso']==null){
 		header('Location: usuario-no-encontrado.php');
 		exit();
-	}
+	}*/
+	$_SESSION['cursos']=$cursosUsuario->obtenerCursosPorId((int)$idUsuario);
+
 	// Asignar cada campo a una variable de sesión
     $_SESSION['idUsuario'] = $datosUsuario['IdUsuario'];
+	
+	$_SESSION['cursosSeleccionados'] = array_column($_SESSION['cursos'], 'idCurso');
     $_SESSION['nombre'] = $datosUsuario['nombre'];
     $_SESSION['apellido'] = $datosUsuario['apellido'];
     $_SESSION['email'] = $datosUsuario['email'];
     $_SESSION['IdTipoUsuario'] = $datosUsuario['tipoUsuario'];
-	$_SESSION['IdCurso']=$datosUsuario['idCurso'];
 	$_SESSION['habilitado']=$datosUsuario['habilitado'];
 	$_SESSION['last_time_connected']=$datosUsuario['last_time_connected'];	
-	$_SESSION['moduloPermitido']=$datosUsuario['idModulo'];
-	$_SESSION['nombreCurso']=$datosUsuario['Titulo'];
-	$_SESSION['linkWhatsapp']=$datosUsuario['linkWhatsapp'];
-	$_SESSION['linkDrive']=$datosUsuario['linkDrive'];
+	$_SESSION['modulosPermitidos'] = array_column($_SESSION['cursos'], 'idModulo');
 } else {
     header('Location: usuario-no-encontrado.php');
 	exit();
@@ -138,14 +139,23 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 										<!--begin::Menu-->
 										<div class="menu menu-rounded menu-column menu-lg-row menu-active-bg menu-title-gray-700 menu-state-primary menu-arrow-gray-500 fw-semibold my-5 my-lg-0 align-items-stretch px-2 px-lg-0" id="#kt_header_menu" data-kt-menu="true">
 										<?php
-											switch($_SESSION['moduloPermitido']){
+										
+										foreach ($_SESSION['cursos'] as $rowCurso) {
+											$moduloPermitido = $rowCurso['idModulo'];
+											$Titulo = $rowCurso['Titulo'];
+											$linkWhatsapp = $rowCurso['linkWhatsapp'];
+											$linkDrive = $rowCurso['linkDrive'];
+											
+
+									
+										switch($moduloPermitido){
 												case 1:
 										?>
 										<!--begin:Menu item-->
 											<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
 												<!--begin:Menu link-->
 												<span class="menu-link py-3">
-													<span class="menu-title"><?=$_SESSION['nombreCurso']?></span>
+													<span class="menu-title"><?=$Titulo?></span>
 													<span class="menu-arrow d-lg-none"></span>
 												</span>
 												<!--end:Menu link-->
@@ -181,7 +191,7 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 																</div>
 																<!--end:Row-->
 																<?php
-																if(strlen($_SESSION['linkWhatsapp'])!=0){
+																if(strlen($linkWhatsapp)!=0){
 																	?>
 																<div class="separator separator-dashed mx-5 my-5"></div>
 																<!--begin:Landing-->
@@ -189,14 +199,14 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 																	<div class="d-flex flex-column me-5">
 																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
 																	</div>
-																	<a href="<?=$_SESSION['linkWhatsapp']?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																	<a href="<?=$linkWhatsapp?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
 																</div>
 																<!--end:Landing-->
 																<?php
 																}
 																?>
 																<?php
-																if(strlen($_SESSION['linkDrive'])!=0){
+																if(strlen($linkDrive)!=0){
 																	?>
 																<div class="separator separator-dashed mx-5 my-5"></div>
 																<!--begin:Landing-->
@@ -204,7 +214,7 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 																	<div class="d-flex flex-column me-5">
 																		<div class="fs-6 fw-bold text-gray-800">Drive</div>
 																	</div>
-																	<a href="<?=$_SESSION['linkDrive']?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																	<a href="<?=$linkDrive?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
 																</div>
 																<!--end:Landing-->
 																<?php
@@ -229,7 +239,7 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 											<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
 												<!--begin:Menu link-->
 												<span class="menu-link py-3">
-													<span class="menu-title"><?=$_SESSION['nombreCurso']?></span>
+													<span class="menu-title"><?=$Titulo?></span>
 													<span class="menu-arrow d-lg-none"></span>
 												</span>
 												<!--end:Menu link-->
@@ -265,7 +275,7 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 																</div>
 																<!--end:Row-->
 																<?php
-																if(strlen($_SESSION['linkWhatsapp'])!=0){
+																if(strlen($linkWhatsapp)!=0){
 																	?>
 																<div class="separator separator-dashed mx-5 my-5"></div>
 																<!--begin:Landing-->
@@ -273,14 +283,14 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 																	<div class="d-flex flex-column me-5">
 																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
 																	</div>
-																	<a href="<?=$_SESSION['linkWhatsapp']?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																	<a href="<?=$linkWhatsapp?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
 																</div>
 																<!--end:Landing-->
 																<?php
 																}
 																?>
 																<?php
-																if(strlen($_SESSION['linkDrive'])!=0){
+																if(strlen($linkDrive)!=0){
 																	?>
 																<div class="separator separator-dashed mx-5 my-5"></div>
 																<!--begin:Landing-->
@@ -288,7 +298,7 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 																	<div class="d-flex flex-column me-5">
 																		<div class="fs-6 fw-bold text-gray-800">Drive</div>
 																	</div>
-																	<a href="<?=$_SESSION['linkDrive']?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																	<a href="<?=$linkDrive?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
 																</div>
 																<!--end:Landing-->
 																<?php
@@ -313,7 +323,7 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 											<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
 												<!--begin:Menu link-->
 												<span class="menu-link py-3">
-													<span class="menu-title"><?=$_SESSION['nombreCurso']?></span>
+													<span class="menu-title"><?=$Titulo?></span>
 													<span class="menu-arrow d-lg-none"></span>
 												</span>
 												<!--end:Menu link-->
@@ -348,7 +358,7 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 																	<!--end:Col-->
 																</div>
 																<?php
-																if(strlen($_SESSION['linkWhatsapp'])!=0){
+																if(strlen($linkWhatsapp)!=0){
 																	?>
 																<div class="separator separator-dashed mx-5 my-5"></div>
 																<!--begin:Landing-->
@@ -356,14 +366,14 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 																	<div class="d-flex flex-column me-5">
 																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
 																	</div>
-																	<a href="<?=$_SESSION['linkWhatsapp']?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																	<a href="<?=$linkWhatsapp?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
 																</div>
 																<!--end:Landing-->
 																<?php
 																}
 																?>
 																<?php
-																if(strlen($_SESSION['linkDrive'])!=0){
+																if(strlen($linkDrive)!=0){
 																	?>
 																<div class="separator separator-dashed mx-5 my-5"></div>
 																<!--begin:Landing-->
@@ -371,7 +381,7 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 																	<div class="d-flex flex-column me-5">
 																		<div class="fs-6 fw-bold text-gray-800">Drive</div>
 																	</div>
-																	<a href="<?=$_SESSION['linkDrive']?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																	<a href="<?=$linkDrive?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
 																</div>
 																<!--end:Landing-->
 																<?php
@@ -469,7 +479,7 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 																</div>
 																<!--end:Row-->
 															<?php
-																if(strlen($_SESSION['linkWhatsapp'])!=0){
+																if(strlen($linkWhatsapp)!=0){
 																	?>
 																<div class="separator separator-dashed mx-5 my-5"></div>
 																<!--begin:Landing-->
@@ -477,14 +487,14 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 																	<div class="d-flex flex-column me-5">
 																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
 																	</div>
-																	<a href="<?=$_SESSION['linkWhatsapp']?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																	<a href="<?=$linkWhatsapp?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
 																</div>
 																<!--end:Landing-->
 																<?php
 																}
 																?>
 																<?php
-																if(strlen($_SESSION['linkDrive'])!=0){
+																if(strlen($linkDrive)!=0){
 																	?>
 																<div class="separator separator-dashed mx-5 my-5"></div>
 																<!--begin:Landing-->
@@ -492,7 +502,7 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 																	<div class="d-flex flex-column me-5">
 																		<div class="fs-6 fw-bold text-gray-800">Drive</div>
 																	</div>
-																	<a href="<?=$_SESSION['linkDrive']?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																	<a href="<?=$linkDrive?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
 																</div>
 																<!--end:Landing-->
 																<?php
@@ -512,6 +522,7 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 											break;
 
 											}
+										}
 											?>
 											
 										</div>
@@ -552,45 +563,45 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 											<!--end::Heading-->
 											<!--begin:Nav-->
 											<div class="row g-0">
-											<?php
-											if($_SESSION['moduloPermitido']==4 ||$_SESSION['moduloPermitido']==1 ){
+											<?php 
+											if (in_array(4, $_SESSION['modulosPermitidos']) || in_array(1, $_SESSION['modulosPermitidos'])){ 
 												?>
 												<!--begin:Item-->
 												<div class="col-6">
-													<a href="pantalla-cursos-clases.php?numero=<?=$numeroLocomotor?>" class="d-flex flex-column flex-center h-100 p-6 bg-hover-light border-end border-bottom">
-													<img alt="Logo" src="./images/locomotor-removebg-preview.png" class="logo-sticky h-25px" />
+													<a href="pantalla-cursos-clases.php?numero=<?= $numeroLocomotor ?>" class="d-flex flex-column flex-center h-100 p-6 bg-hover-light border-end border-bottom">
+														<img alt="Logo" src="./images/locomotor-removebg-preview.png" class="logo-sticky h-25px" />
 														<span class="fs-5 fw-semibold text-gray-800 mb-0">Locomotor</span>
 													</a>
 												</div>
 												<!--end:Item-->
-												<?php
-											}
-											if($_SESSION['moduloPermitido']==4 ||$_SESSION['moduloPermitido']==2 ){
-												
-											?>
+											<?php 
+											} 
+												if (in_array(4, $_SESSION['modulosPermitidos']) || in_array(2, $_SESSION['modulosPermitidos'])){ 
+													?>
 												<!--begin:Item-->
 												<div class="col-6">
-													<a href="pantalla-cursos-clases.php?numero=<?=$numeroEspla?>" class="d-flex flex-column flex-center h-100 p-6 bg-hover-light border-end">
+													<a href="pantalla-cursos-clases.php?numero=<?= $numeroEspla ?>" class="d-flex flex-column flex-center h-100 p-6 bg-hover-light border-end">
 														<img alt="Logo" src="./images/espac-removebg-preview.png" class="logo-sticky h-25px" />
 														<span class="fs-5 fw-semibold text-gray-800 mb-0">Esplacnología</span>
 													</a>
 												</div>
 												<!--end:Item-->
-												<?php
+											<?php 
 											}
-											if($_SESSION['moduloPermitido']==4 ||$_SESSION['moduloPermitido']==3 ){
+											if (in_array(4, $_SESSION['modulosPermitidos']) || in_array(3, $_SESSION['modulosPermitidos'])){
 												?>
 												<!--begin:Item-->
 												<div class="col-6">
-													<a href="pantalla-cursos-clases.php?numero=<?=$numeroNeuro?>" class="d-flex flex-column flex-center h-100 p-6 bg-hover-light border-bottom">
+													<a href="pantalla-cursos-clases.php?numero=<?= $numeroNeuro ?>" class="d-flex flex-column flex-center h-100 p-6 bg-hover-light border-bottom">
 														<img alt="Logo" src="./images/neuro-removebg-preview.png" class="logo-sticky h-25px" />
 														<span class="fs-5 fw-semibold text-gray-800 mb-0">Neuroanatomía</span>
 													</a>
 												</div>
 												<!--end:Item-->
-												<?php
+											<?php 
 											}
 											?>
+
 											</div>
 											<!--end:Nav-->
 										</div>
@@ -732,7 +743,7 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 
 											<div class="row g-5 g-xl-10">
 											<?php
-												if($_SESSION['moduloPermitido']==4 ||$_SESSION['moduloPermitido']==1 ){
+												if (in_array(4, $_SESSION['modulosPermitidos']) || in_array(1, $_SESSION['modulosPermitidos'])){
 													?>
 										<!--begin::Col-->
 										<div class="col-xl-4 mb-5 mb-xl-10">
@@ -760,7 +771,7 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 										<!--end::Col-->
 										<?php
 												}
-												if($_SESSION['moduloPermitido']==4 ||$_SESSION['moduloPermitido']==2 ){
+												if (in_array(4, $_SESSION['modulosPermitidos']) || in_array(2, $_SESSION['modulosPermitidos'])){
 													?>
 										<!--begin::Col-->
 										<div class="col-xl-4 mb-5 mb-xl-10">
@@ -788,7 +799,7 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 										<!--end::Col-->
 										<?php
 										}
-										if($_SESSION['moduloPermitido']==4 ||$_SESSION['moduloPermitido']==3 ){
+										if (in_array(4, $_SESSION['modulosPermitidos']) || in_array(3, $_SESSION['modulosPermitidos'])){
 											?>
 										
 										<!--begin::Col-->
