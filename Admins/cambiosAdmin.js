@@ -6,12 +6,16 @@ let selects = document.querySelectorAll("select");
 //Recorre cada select escuchando un cambio
 selects.forEach(function(select) {
     select.addEventListener("change", function() {
-        let data=select.value.split(".")//El primer valor es el idCurso y el segundo IdUsuario
-        if(data[0]==null){
-            data[0]=0
+        
+        let options=[]
+        data=select.selectedOptions[0].value.split(".")
+        for(let opciones of select.selectedOptions){
+
+            options.push(opciones.value.split(".")[0])
+            
         }
         accion=1
-        actualizarUsuario(data[1],data[0],accion)
+        actualizarUsuario(data[1],options,accion)
     });
 });
 
@@ -32,7 +36,7 @@ switches.forEach(function(switchElement) {
         }
         console.log(switchId+"."+isChecked)
         accion=2
-        actualizarUsuario(switchId,isChecked,accion)
+        //actualizarUsuario(switchId,isChecked,accion)
     });
 });
 
@@ -40,11 +44,8 @@ switches.forEach(function(switchElement) {
 function actualizarUsuario(userId, id, tipoAccion) {
     // Crear el cuerpo de los datos que se enviarán en la solicitud
     let data = new FormData();
-    //debugger
-    console.log('userId:', userId); 
-    console.log('id:', id);
-    console.log('tipoAccion:', tipoAccion);
-    data.append('userId', userId);
+    //agregas toda la informacion apta para ser leida
+    data.append('userId', userId);  
     data.append('id', id);
     data.append('tipoAccion', tipoAccion);
    
@@ -57,13 +58,16 @@ function actualizarUsuario(userId, id, tipoAccion) {
     .then(response => {
         // Verificar si la respuesta es OK (código 200)
         if (!response.ok) {
-            throw new Error('Error en la a: ' + response.status);
-        }
-        return response.json(); // Convertir la respuesta a JSON
+        throw new Error('Error en la respuesta: ' + response.status);
+    }
+    return response.text(); // Convertir la respuesta a JSON
     })
     .then(result => {
+        console.log('Respuesta del servidor:', result); // Ver la respuesta original
+
         if (result.status === 'success') {
             console.log('Usuario actualizado correctamente');
+            console.log(result.message)
         } else {
             console.error('Error al actualizar el usuario:', result.message);
         }

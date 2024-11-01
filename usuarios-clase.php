@@ -9,11 +9,7 @@ class Usuario {
     }
 
     public function obtenerUsuarioPorId($id) {
-        $sql = "SELECT *
-        FROM usuarios
-        JOIN cursos ON usuarios.idCurso = cursos.IdCurso
-        WHERE usuarios.IdUsuario = ?;
-        ";
+        $sql = "SELECT * FROM usuarios WHERE IdUsuario = ?;";
         $stmt = $this->conex->prepare($sql);
         $stmt->bind_param("i", $id);
         $stmt->execute();
@@ -34,7 +30,11 @@ class Usuario {
     
         if ($texto != null && $idCurso != $todosLosCursos) {
            
-            $sql = "SELECT * FROM usuarios WHERE (nombre LIKE ? OR apellido LIKE ? OR email LIKE ?) AND idCurso = ?";
+            $sql = "SELECT u.* 
+            FROM usuarios u 
+            INNER JOIN usuarioscursos uc ON u.IdUsuario = uc.IdUsuario 
+            WHERE (u.nombre LIKE ? OR u.apellido LIKE ? OR u.email LIKE ?) AND uc.IdCurso = ?";
+    
             $texto = "%" . strtolower($texto) . "%";
             $stmt = $this->conex->prepare($sql);
             $stmt->bind_param("sssi", $texto, $texto, $texto, $idCurso);
@@ -50,7 +50,10 @@ class Usuario {
                 $sql = "SELECT * FROM usuarios";
                 $stmt = $this->conex->prepare($sql);
             } else {
-                $sql = "SELECT * FROM usuarios WHERE idCurso = ?";
+                $sql = "SELECT u.* 
+        FROM usuarios u 
+        INNER JOIN usuarioscursos uc ON u.IdUsuario = uc.IdUsuario 
+        WHERE uc.IdCurso = ?";
                 $stmt = $this->conex->prepare($sql);
                 $stmt->bind_param("i", $idCurso);
             }
