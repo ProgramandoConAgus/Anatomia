@@ -36,7 +36,7 @@ switches.forEach(function(switchElement) {
         }
         console.log(switchId+"."+isChecked)
         accion=2
-        //actualizarUsuario(switchId,isChecked,accion)
+        actualizarUsuario(switchId,isChecked,accion)
     });
 });
 
@@ -60,7 +60,7 @@ function actualizarUsuario(userId, id, tipoAccion) {
         if (!response.ok) {
         throw new Error('Error en la respuesta: ' + response.status);
     }
-    return response.text(); // Convertir la respuesta a JSON
+    return response.json(); // Convertir la respuesta a JSON
     })
     .then(result => {
         console.log('Respuesta del servidor:', result); // Ver la respuesta original
