@@ -33,19 +33,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->isSMTP();
             $mail->Host = 'smtp.hostinger.com';
             $mail->SMTPAuth = true;
-            $mail->Username = 'educacion@programandoconagus.com';
-            $mail->Password = 'Pca@07071';
+            $mail->Username = 'educacion@preparandoanato.com';
+            $mail->Password = 'Cande2012!';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
 
             // Destinatarios
-            $mail->setFrom('tiziano@gmail.com', 'Holu');
+            $mail->setFrom('educacion@preparandoanato.com', 'Preparando anato');
             $mail->addAddress($email);
 
             // Contenido del email
             $mail->isHTML(true);
             $mail->Subject = 'Password Reset Request';
-            $mail->Body    = "Click <a href='https://learning.programandoconagus.com/reset-passwordhtml.php?token=$token'>here</a> to reset your password.";
+            $mail->Body = "Click <a href='https://preparandoanato.com/forgot-password/reset-passwordhtml.php?token=$token'>here</a> to reset your password.<br><br>";
 
             $mail->send();
             $message = 'El link de reestablecimiento fue enviado a tu email.';

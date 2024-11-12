@@ -97,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <!--begin::Logo-->
                         <div class="mb-7">
                             <a href="./index.php" class="">
-                                <img alt="Logo" src="./images/generalidades.php" class="h-40px" />
+                                <img alt="Logo" src="./images/generalidades.png" class="h-40px" />
                             </a>
                         </div>
                         <!--end::Logo-->

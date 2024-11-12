@@ -111,7 +111,7 @@
 								<br>
 								<br>	
 								<!--end::Sign up-->
-								<!--<div class="text-gray-500 text-center fw-semibold fs-6"><a href="./forgot-password/forgot-password.php">Olvide mi contraseña</a>-->
+								<div class="text-gray-500 text-center fw-semibold fs-6"><a href="./forgot-password/forgot-password.php">Olvide mi contraseña</a>
 								</div>
 							</form>
 							<!--end::Form-->

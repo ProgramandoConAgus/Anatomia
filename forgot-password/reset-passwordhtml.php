@@ -78,12 +78,12 @@ if (isset($_GET['token'])) {
 							<!--begin::Logo-->
 							<div class="mb-7">
 								<a href="./index.php" class="">
-									<img alt="Logo" src="../images/generalidades.php" class="h-80px" />
+									<img alt="Logo" src="images/generalidades.php" class="h-80px" />
 								</a>
 							</div>
 							<!--end::Logo-->
 							
-							<form class="form w-100" action="forgot-password/reset_password.php" method="POST">
+							<form class="form w-100" action="forgot-password/reset-password.php" method="POST">
 								<!--begin::Heading-->
 								<div class="text-center mb-11">
 									<!--begin::Title-->
