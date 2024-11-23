@@ -890,10 +890,11 @@ $result = $stmt->get_result();
 																</div>
 																<div class="modal-body">
 																	<!-- Reproductor de video dentro del modal -->
-																	<video id="video-<?=$row['IdVideo']?>" width="100%" controls controlslist="nodownload" oncontextmenu="return false;">
-																		<source src="<?=$row['video_path']?>" type="video/mp4">
-																		Tu navegador no soporta el elemento de video.
-																	</video>
+																	<video id="video-<?=$row['IdVideo']?>" width="100%" style="max-height: 500px;" preload="metadata" controls controlslist="nodownload" oncontextmenu="return false;">
+                                                                        <source src="<?=$row['video_path']?>" type="video/mp4">
+                                                                        Tu navegador no soporta el elemento de video.
+                                                                    </video>
+
 																</div>
 															</div>
 														</div>
