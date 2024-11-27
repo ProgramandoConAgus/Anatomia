@@ -29,8 +29,8 @@ if ($_SESSION['IdTipoUsuario'] != 2) {
 }
 
 
-$cursosUsuario=new UsuarioCurso($conex);
-$_SESSION['cursos']=$cursosUsuario->obtenerCursosPorId((int)$idUsuario);
+$cursosUsuario = new UsuarioCurso($conex);
+$_SESSION['cursos'] = $cursosUsuario->obtenerCursosPorId((int)$idUsuario);
 $_SESSION['cursosSeleccionados'] = array_column($_SESSION['cursos'], 'idCurso');
 
 $sql = "SELECT * FROM usuarios ";
@@ -137,392 +137,391 @@ $result = $stmt->get_result();
 								<div class="header-menu align-items-stretch" data-kt-drawer="true" data-kt-drawer-name="header-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_header_menu_mobile_toggle" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav'}">
 									<!--begin::Menu-->
 									<div class="menu menu-rounded menu-column menu-lg-row menu-active-bg menu-title-gray-700 menu-state-primary menu-arrow-gray-500 fw-semibold my-5 my-lg-0 align-items-stretch px-2 px-lg-0" id="#kt_header_menu" data-kt-menu="true">
-									<?php
-										
+										<?php
+
 										foreach ($_SESSION['cursos'] as $rowCurso) {
 											$moduloPermitido = $rowCurso['idModulo'];
 											$Titulo = $rowCurso['Titulo'];
 											$linkWhatsapp = $rowCurso['linkWhatsapp'];
 											$linkDrive = $rowCurso['linkDrive'];
-											
 
-									
-										switch($moduloPermitido){
+
+
+											switch ($moduloPermitido) {
 												case 1:
 										?>
-										<!--begin:Menu item-->
-											<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
-												<!--begin:Menu link-->
-												<span class="menu-link py-3">
-													<span class="menu-title"><?=$Titulo?></span>
-													<span class="menu-arrow d-lg-none"></span>
-												</span>
-												<!--end:Menu link-->
-												<!--begin:Menu sub-->
-												<div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px">
-													<!--begin:Dashboards menu-->
-													<div class="menu-state-bg menu-extended overflow-hidden overflow-lg-visible" data-kt-menu-dismiss="true">
-														<!--begin:Row-->
-														<div class="row">
-															<!--begin:Col-->
-															<div class="col-lg-12 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
-																<!--begin:Row-->
-																<div class="row">
-																<!--begin:Col-->
-																	<div class="col-lg-6 mb-3">
-																		<!--begin:Menu item-->
-																		<div class="menu-item p-0 m-0">
-																			<!--begin:Menu link-->
-																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroLocomotor?>" class="menu-link">
-																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
-																					<img src="./images/locomotor-removebg-preview.png" width="40px" height="40px" alt="">
-																				</span>
-																				<span class="d-flex flex-column">
-																					<span class="fs-6 fw-bold text-gray-800">Locomotor</span>
-																					<span class="fs-7 fw-semibold text-muted">Huesos,  músculos, tendones y ligamentos</span>
-																				</span>
-																			</a>
-																			<!--end:Menu link-->
-																		</div>
-																		<!--end:Menu item-->
-																	</div>
-																	<!--end:Col-->
-																</div>
-																<!--end:Row-->
-																<?php
-																if(strlen($linkWhatsapp)!=0){
-																	?>
-																<div class="separator separator-dashed mx-5 my-5"></div>
-																<!--begin:Landing-->
-																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
-																	<div class="d-flex flex-column me-5">
-																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
-																	</div>
-																	<a href="<?=$linkWhatsapp?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
-																</div>
-																<!--end:Landing-->
-																<?php
-																}
-																?>
-																<?php
-																if(strlen($linkDrive)!=0){
-																	?>
-																<div class="separator separator-dashed mx-5 my-5"></div>
-																<!--begin:Landing-->
-																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
-																	<div class="d-flex flex-column me-5">
-																		<div class="fs-6 fw-bold text-gray-800">Drive</div>
-																	</div>
-																	<a href="<?=$linkDrive?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
-																</div>
-																<!--end:Landing-->
-																<?php
-																}
-																?>
-																
-															</div>
-															<!--end:Col-->
-														</div>
-														<!--end:Row-->
-													</div>
-													<!--end:Dashboards menu-->
-												</div>
-												<!--end:Menu sub-->
-											</div>
-											<!--end:Menu item-->
-											<?php
-											break;
-											case 2:
-											?>
-											<!--begin:Menu item-->
-											<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
-												<!--begin:Menu link-->
-												<span class="menu-link py-3">
-													<span class="menu-title"><?=$Titulo?></span>
-													<span class="menu-arrow d-lg-none"></span>
-												</span>
-												<!--end:Menu link-->
-												<!--begin:Menu sub-->
-												<div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px">
-													<!--begin:Dashboards menu-->
-													<div class="menu-state-bg menu-extended overflow-hidden overflow-lg-visible" data-kt-menu-dismiss="true">
-														<!--begin:Row-->
-														<div class="row">
-															<!--begin:Col-->
-															<div class="col-lg-12 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
+													<!--begin:Menu item-->
+													<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
+														<!--begin:Menu link-->
+														<span class="menu-link py-3">
+															<span class="menu-title"><?= $Titulo ?></span>
+															<span class="menu-arrow d-lg-none"></span>
+														</span>
+														<!--end:Menu link-->
+														<!--begin:Menu sub-->
+														<div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px">
+															<!--begin:Dashboards menu-->
+															<div class="menu-state-bg menu-extended overflow-hidden overflow-lg-visible" data-kt-menu-dismiss="true">
 																<!--begin:Row-->
 																<div class="row">
 																	<!--begin:Col-->
-																	<div class="col-lg-6 mb-3">
-																		<!--begin:Menu item-->
-																		<div class="menu-item p-0 m-0">
-																			<!--begin:Menu link-->
-																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroEspla?>"class="menu-link">
-																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
-																					<img src="./images/espac-removebg-preview.png" height="40px" width="40px" alt="">
-																				</span>
-																				<span class="d-flex flex-column">
-																					<span class="fs-6 fw-bold text-gray-800">Esplacnología</span>
-																					<span class="fs-7 fw-semibold text-muted">Estudio y descripción de las vísceras</span>
-																				</span>
-																			</a>
-																			<!--end:Menu link-->
+																	<div class="col-lg-12 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
+																		<!--begin:Row-->
+																		<div class="row">
+																			<!--begin:Col-->
+																			<div class="col-lg-6 mb-3">
+																				<!--begin:Menu item-->
+																				<div class="menu-item p-0 m-0">
+																					<!--begin:Menu link-->
+																					<a href="pantalla-cursos-clases.php?numero=<?= $numeroLocomotor ?>" class="menu-link">
+																						<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+																							<img src="./images/locomotor-removebg-preview.png" width="40px" height="40px" alt="">
+																						</span>
+																						<span class="d-flex flex-column">
+																							<span class="fs-6 fw-bold text-gray-800">Locomotor</span>
+																							<span class="fs-7 fw-semibold text-muted">Huesos, músculos, tendones y ligamentos</span>
+																						</span>
+																					</a>
+																					<!--end:Menu link-->
+																				</div>
+																				<!--end:Menu item-->
+																			</div>
+																			<!--end:Col-->
 																		</div>
-																		<!--end:Menu item-->
+																		<!--end:Row-->
+																		<?php
+																		if (strlen($linkWhatsapp) != 0) {
+																		?>
+																			<div class="separator separator-dashed mx-5 my-5"></div>
+																			<!--begin:Landing-->
+																			<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																				<div class="d-flex flex-column me-5">
+																					<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
+																				</div>
+																				<a href="<?= $linkWhatsapp ?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																			</div>
+																			<!--end:Landing-->
+																		<?php
+																		}
+																		?>
+																		<?php
+																		if (strlen($linkDrive) != 0) {
+																		?>
+																			<div class="separator separator-dashed mx-5 my-5"></div>
+																			<!--begin:Landing-->
+																			<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																				<div class="d-flex flex-column me-5">
+																					<div class="fs-6 fw-bold text-gray-800">Drive</div>
+																				</div>
+																				<a href="<?= $linkDrive ?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																			</div>
+																			<!--end:Landing-->
+																		<?php
+																		}
+																		?>
+
 																	</div>
 																	<!--end:Col-->
 																</div>
 																<!--end:Row-->
-																<?php
-																if(strlen($linkWhatsapp)!=0){
-																	?>
-																<div class="separator separator-dashed mx-5 my-5"></div>
-																<!--begin:Landing-->
-																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
-																	<div class="d-flex flex-column me-5">
-																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
-																	</div>
-																	<a href="<?=$linkWhatsapp?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
-																</div>
-																<!--end:Landing-->
-																<?php
-																}
-																?>
-																<?php
-																if(strlen($linkDrive)!=0){
-																	?>
-																<div class="separator separator-dashed mx-5 my-5"></div>
-																<!--begin:Landing-->
-																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
-																	<div class="d-flex flex-column me-5">
-																		<div class="fs-6 fw-bold text-gray-800">Drive</div>
-																	</div>
-																	<a href="<?=$linkDrive?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
-																</div>
-																<!--end:Landing-->
-																<?php
-																}
-																?>
 															</div>
-															<!--end:Col-->
-															
+															<!--end:Dashboards menu-->
 														</div>
-														<!--end:Row-->
+														<!--end:Menu sub-->
 													</div>
-													<!--end:Dashboards menu-->
-												</div>
-												<!--end:Menu sub-->
-											</div>
-											<!--end:Menu item-->
+													<!--end:Menu item-->
 												<?php
 													break;
-													case 3:
+												case 2:
 												?>
-											<!--begin:Menu item-->
-											<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
-												<!--begin:Menu link-->
-												<span class="menu-link py-3">
-													<span class="menu-title"><?=$Titulo?></span>
-													<span class="menu-arrow d-lg-none"></span>
-												</span>
-												<!--end:Menu link-->
-												<!--begin:Menu sub-->
-												<div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px">
-													<!--begin:Dashboards menu-->
-													<div class="menu-state-bg menu-extended overflow-hidden overflow-lg-visible" data-kt-menu-dismiss="true">
-														<!--begin:Row-->
-														<div class="row">
-															<!--begin:Col-->
-															<div class="col-lg-12 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
+													<!--begin:Menu item-->
+													<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
+														<!--begin:Menu link-->
+														<span class="menu-link py-3">
+															<span class="menu-title"><?= $Titulo ?></span>
+															<span class="menu-arrow d-lg-none"></span>
+														</span>
+														<!--end:Menu link-->
+														<!--begin:Menu sub-->
+														<div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px">
+															<!--begin:Dashboards menu-->
+															<div class="menu-state-bg menu-extended overflow-hidden overflow-lg-visible" data-kt-menu-dismiss="true">
 																<!--begin:Row-->
 																<div class="row">
 																	<!--begin:Col-->
-																	<div class="col-lg-6 mb-3">
-																		<!--begin:Menu item-->
-																		<div class="menu-item p-0 m-0">
-																			<!--begin:Menu link-->
-																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroNeuro?>" class="menu-link">
-																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
-																					<img src="./images/neuro-removebg-preview.png" height="40px" width="40px" alt="">
-																				</span>
-																				<span class="d-flex flex-column">
-																					<span class="fs-6 fw-bold text-gray-800">Neuroanatomía</span>
-																					<span class="fs-7 fw-semibold text-muted">Estructura y organización del sistema nervioso</span>
-																				</span>
-																			</a>
-																			<!--end:Menu link-->
+																	<div class="col-lg-12 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
+																		<!--begin:Row-->
+																		<div class="row">
+																			<!--begin:Col-->
+																			<div class="col-lg-6 mb-3">
+																				<!--begin:Menu item-->
+																				<div class="menu-item p-0 m-0">
+																					<!--begin:Menu link-->
+																					<a href="pantalla-cursos-clases.php?numero=<?= $numeroEspla ?>" class="menu-link">
+																						<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+																							<img src="./images/espac-removebg-preview.png" height="40px" width="40px" alt="">
+																						</span>
+																						<span class="d-flex flex-column">
+																							<span class="fs-6 fw-bold text-gray-800">Esplacnología</span>
+																							<span class="fs-7 fw-semibold text-muted">Estudio y descripción de las vísceras</span>
+																						</span>
+																					</a>
+																					<!--end:Menu link-->
+																				</div>
+																				<!--end:Menu item-->
+																			</div>
+																			<!--end:Col-->
 																		</div>
-																		<!--end:Menu item-->
+																		<!--end:Row-->
+																		<?php
+																		if (strlen($linkWhatsapp) != 0) {
+																		?>
+																			<div class="separator separator-dashed mx-5 my-5"></div>
+																			<!--begin:Landing-->
+																			<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																				<div class="d-flex flex-column me-5">
+																					<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
+																				</div>
+																				<a href="<?= $linkWhatsapp ?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																			</div>
+																			<!--end:Landing-->
+																		<?php
+																		}
+																		?>
+																		<?php
+																		if (strlen($linkDrive) != 0) {
+																		?>
+																			<div class="separator separator-dashed mx-5 my-5"></div>
+																			<!--begin:Landing-->
+																			<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																				<div class="d-flex flex-column me-5">
+																					<div class="fs-6 fw-bold text-gray-800">Drive</div>
+																				</div>
+																				<a href="<?= $linkDrive ?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																			</div>
+																			<!--end:Landing-->
+																		<?php
+																		}
+																		?>
 																	</div>
 																	<!--end:Col-->
+
 																</div>
-																<?php
-																if(strlen($linkWhatsapp)!=0){
-																	?>
-																<div class="separator separator-dashed mx-5 my-5"></div>
-																<!--begin:Landing-->
-																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
-																	<div class="d-flex flex-column me-5">
-																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
-																	</div>
-																	<a href="<?=$linkWhatsapp?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
-																</div>
-																<!--end:Landing-->
-																<?php
-																}
-																?>
-																<?php
-																if(strlen($linkDrive)!=0){
-																	?>
-																<div class="separator separator-dashed mx-5 my-5"></div>
-																<!--begin:Landing-->
-																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
-																	<div class="d-flex flex-column me-5">
-																		<div class="fs-6 fw-bold text-gray-800">Drive</div>
-																	</div>
-																	<a href="<?=$linkDrive?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
-																</div>
-																<!--end:Landing-->
-																<?php
-																}
-																?>
+																<!--end:Row-->
 															</div>
-															<!--end:Col-->
+															<!--end:Dashboards menu-->
 														</div>
-														<!--end:Row-->
+														<!--end:Menu sub-->
 													</div>
-													<!--end:Dashboards menu-->
-												</div>
-												<!--end:Menu sub-->
-											</div>
-											<?php
-												break;
-												case 4:
-											?>
-											<!--begin:Menu item-->
-											<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
-												<!--begin:Menu link-->
-												<span class="menu-link py-3">
-													<span class="menu-title">Curso Final</span>
-													<span class="menu-arrow d-lg-none"></span>
-												</span>
-												<!--end:Menu link-->
-												<!--begin:Menu sub-->
-												<div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px">
-													<!--begin:Dashboards menu-->
-													<div class="menu-state-bg menu-extended overflow-hidden overflow-lg-visible" data-kt-menu-dismiss="true">
-														<!--begin:Row-->
-														<div class="row">
-															<!--begin:Col-->
-															<div class="col-lg-12 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
+													<!--end:Menu item-->
+												<?php
+													break;
+												case 3:
+												?>
+													<!--begin:Menu item-->
+													<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
+														<!--begin:Menu link-->
+														<span class="menu-link py-3">
+															<span class="menu-title"><?= $Titulo ?></span>
+															<span class="menu-arrow d-lg-none"></span>
+														</span>
+														<!--end:Menu link-->
+														<!--begin:Menu sub-->
+														<div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px">
+															<!--begin:Dashboards menu-->
+															<div class="menu-state-bg menu-extended overflow-hidden overflow-lg-visible" data-kt-menu-dismiss="true">
 																<!--begin:Row-->
 																<div class="row">
-																<!--begin:Col-->
-																<!--begin:Col-->
-																	<div class="col-lg-6 mb-3">
-																		<!--begin:Menu item-->
-																		<div class="menu-item p-0 m-0">
-																			<!--begin:Menu link-->
-																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroLocomotor?>" class="menu-link">
-																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
-																					<img src="./images/locomotor-removebg-preview.png" width="40px" height="40px" alt="">
-																				</span>
-																				<span class="d-flex flex-column">
-																					<span class="fs-6 fw-bold text-gray-800">Locomotor</span>
-																					<span class="fs-7 fw-semibold text-muted">Huesos,  músculos, tendones y ligamentos</span>
-																				</span>
-																			</a>
-																			<!--end:Menu link-->
-																		</div>
-																		<!--end:Menu item-->
-																	</div>
-																	<!--end:Col-->
 																	<!--begin:Col-->
-																	<div class="col-lg-6 mb-3">
-																		<!--begin:Menu item-->
-																		<div class="menu-item p-0 m-0">
-																			<!--begin:Menu link-->
-																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroEspla?>"class="menu-link">
-																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
-																					<img src="./images/espac-removebg-preview.png" height="40px" width="40px" alt="">
-																				</span>
-																				<span class="d-flex flex-column">
-																					<span class="fs-6 fw-bold text-gray-800">Esplacnología</span>
-																					<span class="fs-7 fw-semibold text-muted">Estudio y descripción de las vísceras</span>
-																				</span>
-																			</a>
-																			<!--end:Menu link-->
+																	<div class="col-lg-12 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
+																		<!--begin:Row-->
+																		<div class="row">
+																			<!--begin:Col-->
+																			<div class="col-lg-6 mb-3">
+																				<!--begin:Menu item-->
+																				<div class="menu-item p-0 m-0">
+																					<!--begin:Menu link-->
+																					<a href="pantalla-cursos-clases.php?numero=<?= $numeroNeuro ?>" class="menu-link">
+																						<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+																							<img src="./images/neuro-removebg-preview.png" height="40px" width="40px" alt="">
+																						</span>
+																						<span class="d-flex flex-column">
+																							<span class="fs-6 fw-bold text-gray-800">Neuroanatomía</span>
+																							<span class="fs-7 fw-semibold text-muted">Estructura y organización del sistema nervioso</span>
+																						</span>
+																					</a>
+																					<!--end:Menu link-->
+																				</div>
+																				<!--end:Menu item-->
+																			</div>
+																			<!--end:Col-->
 																		</div>
-																		<!--end:Menu item-->
-																	</div>
-																	<!--end:Col-->
-																	<!--begin:Col-->
-																	<div class="col-lg-6 mb-3">
-																		<!--begin:Menu item-->
-																		<div class="menu-item p-0 m-0">
-																			<!--begin:Menu link-->
-																			<a href="pantalla-cursos-clases.php?numero=<?=$numeroNeuro?>" class="menu-link">
-																				<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
-																					<img src="./images/neuro-removebg-preview.png" height="40px" width="40px" alt="">
-																				</span>
-																				<span class="d-flex flex-column">
-																					<span class="fs-6 fw-bold text-gray-800">Neuroanatomía</span>
-																					<span class="fs-7 fw-semibold text-muted">Estructura y organización del sistema nervioso</span>
-																				</span>
-																			</a>
-																			<!--end:Menu link-->
-																		</div>
-																		<!--end:Menu item-->
+																		<?php
+																		if (strlen($linkWhatsapp) != 0) {
+																		?>
+																			<div class="separator separator-dashed mx-5 my-5"></div>
+																			<!--begin:Landing-->
+																			<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																				<div class="d-flex flex-column me-5">
+																					<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
+																				</div>
+																				<a href="<?= $linkWhatsapp ?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																			</div>
+																			<!--end:Landing-->
+																		<?php
+																		}
+																		?>
+																		<?php
+																		if (strlen($linkDrive) != 0) {
+																		?>
+																			<div class="separator separator-dashed mx-5 my-5"></div>
+																			<!--begin:Landing-->
+																			<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																				<div class="d-flex flex-column me-5">
+																					<div class="fs-6 fw-bold text-gray-800">Drive</div>
+																				</div>
+																				<a href="<?= $linkDrive ?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																			</div>
+																			<!--end:Landing-->
+																		<?php
+																		}
+																		?>
 																	</div>
 																	<!--end:Col-->
 																</div>
 																<!--end:Row-->
-															<?php
-																if(strlen($linkWhatsapp)!=0){
-																	?>
-																<div class="separator separator-dashed mx-5 my-5"></div>
-																<!--begin:Landing-->
-																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
-																	<div class="d-flex flex-column me-5">
-																		<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
-																	</div>
-																	<a href="<?=$linkWhatsapp?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
-																</div>
-																<!--end:Landing-->
-																<?php
-																}
-																?>
-																<?php
-																if(strlen($linkDrive)!=0){
-																	?>
-																<div class="separator separator-dashed mx-5 my-5"></div>
-																<!--begin:Landing-->
-																<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
-																	<div class="d-flex flex-column me-5">
-																		<div class="fs-6 fw-bold text-gray-800">Drive</div>
-																	</div>
-																	<a href="<?=$linkDrive?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
-																</div>
-																<!--end:Landing-->
-																<?php
-																}
-																?>
-																</div>
-															<!--end:Col-->
+															</div>
+															<!--end:Dashboards menu-->
 														</div>
-														<!--end:Row-->
+														<!--end:Menu sub-->
 													</div>
-													<!--end:Dashboards menu-->
-												</div>
-												<!--end:Menu sub-->
-											</div>
-											<!--end:Menu item-->
-											<?php
-											break;
-
+												<?php
+													break;
+												case 4:
+												?>
+													<!--begin:Menu item-->
+													<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item here show menu-here-bg menu-lg-down-accordion me-0 me-lg-2">
+														<!--begin:Menu link-->
+														<span class="menu-link py-3">
+															<span class="menu-title">Curso Final</span>
+															<span class="menu-arrow d-lg-none"></span>
+														</span>
+														<!--end:Menu link-->
+														<!--begin:Menu sub-->
+														<div class="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown p-0 w-100 w-lg-850px">
+															<!--begin:Dashboards menu-->
+															<div class="menu-state-bg menu-extended overflow-hidden overflow-lg-visible" data-kt-menu-dismiss="true">
+																<!--begin:Row-->
+																<div class="row">
+																	<!--begin:Col-->
+																	<div class="col-lg-12 mb-3 mb-lg-0 py-3 px-3 py-lg-6 px-lg-6">
+																		<!--begin:Row-->
+																		<div class="row">
+																			<!--begin:Col-->
+																			<!--begin:Col-->
+																			<div class="col-lg-6 mb-3">
+																				<!--begin:Menu item-->
+																				<div class="menu-item p-0 m-0">
+																					<!--begin:Menu link-->
+																					<a href="pantalla-cursos-clases.php?numero=<?= $numeroLocomotor ?>" class="menu-link">
+																						<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+																							<img src="./images/locomotor-removebg-preview.png" width="40px" height="40px" alt="">
+																						</span>
+																						<span class="d-flex flex-column">
+																							<span class="fs-6 fw-bold text-gray-800">Locomotor</span>
+																							<span class="fs-7 fw-semibold text-muted">Huesos, músculos, tendones y ligamentos</span>
+																						</span>
+																					</a>
+																					<!--end:Menu link-->
+																				</div>
+																				<!--end:Menu item-->
+																			</div>
+																			<!--end:Col-->
+																			<!--begin:Col-->
+																			<div class="col-lg-6 mb-3">
+																				<!--begin:Menu item-->
+																				<div class="menu-item p-0 m-0">
+																					<!--begin:Menu link-->
+																					<a href="pantalla-cursos-clases.php?numero=<?= $numeroEspla ?>" class="menu-link">
+																						<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+																							<img src="./images/espac-removebg-preview.png" height="40px" width="40px" alt="">
+																						</span>
+																						<span class="d-flex flex-column">
+																							<span class="fs-6 fw-bold text-gray-800">Esplacnología</span>
+																							<span class="fs-7 fw-semibold text-muted">Estudio y descripción de las vísceras</span>
+																						</span>
+																					</a>
+																					<!--end:Menu link-->
+																				</div>
+																				<!--end:Menu item-->
+																			</div>
+																			<!--end:Col-->
+																			<!--begin:Col-->
+																			<div class="col-lg-6 mb-3">
+																				<!--begin:Menu item-->
+																				<div class="menu-item p-0 m-0">
+																					<!--begin:Menu link-->
+																					<a href="pantalla-cursos-clases.php?numero=<?= $numeroNeuro ?>" class="menu-link">
+																						<span class="menu-custom-icon d-flex flex-center flex-shrink-0 rounded w-40px h-40px me-3">
+																							<img src="./images/neuro-removebg-preview.png" height="40px" width="40px" alt="">
+																						</span>
+																						<span class="d-flex flex-column">
+																							<span class="fs-6 fw-bold text-gray-800">Neuroanatomía</span>
+																							<span class="fs-7 fw-semibold text-muted">Estructura y organización del sistema nervioso</span>
+																						</span>
+																					</a>
+																					<!--end:Menu link-->
+																				</div>
+																				<!--end:Menu item-->
+																			</div>
+																			<!--end:Col-->
+																		</div>
+																		<!--end:Row-->
+																		<?php
+																		if (strlen($linkWhatsapp) != 0) {
+																		?>
+																			<div class="separator separator-dashed mx-5 my-5"></div>
+																			<!--begin:Landing-->
+																			<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																				<div class="d-flex flex-column me-5">
+																					<div class="fs-6 fw-bold text-gray-800">Grupo de Whatsapp</div>
+																				</div>
+																				<a href="<?= $linkWhatsapp ?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																			</div>
+																			<!--end:Landing-->
+																		<?php
+																		}
+																		?>
+																		<?php
+																		if (strlen($linkDrive) != 0) {
+																		?>
+																			<div class="separator separator-dashed mx-5 my-5"></div>
+																			<!--begin:Landing-->
+																			<div class="d-flex flex-stack flex-wrap flex-lg-nowrap gap-2 mx-5">
+																				<div class="d-flex flex-column me-5">
+																					<div class="fs-6 fw-bold text-gray-800">Drive</div>
+																				</div>
+																				<a href="<?= $linkDrive ?>" class="btn btn-sm btn-primary fw-bold" target="_blank">Unirme</a>
+																			</div>
+																			<!--end:Landing-->
+																		<?php
+																		}
+																		?>
+																	</div>
+																	<!--end:Col-->
+																</div>
+																<!--end:Row-->
+															</div>
+															<!--end:Dashboards menu-->
+														</div>
+														<!--end:Menu sub-->
+													</div>
+													<!--end:Menu item-->
+										<?php
+													break;
 											}
 										}
-											?>
+										?>
 
 									</div>
 									<!--end::Menu-->
@@ -562,9 +561,9 @@ $result = $stmt->get_result();
 										<!--end::Heading-->
 										<!--begin:Nav-->
 										<div class="row g-0">
-											<?php 
-											if (in_array(4, $_SESSION['modulosPermitidos']) || in_array(1, $_SESSION['modulosPermitidos'])){ 
-												?>
+											<?php
+											if (in_array(4, $_SESSION['modulosPermitidos']) || in_array(1, $_SESSION['modulosPermitidos'])) {
+											?>
 												<!--begin:Item-->
 												<div class="col-6">
 													<a href="pantalla-cursos-clases.php?numero=<?= $numeroLocomotor ?>" class="d-flex flex-column flex-center h-100 p-6 bg-hover-light border-end border-bottom">
@@ -573,10 +572,10 @@ $result = $stmt->get_result();
 													</a>
 												</div>
 												<!--end:Item-->
-											<?php 
-											} 
-												if (in_array(4, $_SESSION['modulosPermitidos']) || in_array(2, $_SESSION['modulosPermitidos'])){ 
-													?>
+											<?php
+											}
+											if (in_array(4, $_SESSION['modulosPermitidos']) || in_array(2, $_SESSION['modulosPermitidos'])) {
+											?>
 												<!--begin:Item-->
 												<div class="col-6">
 													<a href="pantalla-cursos-clases.php?numero=<?= $numeroEspla ?>" class="d-flex flex-column flex-center h-100 p-6 bg-hover-light border-end">
@@ -585,10 +584,10 @@ $result = $stmt->get_result();
 													</a>
 												</div>
 												<!--end:Item-->
-											<?php 
+											<?php
 											}
-											if (in_array(4, $_SESSION['modulosPermitidos']) || in_array(3, $_SESSION['modulosPermitidos'])){
-												?>
+											if (in_array(4, $_SESSION['modulosPermitidos']) || in_array(3, $_SESSION['modulosPermitidos'])) {
+											?>
 												<!--begin:Item-->
 												<div class="col-6">
 													<a href="pantalla-cursos-clases.php?numero=<?= $numeroNeuro ?>" class="d-flex flex-column flex-center h-100 p-6 bg-hover-light border-bottom">
@@ -597,7 +596,7 @@ $result = $stmt->get_result();
 													</a>
 												</div>
 												<!--end:Item-->
-											<?php 
+											<?php
 											}
 											?>
 										</div>
@@ -712,17 +711,26 @@ $result = $stmt->get_result();
 
 													<table class="table align-middle">
 														<h1 style="text-align:center;">Datos de usuarios</h1>
-														
+
 														<div class="container d-flex flex-row col-lg-12 mt-4">
-															<a href="#" class="btn btn-primary er fs-6 me-2 px-5 py-3" data-bs-toggle="modal" data-bs-target="#kt_modal_video">Cargar Videos</a>
-															<a href="#" class="btn btn-primary er fs-6 px-5 py-3" data-bs-toggle="modal" data-bs-target="#kt_modal_categoria">Nueva categoria</a>
+															<div class="dropdown">
+																<button type="button" data-bs-toggle="dropdown" aria-expanded="false" class="btn btn-primary dropdown-toggle">
+																	Acciones
+																</button>
+																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#kt_modal_video" href="#">Cargar Videos</a></li>
+																	<li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#kt_modal_categoria" href="#">Nueva categoria</a></li>
+																	<li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#kt_modal_gestion_bajas_masiva" href="#">Gestión de bajas masivas</a></li>
+
+																</ul>
+															</div>
 															<div class="container col-lg-8">
 																<!--Formulario de busqueda-->
 																<form method="POST" action="./service/buqueda-usuario.php">
 																	<div class="d-flex flex-row">
-																		<select class="form-select w-50  " name="id-curso-busqueda" id ="id-curso-busqueda">
-																		<option value="-1">Todos los cursos</option>
-																		<?php
+																		<select class="form-select w-50  " name="id-curso-busqueda" id="id-curso-busqueda">
+																			<option value="-1">Todos los cursos</option>
+																			<?php
 																			$curso_seleccionado = $_SESSION['parametro-busqueda-idCurso'] ?? '';
 																			$valueText = $_SESSION['parametro-busqueda-texto'] ?? '';
 																			$sqlQuery = "SELECT * FROM cursos where idCurso <> 0";
@@ -734,7 +742,7 @@ $result = $stmt->get_result();
 																			?>
 																				<option value="<?= $rowCurso['IdCurso'] ?>" <?= $selected ?>><?= $rowCurso['Titulo'] ?></option>
 																			<?php
-																				}	
+																			}
 																			?>
 																		</select>
 																		<input value="<?= htmlspecialchars($valueText) ?>" name="busqueda-texto" id="" class="form-control w-50 ms-3" type="text" name="busqueda" id="busqueda" placeholder="Buscar...">
@@ -745,11 +753,81 @@ $result = $stmt->get_result();
 															</div>
 														</div>
 
+														<div class="modal fade" id="modalAlert-events" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+															<div class="modal-dialog">
+																<div class="modal-content">
+																	<div class="modal-header">
+																		<h1 class="modal-title fs-5" id="staticBackdropLabel">Actualizacion</h1>
+																	
+																	</div>
+																	<div class="modal-body" id="modal-body-events">
+																	</div>
+																</div>
+															</div>
+														</div>
+														<br>
+														<div class="modal fade" id="kt_modal_gestion_bajas_masiva" tabindex="-1" aria-hidden="true" aria-labelledby="modal-title" aria-describedby="modal-description">
+															<!--begin::Modal dialog-->
+															<div class="modal-dialog modal-dialog-centered mw-650px">
+																<!--begin::Modal content-->
+																<div class="modal-content rounded">
+																	<!--begin::Modal header-->
+																	<div class="modal-header pb-0 border-0 justify-content-end">
+																		<!--begin::Close-->
+																		<button class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal" id="btnCancel" aria-label="Cerrar">
+																			<i class="ki-duotone ki-cross fs-1" role="img" aria-hidden="true">
+																				<span class="path1"></span>
+																				<span class="path2"></span>
+																			</i>
+																		</button>
+																		<!--end::Close-->
+																	</div>
+																	<!--end::Modal header-->
 
+																	<!--begin::Modal body-->
+																	<div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
+																		<!--begin:Form-->
+																		<form id="baja-masiva-form" class="form" novalidate>
+																			<!--begin::Heading-->
+																			<div class="mb-13 text-center">
+																				<!--begin::Title-->
+																				<h1 id="modal-title" class="mb-3">Gestión de bajas masivas</h1>
+																				<!--end::Title-->
+																			</div>
+																			<div>
+																				<!-- Input de fecha -->
+																				<label for="fecha-evento" class="form-label">Fecha del evento</label>
+																				<input id="fecha-evento" class=" mb-3 form-control form-control-solid" name="fecha-evento" type="date" required aria-required="true">
 
+																				<p class="p-5 fs-5 border border-primary text-muted"  id="date-persist" title="Indica la fecha en la cual se ejecutara el evento de baja masivas">Fecha de baja: </p>
 
+																				<!--begin::Actions-->
+																				<div class="text-center mt-4">
+																					<button type="reset" class="btn btn-danger me-3" data-bs-dismiss="modal" id="btnEliminar">Eliminar</button>
+																					<button type="submit" data-bs-dismiss="modal" class="btn btn-primary" data-kt-modal-action-type="submit">
+																						<span class="indicator-label">Guardar</span>
+																						<span class="indicator-progress">
+																							Please wait...
+																							<span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+																						</span>
+																					</button>
+																					<button type="reset" data-bs-dismiss="modal" class="btn btn-secondary" data-kt-modal-action-type="submit">Cancelar </button>
+
+																				</div>
+																				<!--end::Actions-->
+																			</div>
+																		</form>
+																		<!--end:Form-->
+																	</div>
+																	<!--end::Modal body-->
+																</div>
+																<!--end::Modal content-->
+															</div>
+															<!--end::Modal dialog-->
+														</div>
 
 														<br>
+
 														<!--begin::Modal - New Target-->
 														<div class="modal fade" id="kt_modal_video" tabindex="-1" aria-hidden="true">
 															<!--begin::Modal dialog-->
@@ -1039,10 +1117,10 @@ $result = $stmt->get_result();
 														<!--begin::Table body-->
 														<tbody>
 															<?php
-															if (isset($_SESSION['usuario-busqueda']) && $_SESSION['usuario-busqueda'] != null){
+															if (isset($_SESSION['usuario-busqueda']) && $_SESSION['usuario-busqueda'] != null) {
 																$usuarios = $_SESSION['usuario-busqueda'];
 																foreach ($usuarios as $row) {
-																		
+
 																	$checked = ($row['habilitado'] == 1) ? 'checked' : '';
 																	$switchId = $row['IdUsuario'];
 																	$inputName = 'usuarioid_' . $row['IdUsuario'];
@@ -1057,14 +1135,15 @@ $result = $stmt->get_result();
 																				<div>
 																					<!--begin::Number-->
 																					<td class="fs-6 fw-bold text-gray-800">
-																						<h3><?= ucfirst(strtolower($row['nombre'])) ?> <?= ucfirst(strtolower($row['apellido'])) ?> </h3>			</h3>
+																						<h3><?= ucfirst(strtolower($row['nombre'])) ?> <?= ucfirst(strtolower($row['apellido'])) ?> </h3>
+																						</h3>
 																					</td>
 																					<!--end::Number-->
 																					<!--begin::Desc-->
 																					<td class="fs-6 fw-bold text-gray-800">Última conexión: <?= $row['last_time_connected'] ?></td>
 																					<td class="fs-6 fw-bold">Cursos:
 																						<span class="text-gray-800">
-																						<select id="cursos" name="id-cursos[]" class="selectpicker" multiple data-live-search="true">
+																							<select id="cursos" name="id-cursos[]" class="selectpicker" multiple data-live-search="true">
 																								<?php
 																								// Consulta para obtener los cursos
 																								$sqlQuery = "SELECT * FROM cursos";
@@ -1073,21 +1152,21 @@ $result = $stmt->get_result();
 																								$resultCursos = $stm->get_result();
 
 																								$usuarioId = $row['IdUsuario'];
-																								$query2="SELECT * FROM usuarioscursos where idUsuario=?";
-																								$prepare=$conex->prepare($query2);
-																								$prepare->bind_param('i',$usuarioId);
+																								$query2 = "SELECT * FROM usuarioscursos where idUsuario=?";
+																								$prepare = $conex->prepare($query2);
+																								$prepare->bind_param('i', $usuarioId);
 																								$prepare->execute();
-																								$result2=$prepare->get_result();
+																								$result2 = $prepare->get_result();
 																								$cursosSeleccionados = [];
 																								while ($row2 = mysqli_fetch_assoc($result2)) {
-																									$cursosSeleccionados[] =$row2['idCurso']; 
+																									$cursosSeleccionados[] = $row2['idCurso'];
 																								}
 
 																								while ($rowCurso = mysqli_fetch_assoc($resultCursos)) {
 																									$selected = in_array($rowCurso['IdCurso'], $cursosSeleccionados) ? 'selected' : '';
-																									?>
+																								?>
 																									<option value="<?= $rowCurso['IdCurso'] ?>.<?= $usuarioId ?>" <?= $selected ?>><?= $rowCurso['Titulo'] ?></option>
-																									<?php
+																								<?php
 																								}
 																								?>
 																							</select>
@@ -1108,35 +1187,35 @@ $result = $stmt->get_result();
 																		<!--end::Col-->
 
 																	</tr>
-															<?php
-																	
+																	<?php
+
 																}
-															}else if (!isset($_SESSION['busqueda-usuario-activo'])){
+															} else if (!isset($_SESSION['busqueda-usuario-activo'])) {
 																$sql = "SELECT * FROM usuarios ";
 																$stmt = $conex->prepare($sql);
 																$stmt->execute();
 																$result = $stmt->get_result();
 																if ($result) {
 																	while ($row = mysqli_fetch_assoc($result)) {
-	
+
 																		$checked = ($row['habilitado'] == 1) ? 'checked' : '';
 																		$switchId = $row['IdUsuario'];
 																		$inputName = 'usuarioid_' . $row['IdUsuario'];
-																?>
+																	?>
 																		<tr>
 																			<!--begin::Col-->
 																			<div class="col-4">
 																				<!--begin::Items-->
 																				<div class="bg-gray-100 bg-opacity-70 rounded-2 px-6 ">
-	
+
 																					<!--begin::Stats-->
 																					<div class="m-0">
 																						<!--begin::Number-->
 																						<td class="fs-6 fw-bold text-gray-800">
 																							<h3><?= ucfirst(strtolower($row['nombre'])) ?> <?= ucfirst(strtolower($row['apellido'])) ?> </h3>
-	
-	
-	
+
+
+
 																							</h3>
 																						</td>
 																						<!--end::Number-->
@@ -1144,35 +1223,35 @@ $result = $stmt->get_result();
 																						<td class="fs-6 fw-bold text-gray-800">Última conexión: <?= $row['last_time_connected'] ?></td>
 																						<td class="fs-6 fw-bold">Cursos:
 																							<span class="text-gray-800">
-																							<span class="text-gray-800">
-																						<select id="cursos" name="id-cursos[]" class="selectpicker" multiple data-live-search="true">
-																								<?php
-																								// Consulta para obtener los cursos
-																								$sqlQuery = "SELECT * FROM cursos";
-																								$stm = $conex->prepare($sqlQuery);
-																								$stm->execute();
-																								$resultCursos = $stm->get_result();
+																								<span class="text-gray-800">
+																									<select id="cursos" name="id-cursos[]" class="selectpicker" multiple data-live-search="true">
+																										<?php
+																										// Consulta para obtener los cursos
+																										$sqlQuery = "SELECT * FROM cursos";
+																										$stm = $conex->prepare($sqlQuery);
+																										$stm->execute();
+																										$resultCursos = $stm->get_result();
 
-																								$usuarioId = $row['IdUsuario'];
-																								$query2="SELECT * FROM usuarioscursos where idUsuario=?";
-																								$prepare=$conex->prepare($query2);
-																								$prepare->bind_param('i',$usuarioId);
-																								$prepare->execute();
-																								$result2=$prepare->get_result();
-																								$cursosSeleccionados = [];
-																								while ($row2 = mysqli_fetch_assoc($result2)) {
-																									$cursosSeleccionados[] =$row2['idCurso']; 
-																								}
+																										$usuarioId = $row['IdUsuario'];
+																										$query2 = "SELECT * FROM usuarioscursos where idUsuario=?";
+																										$prepare = $conex->prepare($query2);
+																										$prepare->bind_param('i', $usuarioId);
+																										$prepare->execute();
+																										$result2 = $prepare->get_result();
+																										$cursosSeleccionados = [];
+																										while ($row2 = mysqli_fetch_assoc($result2)) {
+																											$cursosSeleccionados[] = $row2['idCurso'];
+																										}
 
-																								while ($rowCurso = mysqli_fetch_assoc($resultCursos)) {
-																									$selected = in_array($rowCurso['IdCurso'], $cursosSeleccionados) ? 'selected' : '';
-																									?>
-																									<option value="<?= $rowCurso['IdCurso'] ?>.<?= $usuarioId ?>" <?= $selected ?>><?= $rowCurso['Titulo'] ?></option>
-																									<?php
-																								}
-																								?>
-																							</select>
-																						</span>
+																										while ($rowCurso = mysqli_fetch_assoc($resultCursos)) {
+																											$selected = in_array($rowCurso['IdCurso'], $cursosSeleccionados) ? 'selected' : '';
+																										?>
+																											<option value="<?= $rowCurso['IdCurso'] ?>.<?= $usuarioId ?>" <?= $selected ?>><?= $rowCurso['Titulo'] ?></option>
+																										<?php
+																										}
+																										?>
+																									</select>
+																								</span>
 																						</td>
 																						<td class="fs-6 fw-bold text-gray-500">
 																							<div class="form-check form-switch">
@@ -1187,14 +1266,14 @@ $result = $stmt->get_result();
 																				<!--end::Items-->
 																			</div>
 																			<!--end::Col-->
-	
+
 																		</tr>
-																<?php
-	
+															<?php
+
 																	}
 																}
 															}
-															
+
 
 															?>
 														</tbody>
@@ -6349,9 +6428,9 @@ $result = $stmt->get_result();
 		});
 	</script>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 
 	<!--end::Javascript-->
 </body>
@@ -6362,4 +6441,5 @@ unset($_SESSION['busqueda-usuario-activo']);
 unset($_SESSION['parametro-busqueda-texto']);
 unset($_SESSION['parametro-busqueda-idCurso']);
 ?>
+
 </html>
