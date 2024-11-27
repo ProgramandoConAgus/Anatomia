@@ -19,13 +19,16 @@ document.addEventListener('DOMContentLoaded', function () {
             return response.text(); 
         })
         .then(result => {
-            let responseText = 'No se recibió una fecha válida';
             try {
                 const data = JSON.parse(result);
-                if (data && data.message) {
-                    responseText = data.message; 
-                    let val = responseText.split(" ");
-                    p.innerHTML = 'Fecha de baja: ' + val[0];
+                if (data) {
+                    if (data.status === 'success'){
+                        let responseText = data.message; 
+                    
+                        let val = responseText.split(" ");
+                        p.innerHTML = 'Fecha de baja: ' + val[0];
+                        
+                    }
                 }
             } catch (error) {
                 console.error('Error al analizar la respuesta JSON:', result);
@@ -154,7 +157,6 @@ function disebledAllUsers(formData){
                    
                     dateEvent = data.date;
                 }
-                
                 const myModal = new bootstrap.Modal(document.getElementById('modalAlert-events'));
                 const modalBody = document.getElementById('modal-body-events');
                 modalBody.innerHTML = responseText;

@@ -63,9 +63,11 @@ class Events
     
         if ($result->num_rows === 1) {
             while ($row = $result->fetch_assoc()) {
+                $response['status'] = 'success';
                 $response['message'] = $row["starts"];
             }
         } else {
+            $response['status'] = 'notResult';
             $response['message'] = 'No se encontró el evento solicitado.';
         }
     
