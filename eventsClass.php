@@ -101,7 +101,7 @@ class Events{
 {
     $response = [];
     // Consulta para obtener todos los eventos programados en la base de datos
-    $selectEvents = "SELECT name, starts FROM mysql.event WHERE db = 'u981249563_anato_platform';";
+    $selectEvents = "SELECT EVENT_NAME, STARTS FROM information_schema.events WHERE EVENT_SCHEMA = 'u981249563_preparandoanat';";
     $result = $this->conex->query($selectEvents);
 
     if ($result->num_rows > 0) {
@@ -110,8 +110,8 @@ class Events{
         // Recorremos todos los eventos encontrados
         while ($row = $result->fetch_assoc()) {
             $events[] = [
-                'name' => $row['name'],
-                'starts' => $row['starts']
+                'name' => $row['EVENT_NAME'],
+                'starts' => $row['STARTS']
             ];
         }
         $response['events'] = $events;

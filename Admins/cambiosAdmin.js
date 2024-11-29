@@ -11,28 +11,25 @@ function mostrarEventos() {
         method: 'POST',
         body: formData,
     })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
-            }
-            return response.json(); 
-        })
-        .then(data => {
-            if (data.status === 'success') {
-                let eventsList = "Eventos programados:<br />";
-                data.events.forEach(event => {
-                    eventsList += `Nombre: ${event.name}, Fecha de inicio: ${event.starts}<br />`;
-                });
-                p.innerHTML = eventsList; // Muestra todos los eventos
-            } else {
-                p.innerHTML = 'No se encontraron eventos.'; // En caso de no encontrar eventos
-            }
-        })
-        .catch(error => {
-            console.error('Error en la solicitud:', error);
-            p.innerHTML = 'Ocurrió un error al obtener los eventos.'; // Mensaje de error
-        });
+    .then(response => response.json())  // Asumiendo que la respuesta es JSON
+    .then(data => {
+        console.log(data);  // Verifica lo que se recibe
+        if (data.status == 'success') {
+            let eventsList = "Eventos programados:<br />";
+            data.events.forEach(event => {
+                eventsList += `Nombre: ${event.name}, Fecha de inicio: ${event.starts}<br />`;
+            });
+            p.innerHTML = eventsList;
+        } else {
+            p.innerHTML = 'No se encontraron eventos.';
+        }
+    })
+    .catch(error => {
+        console.error('Error en la solicitud:', error);
+        p.innerHTML = 'Ocurrió un error al obtener los eventos.';
+    });
 }
+
 btnDeleteEvento.addEventListener('click', function (event) {
     event.preventDefault(); 
     const curso=document.getElementById("borrarEventoCurso")
