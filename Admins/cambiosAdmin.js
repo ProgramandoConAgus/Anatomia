@@ -1,8 +1,96 @@
+document.addEventListener('DOMContentLoaded', mostrarEventos());
 
-let accion//1 sera Actualizar Curso, 2 sera habilitar o deshabilitar usuario
+const form = document.getElementById('baja-masiva-form');
+const btnDeleteEvento = document.getElementById('btnEliminar');
+function mostrarEventos() {
+    const p = document.getElementById('date-persist');
+    const formData = new FormData();
+    formData.append('action', 'getAllEvents');  // Cambié a 'getAllEvents' para obtener todos los eventos
+
+    fetch('./Admins/disableAllStudents.php', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.json())  // Asumiendo que la respuesta es JSON
+    .then(data => {
+        console.log(data);  // Verifica lo que se recibe
+        if (data.status == 'success') {
+            let eventsList = "Eventos programados:<br />";
+            data.events.forEach(event => {
+                eventsList += `Nombre: ${event.name}, Fecha de inicio: ${event.starts}<br />`;
+            });
+            p.innerHTML = eventsList;
+        } else {
+            p.innerHTML = 'No se encontraron eventos.';
+        }
+    })
+    .catch(error => {
+        console.error('Error en la solicitud:', error);
+        p.innerHTML = 'Ocurrió un error al obtener los eventos.';
+    });
+}
+
+btnDeleteEvento.addEventListener('click', function (event) {
+    event.preventDefault(); 
+    const curso=document.getElementById("borrarEventoCurso")
+    const nombreCurso = curso.value.split(".");
+
+    const formData = new FormData(form);
+    formData.append('curso',nombreCurso[1]);
+    formData.append('action', 'delete');
+    disebledAllUsers(formData);
+});
+
+form.addEventListener('submit', function (event) {
+    event.preventDefault(); 
+    const formData = new FormData(form);
+    formData.append('action', 'create');
+    disebledAllUsers(formData);
+});
+
+function disebledAllUsers(formData) {
+    const date = document.getElementById('fecha-evento');
+    date.value = '';  // Limpiar el campo de fecha
+
+    fetch('./Admins/disableAllStudents.php', {
+        method: 'POST',
+        body: formData,
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Error en la solicitud: ${response.statusText}`);
+            }
+            return response.json();  // Asegurarse de que la respuesta se procese como JSON
+        })
+        .then(data => {
+            console.log('Respuesta del servidor:', data);  // Ver lo que el servidor devuelve
+
+            const myModal = new bootstrap.Modal(document.getElementById('modalAlert-events'));
+            const modalBody = document.getElementById('modal-body-events');
+            modalBody.innerHTML = data.message;  // Mostrar el mensaje en el modal
+            myModal.show();  // Mostrar el modal
+
+            // Verificar si 'data.events' está definido y es un arreglo antes de usar 'forEach'
+            if (data.status === 'success') {
+                mostrarEventos()
+            } else {
+                pDatePersist.innerHTML = 'No se encontraron eventos.';  // Si no hay eventos o no es un arreglo
+            }
+        })
+        .catch(error => {
+            console.error('Error en la solicitud:', error);
+            const pDatePersist = document.getElementById('date-persist');
+            pDatePersist.innerHTML = 'Ocurrió un error al obtener los eventos.';  // Mensaje de error
+        });
+}
+
+
+
 
 //Selecciona todos los selects
-let selects = document.querySelectorAll("select");
+let selects = document.querySelectorAll("select:not(.exclude-select)");
+let responseText="";
+let dateEvent = "";
 //Recorre cada select escuchando un cambio
 selects.forEach(function(select) {
     select.addEventListener("change", function() {
@@ -20,8 +108,8 @@ selects.forEach(function(select) {
 });
 
 
-// Selecciona todos los switches (checkboxes) con la clase 'form-check-input'
-let switches = document.querySelectorAll(".form-check-input");
+// Selecciona todos los switches (checkboxes) con la clase 'check-input-users'
+let switches = document.querySelectorAll(".check-input-users");
 
 // Recorre cada switch escuchando un cambio
 switches.forEach(function(switchElement) {
