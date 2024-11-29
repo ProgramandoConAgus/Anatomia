@@ -1,12 +1,11 @@
+document.addEventListener('DOMContentLoaded', mostrarEventos());
 
-let accion//1 sera Actualizar Curso, 2 sera habilitar o deshabilitar usuario
 const form = document.getElementById('baja-masiva-form');
 const btnDeleteEvento = document.getElementById('btnEliminar');
-
-document.addEventListener('DOMContentLoaded', function () {
+function mostrarEventos() {
     const p = document.getElementById('date-persist');
     const formData = new FormData();
-    formData.append('action', 'getDate');
+    formData.append('action', 'getAllEvents');  // Cambié a 'getAllEvents' para obtener todos los eventos
 
     fetch('./Admins/disableAllStudents.php', {
         method: 'POST',
@@ -16,35 +15,83 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!response.ok) {
                 throw new Error(`Error en la solicitud: ${response.statusText}`);
             }
-            return response.text(); 
+            return response.json(); 
         })
-        .then(result => {
-            try {
-                const data = JSON.parse(result);
-                if (data) {
-                    if (data.status === 'success'){
-                        let responseText = data.message; 
-                    
-                        let val = responseText.split(" ");
-                        p.innerHTML = 'Fecha de baja: ' + val[0];
-                        
-                    }
-                }
-            } catch (error) {
-                console.error('Error al analizar la respuesta JSON:', result);
+        .then(data => {
+            if (data.status === 'success') {
+                let eventsList = "Eventos programados:<br />";
+                data.events.forEach(event => {
+                    eventsList += `Nombre: ${event.name}, Fecha de inicio: ${event.starts}<br />`;
+                });
+                p.innerHTML = eventsList; // Muestra todos los eventos
+            } else {
+                p.innerHTML = 'No se encontraron eventos.'; // En caso de no encontrar eventos
             }
-
-           
         })
         .catch(error => {
             console.error('Error en la solicitud:', error);
-            p.innerHTML = 'Ocurrió un error al obtener la fecha.';
+            p.innerHTML = 'Ocurrió un error al obtener los eventos.'; // Mensaje de error
         });
+}
+btnDeleteEvento.addEventListener('click', function (event) {
+    event.preventDefault(); 
+    const curso=document.getElementById("borrarEventoCurso")
+    const nombreCurso = curso.value.split(".");
+
+    const formData = new FormData(form);
+    formData.append('curso',nombreCurso[1]);
+    formData.append('action', 'delete');
+    disebledAllUsers(formData);
 });
+
+form.addEventListener('submit', function (event) {
+    event.preventDefault(); 
+    const formData = new FormData(form);
+    formData.append('action', 'create');
+    disebledAllUsers(formData);
+});
+
+function disebledAllUsers(formData) {
+    const date = document.getElementById('fecha-evento');
+    date.value = '';  // Limpiar el campo de fecha
+
+    fetch('./Admins/disableAllStudents.php', {
+        method: 'POST',
+        body: formData,
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Error en la solicitud: ${response.statusText}`);
+            }
+            return response.json();  // Asegurarse de que la respuesta se procese como JSON
+        })
+        .then(data => {
+            console.log('Respuesta del servidor:', data);  // Ver lo que el servidor devuelve
+
+            const myModal = new bootstrap.Modal(document.getElementById('modalAlert-events'));
+            const modalBody = document.getElementById('modal-body-events');
+            modalBody.innerHTML = data.message;  // Mostrar el mensaje en el modal
+            myModal.show();  // Mostrar el modal
+
+            // Verificar si 'data.events' está definido y es un arreglo antes de usar 'forEach'
+            if (data.status === 'success') {
+                mostrarEventos()
+            } else {
+                pDatePersist.innerHTML = 'No se encontraron eventos.';  // Si no hay eventos o no es un arreglo
+            }
+        })
+        .catch(error => {
+            console.error('Error en la solicitud:', error);
+            const pDatePersist = document.getElementById('date-persist');
+            pDatePersist.innerHTML = 'Ocurrió un error al obtener los eventos.';  // Mensaje de error
+        });
+}
+
+
 
 
 //Selecciona todos los selects
-let selects = document.querySelectorAll("select");
+let selects = document.querySelectorAll("select:not(.exclude-select)");
 let responseText="";
 let dateEvent = "";
 //Recorre cada select escuchando un cambio
@@ -118,56 +165,4 @@ function actualizarUsuario(userId, id, tipoAccion) {
     })
     .catch(error => console.error('Error en la solicitud:', error));
     
-}
-
-btnDeleteEvento.addEventListener('click',function (event){
-    event.preventDefault(); 
-    const formData = new FormData(form);
-    formData.append('action','delete');
-    disebledAllUsers(formData);
-});
-
-form.addEventListener('submit', function (event) {
-    event.preventDefault(); 
-    const formData = new FormData(form);
-    formData.append('action','create');
-    disebledAllUsers(formData);
-    
-});
-
-function disebledAllUsers(formData){
-    const date = document.getElementById('fecha-evento');
-    date.value = '';
-    fetch('./Admins/disableAllStudents.php', {
-        method: 'POST',
-        body: formData,
-    })
-        .then(response => {
-
-            if (!response.ok) {
-                throw new Error(`Error en la solicitud: ${response.statusText}`);
-            }
-            return response.text(); 
-        })
-        .then(text => {
-            try {
-                const data = JSON.parse(text);
-                responseText =  data.message;
-                if (data.status == 'success'){
-                   
-                    dateEvent = data.date;
-                }
-                const myModal = new bootstrap.Modal(document.getElementById('modalAlert-events'));
-                const modalBody = document.getElementById('modal-body-events');
-                modalBody.innerHTML = responseText;
-                myModal.show();
-                const pDatePersist = document.getElementById('date-persist');
-                pDatePersist.innerHTML= "Fecha de baja: " + dateEvent;
-            } catch (error) {
-                console.error('La respuesta no es JSON válido:', text);
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
 }

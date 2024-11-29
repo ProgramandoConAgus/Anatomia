@@ -787,7 +787,7 @@ $result = $stmt->get_result();
 																	<!--begin::Modal body-->
 																	<div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
 																		<!--begin:Form-->
-																		<form id="baja-masiva-form" class="form" novalidate>
+																		<form id="baja-masiva-form" method="POST" class="form" novalidate>
 																			<!--begin::Heading-->
 																			<div class="mb-13 text-center">
 																				<!--begin::Title-->
@@ -798,9 +798,21 @@ $result = $stmt->get_result();
 																				<!-- Input de fecha -->
 																				<label for="fecha-evento" class="form-label">Fecha del evento</label>
 																				<input id="fecha-evento" class=" mb-3 form-control form-control-solid" name="fecha-evento" type="date" required aria-required="true">
-
+																				<select class="form-select mb-3 exclude-select" id="borrarEventoCurso" name="createByCourse" >
+																					<option value="-1.todos">Todos los cursos</option>
+																					<?php
+																					$sqlQuery = "SELECT * FROM cursos where idCurso <> 0";
+																					$stm = $conex->prepare($sqlQuery);
+																					$stm->execute();
+																					$resultCursos = $stm->get_result();
+																					while ($rowCurso = mysqli_fetch_assoc($resultCursos)) {
+																					?>
+																						<option value="<?= $rowCurso['IdCurso']?>.<?=$rowCurso['Titulo']?>" ><?= $rowCurso['Titulo'] ?></option>
+																					<?php
+																					}
+																					?>
+																				</select>
 																				<p class="p-5 fs-5 border border-primary text-muted"  id="date-persist" title="Indica la fecha en la cual se ejecutara el evento de baja masivas">Fecha de baja: </p>
-
 																				<!--begin::Actions-->
 																				<div class="text-center mt-4">
 																					<button type="reset" class="btn btn-danger me-3" data-bs-dismiss="modal" id="btnEliminar">Eliminar</button>
