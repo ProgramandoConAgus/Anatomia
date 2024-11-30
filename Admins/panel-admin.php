@@ -718,10 +718,11 @@ $result = $stmt->get_result();
 																	Acciones
 																</button>
 																<ul class="dropdown-menu">
+																	<li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#kt_modal_pdf" href="#">Administrar material</a></li>
 																	<li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#kt_modal_video" href="#">Cargar Videos</a></li>
-																	<li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#kt_modal_categoria" href="#">Nueva categoria</a></li>
 																	<li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#kt_modal_gestion_bajas_masiva" href="#">Gestión de bajas masivas</a></li>
-
+																	<li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#kt_modal_categoria" href="#">Nueva categoria</a></li>
+																	
 																</ul>
 															</div>
 															<div class="container col-lg-8">
@@ -758,7 +759,7 @@ $result = $stmt->get_result();
 																<div class="modal-content">
 																	<div class="modal-header">
 																		<h1 class="modal-title fs-5" id="staticBackdropLabel">Actualizacion</h1>
-																	
+
 																	</div>
 																	<div class="modal-body" id="modal-body-events">
 																	</div>
@@ -798,7 +799,7 @@ $result = $stmt->get_result();
 																				<!-- Input de fecha -->
 																				<label for="fecha-evento" class="form-label">Fecha del evento</label>
 																				<input id="fecha-evento" class=" mb-3 form-control form-control-solid" name="fecha-evento" type="date" required aria-required="true">
-																				<select class="form-select mb-3 exclude-select" id="borrarEventoCurso" name="createByCourse" >
+																				<select class="form-select mb-3 exclude-select" id="borrarEventoCurso" name="createByCourse">
 																					<option value="-1.todos">Todos los cursos</option>
 																					<?php
 																					$sqlQuery = "SELECT * FROM cursos where idCurso <> 0";
@@ -807,12 +808,12 @@ $result = $stmt->get_result();
 																					$resultCursos = $stm->get_result();
 																					while ($rowCurso = mysqli_fetch_assoc($resultCursos)) {
 																					?>
-																						<option value="<?= $rowCurso['IdCurso']?>.<?=$rowCurso['Titulo']?>" ><?= $rowCurso['Titulo'] ?></option>
+																						<option value="<?= $rowCurso['IdCurso'] ?>.<?= $rowCurso['Titulo'] ?>"><?= $rowCurso['Titulo'] ?></option>
 																					<?php
 																					}
 																					?>
 																				</select>
-																				<p class="p-5 fs-5 border border-primary text-muted"  id="date-persist" title="Indica la fecha en la cual se ejecutara el evento de baja masivas">Fecha de baja: </p>
+																				<p class="p-5 fs-5 border border-primary text-muted" id="date-persist" title="Indica la fecha en la cual se ejecutara el evento de baja masivas">Fecha de baja: </p>
 																				<!--begin::Actions-->
 																				<div class="text-center mt-4">
 																					<button type="reset" class="btn btn-danger me-3" data-bs-dismiss="modal" id="btnEliminar">Eliminar</button>
@@ -987,6 +988,148 @@ $result = $stmt->get_result();
 															<!--end::Modal dialog-->
 														</div>
 														<!--end::Modal - New Target-->
+
+
+														<!--begin-modal-Pdf-->
+
+
+														<div class="modal fade" id="kt_modal_pdf" tabindex="-1" aria-hidden="true">
+
+															<div class="modal-dialog modal-dialog-centered mw-650px">
+
+																<div class="modal-content rounded">
+
+																	<div class="modal-header pb-0 border-0 justify-content-end">
+
+																		<div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal" id="btnCancel">
+																			<i class="ki-duotone ki-cross fs-1">
+																				<span class="path1"></span>
+																				<span class="path2"></span>
+																			</i>
+																		</div>
+
+																	</div>
+
+																	<div class="progress mt-4" style="display:none;" id="uploadProgressContainer">
+																		<div id="uploadProgressBar" class="progress-bar progress-bar-striped progress-bar-animated" style="width: 0%">0%</div>
+																	</div>
+
+																	<div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
+
+																		<form method="POST" id="upLoadArchivoForm" class="form" action="#" enctype="multipart/form-data">
+
+																			<div class="mb-13 text-center">
+
+																				<h1 class="mb-3">Administrar material</h1>
+
+																			</div>
+
+																			<div class="d-flex flex-column mb-8 fv-row">
+
+																				<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																					<span class="required">Titulo</span>
+																					<span class="ms-1" data-bs-toggle="tooltip" title="Titulo con el que se mostrara el video.">
+																						<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																							<span class="path1"></span>
+																							<span class="path2"></span>
+																							<span class="path3"></span>
+																						</i>
+																					</span>
+																				</label>
+
+																				<input type="text" class="form-control form-control-solid" placeholder="Ingresa el titulo del video" name="titulo" />
+																			</div>
+
+																			<div class="fv-row mb-8">
+
+																				<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																					<span class="required">Modulo</span>
+																					<span class="ms-1" data-bs-toggle="tooltip" title="Modulo al que pertenece el video">
+																						<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																							<span class="path1"></span>
+																							<span class="path2"></span>
+																							<span class="path3"></span>
+																						</i>
+																					</span>
+																				</label>
+
+																				<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Selecciona un Modulo" name="modulo">
+																					<option value=""></option>
+																					<option value="1">Modulo Locomotor</option>
+																					<option value="2">Modulo Neuroanatomía</option>
+																					<option value="3">Modulo Esplacnología</option>
+																				</select>
+
+																			</div>
+
+																			<div class="fv-row mb-8">
+
+																				<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																					<span class="required">Categoria</span>
+																					<span class="ms-1" data-bs-toggle="tooltip" title="Categoria al que pertenece el video">
+																						<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																							<span class="path1"></span>
+																							<span class="path2"></span>
+																							<span class="path3"></span>
+																						</i>
+																					</span>
+																				</label>
+
+																				<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Selecciona la categoria" name="categoria">
+																					<option value=""></option>
+																					<?php
+																					$sql = "SELECT * FROM categoria";
+																					$stmt = $conex->prepare($sql);
+																					$stmt->execute();
+																					$result = $stmt->get_result();
+																					if ($result) {
+																						while ($row = mysqli_fetch_assoc($result)) {
+																					?>
+																							<option value="<?= $row['IdCategoria'] ?>"><?= $row['nombre'] ?></option>
+																					<?php
+																						}
+																					}
+
+																					?>
+																				</select>
+
+																			</div>
+
+																			<div class="d-flex flex-column mb-8 fv-row">
+
+																				<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																					<span class="required">Cargar archivo</span>
+																					<span class="ms-1" data-bs-toggle="tooltip" title="Selecciona el archivo.">
+																						<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																							<span class="path1"></span>
+																							<span class="path2"></span>
+																							<span class="path3"></span>
+																						</i>
+																					</span>
+																				</label>
+
+																				<input type="file" class="form-control form-control-solid" accept=".pdf,application/pdf" name="archivo" />																			</div>
+
+																			<div class="text-center">
+																				<button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal" id="btnCancel">Cancel</button>
+																				<button type="submit" class="btn btn-primary" data-kt-modal-action-type="submit">
+																					<span class="indicator-label">Submit</span>
+																					<span class="indicator-progress">Please wait...
+																						<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+																				</button>
+																			</div>
+
+																		</form>
+
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+
+														<!--End-modal-Pdf-->
 
 
 
