@@ -9,6 +9,13 @@ if (
     && $_SESSION['loggedin'] === true
     && $_SESSION['IdTipoUsuario'] == 2
 ) {
+    if (!isset($_POST['categoria']) || empty($_POST['categoria']) || !isset($_FILES['archivo']) || $_FILES['archivo']['error'] != UPLOAD_ERR_OK ) {
+        echo json_encode([
+            'status' => 'error',
+            'message' => 'La categoría y el archivo son requeridos'
+        ]);
+        exit; 
+    }
 
     $pdf = new Pdf($conex);
     $idCategoria = $_POST['categoria'];
@@ -18,6 +25,6 @@ if (
 } else {
     echo json_encode([
         'status' => 'eror',
-        'menssage ' => 'La solicitud no es válida.'
+        'message ' => 'La solicitud no es válida.'
     ]);
 }
