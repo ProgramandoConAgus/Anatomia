@@ -11,10 +11,9 @@ if (
 ) {
 
     $pdf = new Pdf($conex);
-    $idCategoria = $_POST['idCatecoria'];
-    $titulo = $_POST['titulo'];
+    $idCategoria = $_POST['categoria'];
 
-    $response = $pdf->createPdf($idCategoria, $titulo, $_FILES['archivo']);
+    $response = $pdf->createPdf($idCategoria, $_FILES['archivo']);
     echo $response;
 } else {
     echo json_encode([

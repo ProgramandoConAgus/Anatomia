@@ -1,7 +1,37 @@
-document.addEventListener('DOMContentLoaded', mostrarEventos());
 
 const form = document.getElementById('baja-masiva-form');
+const upLoadArchivoForm = document.getElementById('upLoadArchivoForm');
 const btnDeleteEvento = document.getElementById('btnEliminar');
+
+//----addEvents----
+
+document.addEventListener('DOMContentLoaded', mostrarEventos());
+
+form.addEventListener('submit', function (event) {
+    event.preventDefault(); 
+    const formData = new FormData(form);
+    formData.append('action', 'create');
+    disebledAllUsers(formData);
+});
+
+btnDeleteEvento.addEventListener('click', function (event) {
+    event.preventDefault(); 
+    const curso=document.getElementById("borrarEventoCurso")
+    const nombreCurso = curso.value.split(".");
+
+    const formData = new FormData(form);
+    formData.append('curso',nombreCurso[1]);
+    formData.append('action', 'delete');
+    disebledAllUsers(formData);
+});
+
+upLoadArchivoForm.addEventListener('submit',function(event){ 
+    event.preventDefault(); 
+    upLoadPdf(this);
+})
+
+//----functions----
+
 function mostrarEventos() {
     const p = document.getElementById('date-persist');
     const formData = new FormData();
@@ -30,23 +60,7 @@ function mostrarEventos() {
     });
 }
 
-btnDeleteEvento.addEventListener('click', function (event) {
-    event.preventDefault(); 
-    const curso=document.getElementById("borrarEventoCurso")
-    const nombreCurso = curso.value.split(".");
 
-    const formData = new FormData(form);
-    formData.append('curso',nombreCurso[1]);
-    formData.append('action', 'delete');
-    disebledAllUsers(formData);
-});
-
-form.addEventListener('submit', function (event) {
-    event.preventDefault(); 
-    const formData = new FormData(form);
-    formData.append('action', 'create');
-    disebledAllUsers(formData);
-});
 
 function disebledAllUsers(formData) {
     const date = document.getElementById('fecha-evento');
@@ -84,9 +98,6 @@ function disebledAllUsers(formData) {
         });
 }
 
-
-
-
 //Selecciona todos los selects
 let selects = document.querySelectorAll("select:not(.exclude-select)");
 let responseText="";
@@ -106,7 +117,6 @@ selects.forEach(function(select) {
         actualizarUsuario(data[1],options,accion)
     });
 });
-
 
 // Selecciona todos los switches (checkboxes) con la clase 'check-input-users'
 let switches = document.querySelectorAll(".check-input-users");
@@ -160,6 +170,76 @@ function actualizarUsuario(userId, id, tipoAccion) {
             console.error('Error al actualizar el usuario:', result.message);
         }
     })
-    .catch(error => console.error('Error en la solicitud:', error));
+    .catch(error =>{console.error('Error en la solicitud:', error)} );
     
 }
+
+function upLoadPdf(form){
+    
+    const progressContainer = document.getElementById("uploadProgressContainerPdf");
+    const progressBar = document.getElementById("uploadProgressBarPdf");
+
+    progressContainer.style.display = "block";
+    const formData = new FormData(form);
+    
+    form.reset()
+    
+    const xhr = new XMLHttpRequest();
+
+    xhr.open("POST", "./Admins/upLoadPdf.php", true);
+
+    xhr.upload.addEventListener("progress", function(e) {
+        if (e.lengthComputable) {
+            const percentComplete = (e.loaded / e.total) * 100;
+            progressBar.style.width = percentComplete + "%";
+            progressBar.innerHTML = Math.floor(percentComplete) + "%";
+        }
+    });
+
+    xhr.onload = function() {
+        let response;
+        try {
+            
+            response = JSON.parse(xhr.responseText); 
+        
+        } catch (error) {
+            console.error("Error al parsear la respuesta del servidor:", error);
+            progressBar.classList.add("bg-danger");
+            progressBar.innerHTML = "Error en la respuesta del servidor.";
+            return;
+        }
+
+        if (response.status === 'success') {
+
+            progressBar.classList.add("bg-success"); 
+            progressBar.innerHTML = response.message;
+            
+            setTimeout(() => {
+                progressContainer.style.display = "none";
+                progressBar.classList.remove("bg-success");
+                progressBar.style.width = "0%";
+            }, 2000);
+
+        } else {
+            progressBar.classList.add("bg-danger");
+            progressBar.innerHTML = response.message || "Error desconocido.";
+            setTimeout(() => {
+                progressContainer.style.display = "none";
+                progressBar.classList.remove("bg-danger");
+                progressBar.style.width = "0%";
+            }, 2000);
+        }
+    };
+
+    xhr.onerror = function() {
+        progressBar.classList.add("bg-danger");
+        progressBar.innerHTML = "Error de conexión.";
+        setTimeout(() => {
+            progressContainer.style.display = "none";
+            progressBar.classList.remove("bg-danger");
+            progressBar.style.width = "0%";
+        }, 2000);
+    };
+
+    xhr.send(formData);
+};

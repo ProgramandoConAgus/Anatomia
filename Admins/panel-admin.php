@@ -722,7 +722,7 @@ $result = $stmt->get_result();
 																	<li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#kt_modal_video" href="#">Cargar Videos</a></li>
 																	<li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#kt_modal_gestion_bajas_masiva" href="#">Gestión de bajas masivas</a></li>
 																	<li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#kt_modal_categoria" href="#">Nueva categoria</a></li>
-																	
+
 																</ul>
 															</div>
 															<div class="container col-lg-8">
@@ -1010,58 +1010,19 @@ $result = $stmt->get_result();
 
 																	</div>
 
-																	<div class="progress mt-4" style="display:none;" id="uploadProgressContainer">
-																		<div id="uploadProgressBar" class="progress-bar progress-bar-striped progress-bar-animated" style="width: 0%">0%</div>
+																	<div class="progress mt-4" style="display:none;" id="uploadProgressContainerPdf">
+																		<div id="uploadProgressBarPdf" class="progress-bar progress-bar-striped progress-bar-animated" style="width: 0%">0%</div>
 																	</div>
 
 																	<div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
 
-																		<form method="POST" id="upLoadArchivoForm" class="form" action="#" enctype="multipart/form-data">
+																		<form method="POST" id="upLoadArchivoForm" class="form" enctype="multipart/form-data">
 
 																			<div class="mb-13 text-center">
 
 																				<h1 class="mb-3">Administrar material</h1>
 
 																			</div>
-
-																			<div class="d-flex flex-column mb-8 fv-row">
-
-																				<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
-																					<span class="required">Titulo</span>
-																					<span class="ms-1" data-bs-toggle="tooltip" title="Titulo con el que se mostrara el video.">
-																						<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
-																							<span class="path1"></span>
-																							<span class="path2"></span>
-																							<span class="path3"></span>
-																						</i>
-																					</span>
-																				</label>
-
-																				<input type="text" class="form-control form-control-solid" placeholder="Ingresa el titulo del video" name="titulo" />
-																			</div>
-
-																			<div class="fv-row mb-8">
-
-																				<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
-																					<span class="required">Modulo</span>
-																					<span class="ms-1" data-bs-toggle="tooltip" title="Modulo al que pertenece el video">
-																						<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
-																							<span class="path1"></span>
-																							<span class="path2"></span>
-																							<span class="path3"></span>
-																						</i>
-																					</span>
-																				</label>
-
-																				<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Selecciona un Modulo" name="modulo">
-																					<option value=""></option>
-																					<option value="1">Modulo Locomotor</option>
-																					<option value="2">Modulo Neuroanatomía</option>
-																					<option value="3">Modulo Esplacnología</option>
-																				</select>
-
-																			</div>
-
 																			<div class="fv-row mb-8">
 
 																				<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
@@ -1108,7 +1069,8 @@ $result = $stmt->get_result();
 																					</span>
 																				</label>
 
-																				<input type="file" class="form-control form-control-solid" accept=".pdf,application/pdf" name="archivo" />																			</div>
+																				<input type="file" class="form-control form-control-solid" accept=".pdf,application/pdf" name="archivo"/>
+																			</div>
 
 																			<div class="text-center">
 																				<button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal" id="btnCancel">Cancel</button>
@@ -1128,13 +1090,7 @@ $result = $stmt->get_result();
 															</div>
 
 														</div>
-
 														<!--End-modal-Pdf-->
-
-
-
-
-
 														<!--begin::Modal - New Target-->
 														<div class="modal fade" id="kt_modal_categoria" tabindex="-1" aria-hidden="true">
 															<!--begin::Modal dialog-->
