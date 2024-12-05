@@ -2,10 +2,15 @@
 const form = document.getElementById('baja-masiva-form');
 const upLoadArchivoForm = document.getElementById('upLoadArchivoForm');
 const btnDeleteEvento = document.getElementById('btnEliminar');
+const dirPdfs = document.getElementById("dirPdfs");
 
 //----addEvents----
 
-document.addEventListener('DOMContentLoaded', mostrarEventos());
+document.addEventListener('DOMContentLoaded',() => {
+    mostrarEventos();
+    getPdfs();
+
+} );
 
 form.addEventListener('submit', function (event) {
     event.preventDefault(); 
@@ -174,6 +179,8 @@ function actualizarUsuario(userId, id, tipoAccion) {
     
 }
 
+//----------------------------PDF-----------------------------------------
+
 function upLoadPdf(form){
     
     const progressContainer = document.getElementById("uploadProgressContainerPdf");
@@ -181,12 +188,12 @@ function upLoadPdf(form){
 
     progressContainer.style.display = "block";
     const formData = new FormData(form);
-    
+    formData.append('action', '1');
     form.reset()
     
     const xhr = new XMLHttpRequest();
 
-    xhr.open("POST", "./Admins/upLoadPdf.php", true);
+    xhr.open("POST", "./Admins/managmentPdf.php", true);
 
     xhr.upload.addEventListener("progress", function(e) {
         if (e.lengthComputable) {
@@ -210,7 +217,7 @@ function upLoadPdf(form){
         }
 
         if (response.status === 'success') {
-
+            
             progressBar.classList.add("bg-success"); 
             progressBar.innerHTML = response.message;
             
@@ -218,7 +225,11 @@ function upLoadPdf(form){
                 progressContainer.style.display = "none";
                 progressBar.classList.remove("bg-success");
                 progressBar.style.width = "0%";
+
+                //recargamos directorios en pantalla
+                 getPdfs();
             }, 2000);
+         
 
         } else {
             progressBar.classList.add("bg-danger");
@@ -229,6 +240,7 @@ function upLoadPdf(form){
                 progressBar.style.width = "0%";
             }, 2000);
         }
+       
     };
 
     xhr.onerror = function() {
@@ -242,4 +254,123 @@ function upLoadPdf(form){
     };
 
     xhr.send(formData);
+   
 };
+
+function getPdfs(){
+    debugger;
+    const formData = new FormData();
+    formData.append('action', '2');
+        fetch('./Admins/managmentPdf.php', {
+            method: 'POST',
+            body: formData
+        }).then(response => {
+            
+            if (!response.ok) {
+            throw new Error('Error en la respuesta: ' + response.status);
+        }
+            return response.json(); 
+        }).then(result  =>{
+            builderDir(result)
+        }).catch(error => {console.log(error)})
+    }
+
+    function builderDir(data) {
+        debugger
+        const arrayData = data.data; 
+        const jsonData = []; 
+    
+        for (let i = 0; i < arrayData.length; i++) {
+            let row = arrayData[i];
+            let path = row.pdf_path.split('/'); // Dividir la ruta por "/"
+    
+            if (path.length < 4) continue; // Ignorar rutas con menos de 3 niveles
+    
+            let nameDir = path[2]; // Carpeta principal ( el nombre de categoria)
+            let file = path[3];    // Archivo dentro de la carpeta
+    
+            
+            let existingFolder = jsonData.find(folder => folder.name === nameDir); // Buscar si la carpeta ya existe en jsonData
+    
+            if (existingFolder) {
+                // Si la carpeta existe, agregar el archivo
+                existingFolder.files.push({ name: file, 
+                                            type:'file'
+                                        });
+            } else {
+                // Si no existe, crear una nueva entrada de carpeta
+                jsonData.push({
+                    name: nameDir,
+                    id: Math.floor(1000 + Math.random() * 9000),
+                    files: [{   name: file, 
+                                type:'file' 
+                            }]
+                });
+            }
+        }
+    
+        renderFolders( jsonData);
+    }
+
+function createFolder(folder) {
+    const li = document.createElement("li");
+    li.classList.add("list-group-item");
+
+    const icon = document.createElement("i");
+    icon.classList.add("bi", "bi-folder-fill", "text-warning");
+    li.appendChild(icon);
+
+    li.append(` ${folder.name} `);
+
+    if (folder.files && folder.files.length > 0) {
+      const button = document.createElement("button");
+      button.classList.add("btn", "btn-link", "btn-sm", "float-end");
+      button.setAttribute("data-bs-toggle", "collapse");
+      button.setAttribute("data-bs-target", `#folder${folder.id}`);
+      button.innerHTML = '<i class="bi bi-chevron-down"></i>';
+      li.appendChild(button);
+
+      const ul = document.createElement("ul");
+      ul.classList.add("list-group", "collapse", "mt-2");
+      ul.id = 'folder'+folder.id;
+
+      folder.files.forEach((file) => {
+        if (file.type === "file") {
+          ul.appendChild(createFile(file));
+        } else if (file.type === "folder") {
+          ul.appendChild(createFolder(file));
+        }
+      });
+
+      li.appendChild(ul);
+    }
+
+    return li;
+  }
+
+  function createFile(file) {
+    const li = document.createElement("li");
+    li.classList.add("list-group-item");
+
+    const icon = document.createElement("i");
+    icon.classList.add("bi", "bi-file-earmark-pdf");
+    li.appendChild(icon);
+
+    li.append(` ${file.name}`);
+    return li;
+  }
+
+  function renderFolders(data) {
+    debugger;
+    const ul = document.createElement("ul");
+    ul.classList.add("list-group");
+
+    data.forEach((folder) => {
+      ul.appendChild(createFolder(folder));
+    });
+    dirPdfs.innerHTML = "";
+
+    dirPdfs.appendChild(ul);
+  }
+
+

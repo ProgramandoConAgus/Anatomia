@@ -9,7 +9,7 @@ class Pdf {
         $this->conex = $conex;
     }
 
-    public function createPdf($idCategoria,$archivo) {
+    public function createPdf($idCategoria,$titulo,$archivo) {
         $response = [];
 
         $pdfName = basename($archivo['name']); // Obtenemos el nombre del archivo
@@ -55,9 +55,9 @@ class Pdf {
 
             $pdfPath = $this->dir . $pdfName;
 
-            $sqlInsert = 'INSERT INTO pdfs (idCategoria, pdf_path) VALUES (?, ?)';
+            $sqlInsert = 'INSERT INTO pdfs (idCategoria, pdf_path, titulo) VALUES (?, ?,?)';
             if ($stmtInsert = $this->conex->prepare($sqlInsert)) {
-                $stmtInsert->bind_param('is', $idCategoria, $pdfPath);
+                $stmtInsert->bind_param('iss', $idCategoria, $pdfPath,$titulo);
                 if (!$stmtInsert->execute()) {
                     throw new Exception('Error al guardar el PDF en la base de datos: ' . $stmtInsert->error);
                 }
@@ -89,5 +89,41 @@ class Pdf {
 
         return json_encode($response);
     }
+
+    public function getPdfListTree(){
+        $response = [];
+        $sqlGetPdfs = "SELECT * FROM pdfs";
+
+
+
+        try{
+            
+            $result = $this->conex->query($sqlGetPdfs );
+        
+        }catch(Exception $e){
+            $response['status'] = 'error';
+            $response['message'] = 'Error al realizar la consulta: '.$e->getMessage();
+            return json_encode($response);
+        }
+
+        $response['status'] = 'success';
+        $response['message'] = '';
+        $response['count'] = $result-> num_rows;
+        
+        if ($result-> num_rows > 0){
+            $data = [];
+            while($row = $result->fetch_assoc()){
+              array_push($data ,$row);
+            }
+            $response['data'] = $data;
+
+        }else{
+            
+            $response['message'] = 'No se encontraror resultados';
+        }
+        return json_encode($response);
+    }
+
+
 }
 ?>

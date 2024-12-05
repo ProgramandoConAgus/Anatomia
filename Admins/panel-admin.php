@@ -995,7 +995,7 @@ $result = $stmt->get_result();
 
 														<div class="modal fade" id="kt_modal_pdf" tabindex="-1" aria-hidden="true">
 
-															<div class="modal-dialog modal-dialog-centered mw-650px">
+															<div class="modal-dialog modal-dialog-centered modal-xl">
 
 																<div class="modal-content rounded">
 
@@ -1013,75 +1013,101 @@ $result = $stmt->get_result();
 																	<div class="progress mt-4" style="display:none;" id="uploadProgressContainerPdf">
 																		<div id="uploadProgressBarPdf" class="progress-bar progress-bar-striped progress-bar-animated" style="width: 0%">0%</div>
 																	</div>
+																	<div class="d-flex align-items-center justify-content-center">
+																		<h1 class="mb-3">Administrar material</h1>
+																	</div>
 
-																	<div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
+																	<div class="modal-body  px-10 px-lg-15 pt-0 pb-15">
+																		<div class="container d-flex">
 
-																		<form method="POST" id="upLoadArchivoForm" class="form" enctype="multipart/form-data">
+																			<div class="col-6">
+																				<form method="POST" id="upLoadArchivoForm" class="form" enctype="multipart/form-data">
 
-																			<div class="mb-13 text-center">
+																					<div class="mb-13 text-center">
 
-																				<h1 class="mb-3">Administrar material</h1>
 
+
+																					</div>
+																					<div class="d-flex flex-column mb-8 fv-row">
+																						<!--begin::Label-->
+																						<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																							<span class="required">Titulo</span>
+																							<span class="ms-1" data-bs-toggle="tooltip" title="Titulo con el que se mostrara el pdf.">
+																								<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																									<span class="path1"></span>
+																									<span class="path2"></span>
+																									<span class="path3"></span>
+																								</i>
+																							</span>
+																						</label>
+																						<!--end::Label-->
+																						<input type="text" class="form-control form-control-solid" placeholder="Ingresa el titulo del archivo" name="titulo" />
+																					</div>
+																					<div class="fv-row mb-8">
+
+																						<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																							<span class="required">Categoria</span>
+																							<span class="ms-1" data-bs-toggle="tooltip" title="Categoria al que pertenece el pdf">
+																								<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																									<span class="path1"></span>
+																									<span class="path2"></span>
+																									<span class="path3"></span>
+																								</i>
+																							</span>
+																						</label>
+
+																						<select class="form-select form-select-solid exclude-select" data-control="select2" data-hide-search="true" data-placeholder="Selecciona la categoria" name="categoria">
+																							<option value=""></option>
+																							<?php
+																							$sql = "SELECT * FROM categoria";
+																							$stmt = $conex->prepare($sql);
+																							$stmt->execute();
+																							$result = $stmt->get_result();
+																							if ($result) {
+																								while ($row = mysqli_fetch_assoc($result)) {
+																							?>
+																									<option value="<?= $row['IdCategoria'] ?>"><?= $row['nombre'] ?></option>
+																							<?php
+																								}
+																							}
+
+																							?>
+																						</select>
+
+																					</div>
+
+																					<div class="d-flex flex-column mb-8 fv-row">
+
+																						<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																							<span class="required">Cargar archivo</span>
+																							<span class="ms-1" data-bs-toggle="tooltip" title="Selecciona el archivo.">
+																								<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																									<span class="path1"></span>
+																									<span class="path2"></span>
+																									<span class="path3"></span>
+																								</i>
+																							</span>
+																						</label>
+
+																						<input type="file" class="form-control form-control-solid" accept=".pdf,application/pdf" name="archivo" />
+																					</div>
+
+																					<div class="text-center">
+																						<button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal" id="btnCancel">Cancel</button>
+																						<button type="submit" class="btn btn-primary" data-kt-modal-action-type="submit">
+																							<span class="indicator-label">Submit</span>
+																							<span class="indicator-progress">Please wait...
+																								<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+																						</button>
+																					</div>
+
+																				</form>
 																			</div>
-																			<div class="fv-row mb-8">
-
-																				<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
-																					<span class="required">Categoria</span>
-																					<span class="ms-1" data-bs-toggle="tooltip" title="Categoria al que pertenece el video">
-																						<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
-																							<span class="path1"></span>
-																							<span class="path2"></span>
-																							<span class="path3"></span>
-																						</i>
-																					</span>
-																				</label>
-
-																				<select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Selecciona la categoria" name="categoria">
-																					<option value=""></option>
-																					<?php
-																					$sql = "SELECT * FROM categoria";
-																					$stmt = $conex->prepare($sql);
-																					$stmt->execute();
-																					$result = $stmt->get_result();
-																					if ($result) {
-																						while ($row = mysqli_fetch_assoc($result)) {
-																					?>
-																							<option value="<?= $row['IdCategoria'] ?>"><?= $row['nombre'] ?></option>
-																					<?php
-																						}
-																					}
-
-																					?>
-																				</select>
-
+																			<div id="dirPdfs" class="col-6 ms-3"  style="max-height: 300px;overflow: auto; padding: 5px;">
+											
 																			</div>
 
-																			<div class="d-flex flex-column mb-8 fv-row">
-
-																				<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
-																					<span class="required">Cargar archivo</span>
-																					<span class="ms-1" data-bs-toggle="tooltip" title="Selecciona el archivo.">
-																						<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
-																							<span class="path1"></span>
-																							<span class="path2"></span>
-																							<span class="path3"></span>
-																						</i>
-																					</span>
-																				</label>
-
-																				<input type="file" class="form-control form-control-solid" accept=".pdf,application/pdf" name="archivo"/>
-																			</div>
-
-																			<div class="text-center">
-																				<button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal" id="btnCancel">Cancel</button>
-																				<button type="submit" class="btn btn-primary" data-kt-modal-action-type="submit">
-																					<span class="indicator-label">Submit</span>
-																					<span class="indicator-progress">Please wait...
-																						<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-																				</button>
-																			</div>
-
-																		</form>
+																		</div>
 
 																	</div>
 
