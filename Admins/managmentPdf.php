@@ -19,7 +19,9 @@ if (
         exit; 
     }
     $action = $_POST['action'];
+    $pdf = new Pdf($conex);
     switch($action){
+        
         case 1:
                 if (!isset($_POST['categoria']) || empty($_POST['categoria']) || !isset($_FILES['archivo']) || $_FILES['archivo']['error'] != UPLOAD_ERR_OK ) {
                     echo json_encode([
@@ -28,7 +30,7 @@ if (
                     ]);
                     exit; 
                 }
-                $pdf = new Pdf($conex);
+               
                 $idCategoria = $_POST['categoria'];
                 $titulo = !isset( $_POST['titulo'] ) ? '' :  $_POST['titulo'];
 
@@ -36,12 +38,26 @@ if (
                 echo $response;
                 break;
         case 2:
-            
-            $pdf = new Pdf($conex);
-
             $response = $pdf->getPdfListTree();
             echo $response;
             break;
+        
+            case 3:
+                $data = isset($_POST['data']) ? json_decode($_POST['data'], true) : null;
+            
+                if (json_last_error() !== JSON_ERROR_NONE || empty($data)) {
+                    echo json_encode([
+                        'status' => 'error',
+                        'message' => 'Datos inválidos o faltantes.'
+                    ]);
+                    exit;
+                }
+            
+                $response = $pdf->deletePdf($data);
+                echo $response;
+                break;
+            
+
     }
 
 } else {

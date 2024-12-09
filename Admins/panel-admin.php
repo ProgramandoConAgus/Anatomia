@@ -1099,6 +1099,7 @@ $result = $stmt->get_result();
 																							<span class="indicator-progress">Please wait...
 																								<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
 																						</button>
+																						<button type="reset" class="btn btn-danger me-3"  id="btnDeletePdf">Eliminar</button>
 																					</div>
 
 																				</form>
