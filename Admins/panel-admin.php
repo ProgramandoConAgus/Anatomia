@@ -990,10 +990,58 @@ $result = $stmt->get_result();
 														<!--end::Modal - New Target-->
 
 
-														<!--begin-modal-Pdf-->
 
-
+														<!--begin::Modal - Categoria del pdf-->
 														<div class="modal fade" id="kt_modal_pdf" tabindex="-1" aria-hidden="true">
+														<!--begin::Modal dialog-->
+														<div class="modal-dialog modal-dialog-centered mw-650px">
+															<!--begin::Modal content-->
+															<div class="modal-content rounded">
+															<!--begin::Modal header-->
+															<div class="modal-header pb-0 border-0 justify-content-end">
+																<!--begin::Close-->
+																<div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal" id="btnCancel">
+																<i class="ki-duotone ki-cross fs-1">
+																	<span class="path1"></span>
+																	<span class="path2"></span>
+																</i>
+																</div>
+																<!--end::Close-->
+															</div>
+															<!--begin::Modal header-->
+															<!--begin::Modal body-->
+															<div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
+																<div class="mb-13 text-center">
+																<!--begin::Title-->
+																<h1 class="mb-3">Agrega un pdf</h1>
+																<!--end::Title-->
+																</div>
+																<div class="text-center">
+																<h3>¿A que modulo quieres agregar el pdf?</h3>
+																<button class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_pdfLoco">Locomotor</button>
+																<button class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_pdfNeuro">Neuroanatomia</button>
+																<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_pdfEsplacno">Esplacnología</button>
+
+																</div>
+															</div>
+															<!--end::Modal body-->
+															</div>
+															<!--end::Modal content-->
+														</div>
+														<!--end::Modal dialog-->
+														</div>
+														<!--end::Modal - New Target-->
+
+
+
+
+
+
+
+														<!--begin-modal-Pdf Locomotor-->	
+
+
+														<div class="modal fade" id="kt_modal_pdfLoco" tabindex="-1" aria-hidden="true">
 
 															<div class="modal-dialog modal-dialog-centered modal-xl">
 
@@ -1020,13 +1068,10 @@ $result = $stmt->get_result();
 																	<div class="modal-body  px-10 px-lg-15 pt-0 pb-15">
 																		<div class="container d-flex">
 
-																			<div class="col-6">
-																				<form method="POST" id="upLoadArchivoForm" class="form" enctype="multipart/form-data">
+																			<div class="col">
+																				<form method="POST" id="upLoadArchivoFormL" class="form" enctype="multipart/form-data">
 
 																					<div class="mb-13 text-center">
-
-
-
 																					</div>
 																					<div class="d-flex flex-column mb-8 fv-row">
 																						<!--begin::Label-->
@@ -1059,14 +1104,14 @@ $result = $stmt->get_result();
 																						<select class="form-select form-select-solid exclude-select" data-control="select2" data-hide-search="true" data-placeholder="Selecciona la categoria" name="categoria">
 																							<option value=""></option>
 																							<?php
-																							$sql = "SELECT * FROM categoria";
+																							$sql = "SELECT * FROM categoria_pdfs Where idModulo=1";
 																							$stmt = $conex->prepare($sql);
 																							$stmt->execute();
 																							$result = $stmt->get_result();
 																							if ($result) {
 																								while ($row = mysqli_fetch_assoc($result)) {
 																							?>
-																									<option value="<?= $row['IdCategoria'] ?>"><?= $row['nombre'] ?></option>
+																									<option value="<?= $row['IdCategoria'] ?>"><?= $row['titulo'] ?></option>
 																							<?php
 																								}
 																							}
@@ -1094,18 +1139,18 @@ $result = $stmt->get_result();
 
 																					<div class="text-center">
 																						<button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal" id="btnCancel">Cancel</button>
-																						<button type="submit" class="btn btn-primary" data-kt-modal-action-type="submit">
+																						<button type="submit" class="btn btn-primary">
 																							<span class="indicator-label">Submit</span>
 																							<span class="indicator-progress">Please wait...
 																								<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
 																						</button>
-																						<button type="reset" class="btn btn-danger me-3"  id="btnDeletePdf">Eliminar</button>
 																					</div>
 
 																				</form>
 																			</div>
+																			<!--
 																			<div id="dirPdfs" class="col-6 ms-3"  style="max-height: 300px;overflow: auto; padding: 5px;">
-											
+																						-->
 																			</div>
 
 																		</div>
@@ -1118,8 +1163,268 @@ $result = $stmt->get_result();
 
 														</div>
 														<!--End-modal-Pdf-->
+
+
+														<!--begin-modal-Pdf Neuroanatomia-->
+
+
+														<div class="modal fade" id="kt_modal_pdfNeuro" tabindex="-1" aria-hidden="true">
+
+															<div class="modal-dialog modal-dialog-centered modal-xl">
+
+																<div class="modal-content rounded">
+
+																	<div class="modal-header pb-0 border-0 justify-content-end">
+
+																		<div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal" id="btnCancel">
+																			<i class="ki-duotone ki-cross fs-1">
+																				<span class="path1"></span>
+																				<span class="path2"></span>
+																			</i>
+																		</div>
+
+																	</div>
+
+																	<div class="progress mt-4" style="display:none;" id="uploadProgressContainerPdf">
+																		<div id="uploadProgressBarPdf" class="progress-bar progress-bar-striped progress-bar-animated" style="width: 0%">0%</div>
+																	</div>
+																	<div class="d-flex align-items-center justify-content-center">
+																		<h1 class="mb-3">Administrar material</h1>
+																	</div>
+
+																	<div class="modal-body  px-10 px-lg-15 pt-0 pb-15">
+																		<div class="container d-flex">
+
+																			<div class="col">
+																				<form method="POST" id="upLoadArchivoFormN" class="form" enctype="multipart/form-data">
+
+																					<div class="mb-13 text-center">
+																					</div>
+																					<div class="d-flex flex-column mb-8 fv-row">
+																						<!--begin::Label-->
+																						<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																							<span class="required">Titulo</span>
+																							<span class="ms-1" data-bs-toggle="tooltip" title="Titulo con el que se mostrara el pdf.">
+																								<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																									<span class="path1"></span>
+																									<span class="path2"></span>
+																									<span class="path3"></span>
+																								</i>
+																							</span>
+																						</label>
+																						<!--end::Label-->
+																						<input type="text" class="form-control form-control-solid" placeholder="Ingresa el titulo del archivo" name="titulo" />
+																					</div>
+																					<div class="fv-row mb-8">
+
+																						<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																							<span class="required">Categoria</span>
+																							<span class="ms-1" data-bs-toggle="tooltip" title="Categoria al que pertenece el pdf">
+																								<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																									<span class="path1"></span>
+																									<span class="path2"></span>
+																									<span class="path3"></span>
+																								</i>
+																							</span>
+																						</label>
+
+																						<select class="form-select form-select-solid exclude-select" data-control="select2" data-hide-search="true" data-placeholder="Selecciona la categoria" name="categoria">
+																							<option value=""></option>
+																							<?php
+																							$sql = "SELECT * FROM categoria_pdfs Where idModulo=3";
+																							$stmt = $conex->prepare($sql);
+																							$stmt->execute();
+																							$result = $stmt->get_result();
+																							if ($result) {
+																								while ($row = mysqli_fetch_assoc($result)) {
+																							?>
+																									<option value="<?= $row['IdCategoria'] ?>"><?= $row['titulo'] ?></option>
+																							<?php
+																								}
+																							}
+
+																							?>
+																						</select>
+
+																					</div>
+
+																					<div class="d-flex flex-column mb-8 fv-row">
+
+																						<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																							<span class="required">Cargar archivo</span>
+																							<span class="ms-1" data-bs-toggle="tooltip" title="Selecciona el archivo.">
+																								<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																									<span class="path1"></span>
+																									<span class="path2"></span>
+																									<span class="path3"></span>
+																								</i>
+																							</span>
+																						</label>
+
+																						<input type="file" class="form-control form-control-solid" accept=".pdf,application/pdf" name="archivo" />
+																					</div>
+
+																					<div class="text-center">
+																						<button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal" id="btnCancel">Cancel</button>
+																						<button type="submit" class="btn btn-primary" >
+																							<span class="indicator-label">Submit</span>
+																							<span class="indicator-progress">Please wait...
+																								<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+																						</button>
+																						
+																					</div>
+
+																				</form>
+																			</div>
+																			<!--
+																			<div id="dirPdfs" class="col-6 ms-3"  style="max-height: 300px;overflow: auto; padding: 5px;">
+																						-->
+																			</div>
+
+																		</div>
+
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+														<!--End-modal-Pdf-->
+														
+
+
+														<!--begin-modal-Pdf Esplacnologia-->
+
+
+														<div class="modal fade" id="kt_modal_pdfEsplacno" tabindex="-1" aria-hidden="true">
+
+															<div class="modal-dialog modal-dialog-centered modal-xl">
+
+																<div class="modal-content rounded">
+
+																	<div class="modal-header pb-0 border-0 justify-content-end">
+
+																		<div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal" id="btnCancel">
+																			<i class="ki-duotone ki-cross fs-1">
+																				<span class="path1"></span>
+																				<span class="path2"></span>
+																			</i>
+																		</div>
+
+																	</div>
+
+																	<div class="progress mt-4" style="display:none;" id="uploadProgressContainerPdf">
+																		<div id="uploadProgressBarPdf" class="progress-bar progress-bar-striped progress-bar-animated" style="width: 0%">0%</div>
+																	</div>
+																	<div class="d-flex align-items-center justify-content-center">
+																		<h1 class="mb-3">Administrar material</h1>
+																	</div>
+
+																	<div class="modal-body  px-10 px-lg-15 pt-0 pb-15">
+																		<div class="container d-flex">
+
+																			<div class="col">
+																				<form method="POST" id="upLoadArchivoFormE" class="form" enctype="multipart/form-data">
+
+																					<div class="mb-13 text-center">
+																					</div>
+																					<div class="d-flex flex-column mb-8 fv-row">
+																						<!--begin::Label-->
+																						<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																							<span class="required">Titulo</span>
+																							<span class="ms-1" data-bs-toggle="tooltip" title="Titulo con el que se mostrara el pdf.">
+																								<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																									<span class="path1"></span>
+																									<span class="path2"></span>
+																									<span class="path3"></span>
+																								</i>
+																							</span>
+																						</label>
+																						<!--end::Label-->
+																						<input type="text" class="form-control form-control-solid" placeholder="Ingresa el titulo del archivo" name="titulo" />
+																					</div>
+																					<div class="fv-row mb-8">
+
+																						<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																							<span class="required">Categoria</span>
+																							<span class="ms-1" data-bs-toggle="tooltip" title="Categoria al que pertenece el pdf">
+																								<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																									<span class="path1"></span>
+																									<span class="path2"></span>
+																									<span class="path3"></span>
+																								</i>
+																							</span>
+																						</label>
+
+																						<select class="form-select form-select-solid exclude-select" data-control="select2" data-hide-search="true" data-placeholder="Selecciona la categoria" name="categoria">
+																							<option value=""></option>
+																							<?php
+																							$sql = "SELECT * FROM categoria_pdfs Where idModulo=2";
+																							$stmt = $conex->prepare($sql);
+																							$stmt->execute();
+																							$result = $stmt->get_result();
+																							if ($result) {
+																								while ($row = mysqli_fetch_assoc($result)) {
+																							?>
+																									<option value="<?= $row['IdCategoria'] ?>"><?= $row['titulo'] ?></option>
+																							<?php
+																								}
+																							}
+
+																							?>
+																						</select>
+
+																					</div>
+
+																					<div class="d-flex flex-column mb-8 fv-row">
+
+																						<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																							<span class="required">Cargar archivo</span>
+																							<span class="ms-1" data-bs-toggle="tooltip" title="Selecciona el archivo.">
+																								<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																									<span class="path1"></span>
+																									<span class="path2"></span>
+																									<span class="path3"></span>
+																								</i>
+																							</span>
+																						</label>
+
+																						<input type="file" class="form-control form-control-solid" accept=".pdf,application/pdf" name="archivo" />
+																					</div>
+
+																					<div class="text-center">
+																						<button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal" id="btnCancel">Cancel</button>
+																						<button type="submit" class="btn btn-primary" >
+																							<span class="indicator-label">Submit</span>
+																							<span class="indicator-progress">Please wait...
+																								<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+																						</button>
+																					</div>
+
+																				</form>
+																			</div>
+																			<!--
+																			<div id="dirPdfs" class="col-6 ms-3"  style="max-height: 300px;overflow: auto; padding: 5px;">
+																						-->
+																			</div>
+
+																		</div>
+
+																	</div>
+
+																</div>
+
+															</div>
+
+														</div>
+														<!--End-modal-Pdf-->
+
+
+
+
 														<!--begin::Modal - New Target-->
-														<div class="modal fade" id="kt_modal_categoria" tabindex="-1" aria-hidden="true">
+														<div class="modal fade" id="kt_modal_categoriavideo" tabindex="-1" aria-hidden="true">
 															<!--begin::Modal dialog-->
 															<div class="modal-dialog modal-dialog-centered mw-650px">
 																<!--begin::Modal content-->
@@ -1143,7 +1448,7 @@ $result = $stmt->get_result();
 																			<!--begin::Heading-->
 																			<div class="mb-13 text-center">
 																				<!--begin::Title-->
-																				<h1 class="mb-3">Crea una nueva Categoria</h1>
+																				<h1 class="mb-3">Crea una nueva Categoria de videos</h1>
 																				<!--end::Title-->
 																			</div>
 																			<!--end::Heading-->
@@ -1226,6 +1531,165 @@ $result = $stmt->get_result();
 															<!--end::Modal dialog-->
 														</div>
 														<!--end::Modal - New Target-->
+
+
+
+														<!--begin::Modal - New Target-->
+														<div class="modal fade" id="kt_modal_categoriapdfs" tabindex="-1" aria-hidden="true">
+															<!--begin::Modal dialog-->
+															<div class="modal-dialog modal-dialog-centered mw-650px">
+																<!--begin::Modal content-->
+																<div class="modal-content rounded">
+																	<!--begin::Modal header-->
+																	<div class="modal-header pb-0 border-0 justify-content-end">
+																		<!--begin::Close-->
+																		<div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal" id="btnCancel">
+																			<i class="ki-duotone ki-cross fs-1">
+																				<span class="path1"></span>
+																				<span class="path2"></span>
+																			</i>
+																		</div>
+																		<!--end::Close-->
+																	</div>
+																	<!--begin::Modal header-->
+																	<!--begin::Modal body-->
+																	<div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
+																		<!--begin:Form-->
+																		<form method="POST" id="cargasForm" class="form" action="./Admins/cargaCategoriaPDFS.php">
+																			<!--begin::Heading-->
+																			<div class="mb-13 text-center">
+																				<!--begin::Title-->
+																				<h1 class="mb-3">Crea una nueva Categoria de PDFs</h1>
+																				<!--end::Title-->
+																			</div>
+																			<!--end::Heading-->
+																			<!--begin::Input group-->
+																			<div class="d-flex flex-column mb-8 fv-row">
+																				<!--begin::Label-->
+																				<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																					<span class="required">Nombre de la categoria</span>
+																					<span class="ms-1" data-bs-toggle="tooltip" title="Categoria nueva, por ejemplo: Generalidades">
+																						<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																							<span class="path1"></span>
+																							<span class="path2"></span>
+																							<span class="path3"></span>
+																						</i>
+																					</span>
+																				</label>
+																				<!--end::Label-->
+																				<input type="text" class="form-control form-control-solid" placeholder="Ingresa el nombre de la categoria" name="titulo" />
+																			</div>
+																			<!--end::Input group-->
+
+																			<!--begin::Input group-->
+																			<div class="d-flex flex-column mb-8 fv-row">
+																				<!--begin::Label-->
+																				<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																					<span class="required">Descripcion de la categoria</span>
+																					<span class="ms-1" data-bs-toggle="tooltip" title="Breve descripcion de la categoria, por ejemplo: Conceptos generales">
+																						<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																							<span class="path1"></span>
+																							<span class="path2"></span>
+																							<span class="path3"></span>
+																						</i>
+																					</span>
+																				</label>
+																				<!--end::Label-->
+																				<input type="text" class="form-control form-control-solid" placeholder="Ingresa una breve descripcion de la categoria" name="descripcion" />
+																			</div>
+																			<!--end::Input group-->
+																			<!--begin::Input group-->
+																			<div class="fv-row mb-8">
+																				<!--begin::Label-->
+																				<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																					<span class="required">Modulo</span>
+																					<span class="ms-1" data-bs-toggle="tooltip" title="Modulo al que pertenecera la categoria">
+																						<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																							<span class="path1"></span>
+																							<span class="path2"></span>
+																							<span class="path3"></span>
+																						</i>
+																					</span>
+																				</label>
+																				<!--end::Label-->
+																				<!--begin::Select2-->
+																				<select class="form-select form-select-solid" data-hide-search="true" data-placeholder="Selecciona un Modulo" name="modulo">
+																					<option value="">Selecciona un Modulo</option>
+																					<option value="1">Modulo Locomotor</option>
+																					<option value="2">Modulo Esplacnología</option>
+																					<option value="3">Modulo Neuroanatomía</option>
+																				</select>
+																				<!--end::Select2-->
+																			</div>
+																			<!--end::Input group-->
+																			<!--begin::Actions-->
+																			<div class="text-center">
+																				<button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal" id="btnCancel">Cancel</button>
+																				<button type="submit" class="btn btn-primary" data-kt-modal-action-type="submit">
+																					<span class="indicator-label">Submit</span>
+																					<span class="indicator-progress">Please wait...
+																						<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+																				</button>
+																			</div>
+																			<!--end::Actions-->
+																		</form>
+																		<!--end:Form-->
+																	</div>
+																	<!--end::Modal body-->
+																</div>
+																<!--end::Modal content-->
+															</div>
+															<!--end::Modal dialog-->
+														</div>
+														<!--end::Modal - New Target-->
+														
+														
+														
+														
+														<!--begin::Modal - New Target-->
+														<div class="modal fade" id="kt_modal_categoria" tabindex="-1" aria-hidden="true">
+														<!--begin::Modal dialog-->
+														<div class="modal-dialog modal-dialog-centered mw-650px">
+															<!--begin::Modal content-->
+															<div class="modal-content rounded">
+															<!--begin::Modal header-->
+															<div class="modal-header pb-0 border-0 justify-content-end">
+																<!--begin::Close-->
+																<div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal" id="btnCancel">
+																<i class="ki-duotone ki-cross fs-1">
+																	<span class="path1"></span>
+																	<span class="path2"></span>
+																</i>
+																</div>
+																<!--end::Close-->
+															</div>
+															<!--begin::Modal header-->
+															<!--begin::Modal body-->
+															<div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
+																<div class="mb-13 text-center">
+																<!--begin::Title-->
+																<h1 class="mb-3">Crea una nueva Categoria</h1>
+																<!--end::Title-->
+																</div>
+																<div class="text-center">
+																<h3>¿Que tipo de categoria quieres crear?</h3>
+																<button class="btn btn-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_categoriavideo">Video</button>
+																<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_categoriapdfs">PDF</button>
+																</div>
+															</div>
+															<!--end::Modal body-->
+															</div>
+															<!--end::Modal content-->
+														</div>
+														<!--end::Modal dialog-->
+														</div>
+														<!--end::Modal - New Target-->
+
+
+
+
+
+
 														<br>
 														<!--begin::Table head-->
 														<thead>
