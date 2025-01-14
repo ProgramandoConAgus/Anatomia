@@ -101,8 +101,7 @@ class Events{
 {
     $response = [];
     // Consulta para obtener todos los eventos programados en la base de datos
-    $selectEvents = "SELECT EVENT_NAME, STARTS FROM information_schema.events WHERE EVENT_SCHEMA = 'u981249563_preparandoanat';";
-    $result = $this->conex->query($selectEvents);
+    $selectEvents = "SELECT EVENT_NAME, STARTS FROM information_schema.events WHERE EVENT_SCHEMA = 'u981249563_preparandoanat';";    $result = $this->conex->query($selectEvents);
 
     if ($result->num_rows > 0) {
         $response['status'] = 'success';

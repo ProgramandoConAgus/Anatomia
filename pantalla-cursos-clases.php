@@ -868,7 +868,7 @@ $result = $stmt->get_result();
 																<div class="modal-footer">
 																	<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
 																	<!-- Al hacer clic en "Eliminar", redirige a delete_video.php con el IdVideo -->
-																	<a href="borrarVideo.php?id=<?=$row['IdVideo']?>" class="btn btn-danger">Eliminar</a>
+																	<a href="Admins/borrarVideo.php?id=<?=$row['IdVideo']?>" class="btn btn-danger">Eliminar</a>
 																</div>
 															</div>
 														</div>

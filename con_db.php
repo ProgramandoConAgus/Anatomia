@@ -1,6 +1,6 @@
 <?php
     $host = 'localhost'; // Cambia esto si tu host es diferente
-    $db = 'u981249563_anato_platform';
+    $db = 'u981249563_preparandoanat';
     $user = 'root';
     $password = '';
     
