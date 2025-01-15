@@ -722,7 +722,7 @@ $result = $stmt->get_result();
 																	<li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#kt_modal_video" href="#">Cargar Videos</a></li>
 																	<li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#kt_modal_gestion_bajas_masiva" href="#">Gestión de bajas masivas</a></li>
 																	<li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#kt_modal_categoria" href="#">Nueva categoria</a></li>
-
+																	<li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#kt_modal_links" href="#">Cambiar links</a></li>
 																</ul>
 															</div>
 															<div class="container col-lg-8">
@@ -1532,6 +1532,131 @@ $result = $stmt->get_result();
 														</div>
 														<!--end::Modal - New Target-->
 
+														
+
+
+														<!--begin::Modal - Links-->
+														<div class="modal fade" id="kt_modal_links" tabindex="-1" aria-hidden="true">
+															<!--begin::Modal dialog-->
+															<div class="modal-dialog modal-dialog-centered mw-650px">
+																<!--begin::Modal content-->
+																<div class="modal-content rounded">
+																	<!--begin::Modal header-->
+																	<div class="modal-header pb-0 border-0 justify-content-end">
+																		<!--begin::Close-->
+																		<div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal" id="btnCancel">
+																			<i class="ki-duotone ki-cross fs-1">
+																				<span class="path1"></span>
+																				<span class="path2"></span>
+																			</i>
+																		</div>
+																		<!--end::Close-->
+																	</div>
+																	<!--begin::Modal header-->
+																	<!--begin::Modal body-->
+																	<div class="modal-body scroll-y px-10 px-lg-15 pt-0 pb-15">
+																		<!--begin:Form-->
+																		<form method="POST" id="updateLinks" class="form" action="./Admins/cargaCategoriaPDFS.php">
+																			<!--begin::Heading-->
+																			<div class="mb-13 text-center">
+																				<!--begin::Title-->
+																				<h1 class="mb-3">Actualiza los links</h1>
+																				<!--end::Title-->
+																			</div>
+																			<!--end::Heading-->
+																			<!--begin::Input group-->
+																			<div class="d-flex flex-column mb-8 fv-row">
+																				<!--begin::Label-->
+																				<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																					<span class="required">Link nuevo</span>
+																					<span class="ms-1" data-bs-toggle="tooltip" title="Agrega el nuevo link que reemplazara el anterior">
+																						<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																							<span class="path1"></span>
+																							<span class="path2"></span>
+																							<span class="path3"></span>
+																						</i>
+																					</span>
+																				</label>
+																				<!--end::Label-->
+																				<input type="text" class="form-control form-control-solid" placeholder="Ingrese el nuevo Link" name="link" />
+																			</div>
+																			<!--end::Input group-->
+
+																			<!--begin::Input group-->
+																			<div class="fv-row mb-8">
+																				<!--begin::Label-->
+																				<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																					<span class="required">Tipo de link</span>
+																					<span class="ms-1" data-bs-toggle="tooltip" title="Que tipo de link sera">
+																						<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																							<span class="path1"></span>
+																							<span class="path2"></span>
+																							<span class="path3"></span>
+																						</i>
+																					</span>
+																				</label>
+																				<!--end::Label-->
+																				<!--begin::Select2-->
+																				<select class="form-select form-select-solid exclude-select" data-hide-search="true" id="tipoLink" data-placeholder="Selecciona un tipo de link" name="tipoLink">
+																					<option value="">Selecciona un tipo de link</option>
+																					<option value="wpp">Link de Whatsapp</option>
+																					<option value="dri">Link de Drive</option>
+																				</select>
+																				<!--end::Select2-->
+																			</div>
+																			<!--end::Input group-->
+																			<!--begin::Input group-->
+																			<div class="fv-row mb-8">
+																				<!--begin::Label-->
+																				<label class="d-flex align-items-center fs-6 fw-semibold mb-2">
+																					<span class="required">Curso</span>
+																					<span class="ms-1" data-bs-toggle="tooltip" title="Curso al que pertenecera el Link">
+																						<i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+																							<span class="path1"></span>
+																							<span class="path2"></span>
+																							<span class="path3"></span>
+																						</i>
+																					</span>
+																				</label>
+																				<!--end::Label-->
+																				<!--begin::Select2-->
+																				<select class="form-select mb-3 exclude-select" name="cursoLink">
+																					<?php
+																					$sqlQuery = "SELECT * FROM cursos where idCurso <> 0";
+																					$stm = $conex->prepare($sqlQuery);
+																					$stm->execute();
+																					$resultCursos = $stm->get_result();
+																					while ($rowCurso = mysqli_fetch_assoc($resultCursos)) {
+																					?>
+																						<option value="<?= $rowCurso['IdCurso'] ?>.<?= $rowCurso['Titulo'] ?>"><?= $rowCurso['Titulo'] ?></option>
+																					<?php
+																					}
+																					?>
+																				</select>
+																				<!--end::Select2-->
+																			</div>
+																			<!--end::Input group-->
+																			<!--begin::Actions-->
+																			<div class="text-center">
+																				<button type="reset" class="btn btn-light me-3" data-bs-dismiss="modal" id="btnCancel">Cancel</button>
+																				<button type="submit" class="btn btn-primary" data-kt-modal-action-type="submit">
+																					<span class="indicator-label">Submit</span>
+																					<span class="indicator-progress">Please wait...
+																						<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+																				</button>
+																			</div>
+																			<!--end::Actions-->
+																		</form>
+																		<!--end:Form-->
+																	</div>
+																	<!--end::Modal body-->
+																</div>
+																<!--end::Modal content-->
+															</div>
+															<!--end::Modal dialog-->
+														</div>
+														<!--end::Modal - New Target-->
+														
 
 
 														<!--begin::Modal - New Target-->
@@ -7033,7 +7158,7 @@ $result = $stmt->get_result();
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
-
+	<script src="./Admins/links.js"></script>
 	<!--end::Javascript-->
 </body>
 <!--end::Body-->
