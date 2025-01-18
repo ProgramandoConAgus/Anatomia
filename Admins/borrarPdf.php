@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_GET['id'])) {
     $idVideo = $_GET['id'];
     include("../con_db.php");
@@ -9,10 +10,10 @@ if (isset($_GET['id'])) {
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
-        header('Location: ../panel-inicial.php?id=' . $_SESSION['idUsuario'] );
+        header('Location: ../panel-inicial.php?id=' . $_SESSION['IdUser'] );
         exit();
     } else {
-        echo "Error al eliminar el video.";
+        echo "Error al eliminar el pdf.";
     }
 
     $stmt->close();
