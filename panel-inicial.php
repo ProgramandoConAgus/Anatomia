@@ -12,7 +12,7 @@ if(!$_SESSION['loggedin']){
 }
 
 include('con_db.php');
-include('usuarios-clase.php'); // Incluye la clase Usuario
+include('usuarios-clase.php'); 
 include('usuariosCurso-clase.php');
 // Obtén el ID del usuario desde la URL (suponiendo que se pasa como parámetro GET o POST)
 $idUsuario = $_GET['id']; // Ajusta según cómo obtienes el ID desde la ruta
