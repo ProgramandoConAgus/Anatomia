@@ -53,8 +53,7 @@ class Usuario {
                 $sql = "SELECT u.* 
         FROM usuarios u 
         INNER JOIN usuarioscursos uc ON u.IdUsuario = uc.IdUsuario 
-        WHERE uc.IdCurso = ?
-        order by IdUsuario desc";
+        WHERE uc.IdCurso = ?";
                 $stmt = $this->conex->prepare($sql);
                 $stmt->bind_param("i", $idCurso);
             }
