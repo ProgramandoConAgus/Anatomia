@@ -1905,6 +1905,30 @@ $result = $stmt->get_result();
 																							<input class="form-check-input" name="<?= $inputName ?>" type="checkbox" role="switch" id="<?= $switchId ?>" value="1" <?= $checked ?>>
 																						</div>
 																					</td>
+																					<td>
+																					<button class="btn btn-danger er fs-6 px-5 py-3" data-toggle="modal" data-target="#confirmDeleteModal<?=$row['IdUsuario']?>">Eliminar</button>
+
+																					</td>
+																					<div class="modal fade" id="confirmDeleteModal<?=$row['IdUsuario']?>" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteLabel<?=$row['IdUsuario']?>" aria-hidden="true">
+																						<div class="modal-dialog modal-dialog-centered" role="document">
+																							<div class="modal-content">
+																								<div class="modal-header">
+																									<h5 class="modal-title" id="confirmDeleteLabel<?=$row['IdUsuario']?>">Confirmar Eliminación</h5>
+																									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																									<span aria-hidden="true">&times;</span>
+																									</button>
+																								</div>
+																								<div class="modal-body">
+																									¿Estás seguro de que quieres eliminar este usuario?
+																								</div>
+																								<div class="modal-footer">
+																									<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+																									
+																									<button onclick="BorrarUsuario(<?=$row['IdUsuario']?>)" class="btn btn-danger">Eliminar</button>
+																									</div>
+																							</div>
+																						</div>
+																					</div>
 																					<!--end::Desc-->
 																				</div>
 																				<!--end::Stats-->
@@ -1986,6 +2010,30 @@ $result = $stmt->get_result();
 																								<input class="form-check-input" name="<?= $inputName ?>" type="checkbox" role="switch" id="<?= $switchId ?>" value="1" <?= $checked ?>>
 																							</div>
 																						</td>
+																						<td>
+																						<button class="btn btn-danger er fs-6 px-5 py-3" data-toggle="modal" data-target="#confirmDeleteModal<?=$row['IdUsuario']?>">Eliminar</button>
+
+																						</td>
+																						<div class="modal fade" id="confirmDeleteModal<?=$row['IdUsuario']?>" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteLabel<?=$row['IdUsuario']?>" aria-hidden="true">
+																						<div class="modal-dialog modal-dialog-centered" role="document">
+																							<div class="modal-content">
+																								<div class="modal-header">
+																									<h5 class="modal-title" id="confirmDeleteLabel<?=$row['IdUsuario']?>">Confirmar Eliminación</h5>
+																									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+																									<span aria-hidden="true">&times;</span>
+																									</button>
+																								</div>
+																								<div class="modal-body">
+																									¿Estás seguro de que quieres eliminar este usuario?
+																								</div>
+																								<div class="modal-footer">
+																								<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+																								<!-- Al hacer clic en "Eliminar", redirige a delete_video.php con el IdVideo -->
+																								<button onclick="BorrarUsuario(<?=$row['IdUsuario']?>)" class="btn btn-danger">Eliminar</button>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
 																						<!--end::Desc-->
 																					</div>
 																					<!--end::Stats-->
@@ -7159,6 +7207,7 @@ $result = $stmt->get_result();
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 	<script src="./Admins/links.js"></script>
+	<script src="./Admins/BorrarUsuarios/borrarUsuario.js"></script>
 	<!--end::Javascript-->
 </body>
 <!--end::Body-->

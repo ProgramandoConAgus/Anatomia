@@ -92,6 +92,7 @@ if ( isset($_SESSION['loggedin'])&&isset($_SESSION['idUsuario']) && $_SESSION['l
 		<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 		<link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
 		<!--end::Global Stylesheets Bundle-->
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 		<script>// Frame-busting to prevent site from being loaded within a frame without permission (click-jacking) if (window.top != window.self) { window.top.location.replace(window.self.location.href); }</script>
 	</head>
 	<!--end::Head-->
